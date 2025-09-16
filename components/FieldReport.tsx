@@ -1,10 +1,10 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 
-interface FieldReportProps {
+interface FieldLogProps {
   onPinEvidence: (item: { note: string; photo?: string }) => void;
 }
 
-const FieldReport: React.FC<FieldReportProps> = ({ onPinEvidence }) => {
+const FieldLog: React.FC<FieldLogProps> = ({ onPinEvidence }) => {
   const [note, setNote] = useState('');
   const [photo, setPhoto] = useState<string | undefined>(undefined);
   const [stream, setStream] = useState<MediaStream | null>(null);
@@ -56,7 +56,7 @@ const FieldReport: React.FC<FieldReportProps> = ({ onPinEvidence }) => {
 
   const handlePin = () => {
     if (!note && !photo) {
-      setError("Add a note or photo to pin some evidence.");
+      setError("Add a note or photo to create a log entry.");
       return;
     }
     onPinEvidence({ note, photo });
@@ -68,13 +68,13 @@ const FieldReport: React.FC<FieldReportProps> = ({ onPinEvidence }) => {
   const hasDataToPin = note.trim() !== '' || !!photo;
 
   return (
-    <div className="bg-white p-6 rounded-lg mb-8 shadow-md border-t-4 border-slctrips-orange">
-      <h2 className="font-heading text-3xl font-bold text-slctrips-navy mb-2">Field Data Entry</h2>
-      <p className="text-gray-600 mb-6">You're the investigator. Capture your findings here to add them to your evidence board.</p>
+    <div className="bg-white p-6 rounded-lg mb-8 shadow-md border-t-4 border-slctrips-red">
+      <h2 className="font-heading text-3xl font-bold text-slctrips-navy mb-2">Field Log</h2>
+      <p className="text-gray-600 mb-6">You're on scene. Document your observations and photographic evidence here to add them to your case board.</p>
       
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-bold text-slctrips-navy mb-1">Evidence Photo</label>
+          <label className="block text-sm font-bold text-slctrips-navy mb-1">Photographic Evidence</label>
           <div className="p-2 border border-gray-300 rounded-md bg-slctrips-light min-h-[100px] flex justify-center items-center">
             {photo ? (
               <div className="text-center">
@@ -86,7 +86,7 @@ const FieldReport: React.FC<FieldReportProps> = ({ onPinEvidence }) => {
                   <video ref={videoRef} autoPlay playsInline className="w-full rounded-lg bg-black"></video>
                   <canvas ref={canvasRef} className="hidden"></canvas>
                   <div className="flex gap-2">
-                      <button onClick={handleSnapPhoto} className="flex-grow bg-slctrips-blue text-white font-bold py-2 px-4 rounded-lg hover:bg-slctrips-navy">Snap Photo</button>
+                      <button onClick={handleSnapPhoto} className="flex-grow bg-slctrips-sky text-white font-bold py-2 px-4 rounded-lg hover:bg-slctrips-navy">Capture Evidence</button>
                       <button onClick={stopCamera} className="bg-gray-200 text-slctrips-navy font-bold py-2 px-4 rounded-lg hover:bg-gray-300">Close</button>
                   </div>
               </div>
@@ -99,14 +99,14 @@ const FieldReport: React.FC<FieldReportProps> = ({ onPinEvidence }) => {
         </div>
         
         <div>
-            <label htmlFor="field-notes" className="block text-sm font-bold text-slctrips-navy mb-1">Field Notes</label>
+            <label htmlFor="field-notes" className="block text-sm font-bold text-slctrips-navy mb-1">Investigator's Notes</label>
             <textarea
                 id="field-notes"
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
-                placeholder="Log your observations, feelings, and any strange occurrences..."
+                placeholder="Log your observations on the atmosphere, surroundings, and any points of interest..."
                 className="w-full h-24 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-slctrips-gold focus:border-slctrips-gold"
-                aria-label="Field Notes"
+                aria-label="Investigator's Notes"
             />
         </div>
         
@@ -115,14 +115,14 @@ const FieldReport: React.FC<FieldReportProps> = ({ onPinEvidence }) => {
         <button
             onClick={handlePin}
             disabled={!hasDataToPin}
-            className="w-full mt-4 bg-slctrips-orange text-white font-bold py-3 px-6 rounded-lg hover:bg-slctrips-red disabled:bg-slate-400 disabled:cursor-not-allowed transition-colors duration-300"
-            aria-label="Pin Evidence to Board"
+            className="w-full mt-4 bg-slctrips-red text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 disabled:bg-slate-400 disabled:cursor-not-allowed transition-colors duration-300"
+            aria-label="Add to Case Board"
         >
-            📌 Pin Evidence to Board
+            📌 Add to Case Board
         </button>
       </div>
     </div>
   );
 };
 
-export default FieldReport;
+export default FieldLog;

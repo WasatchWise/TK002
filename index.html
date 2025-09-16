@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/slctrips-logo.png" />
+    <link rel="icon" type="image/x-icon" href="data:," />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SLCTrips: Utah TripKits & Adventures</title>
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data: https:;">
+    <title>Dark Tourism West</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,17 +25,13 @@
           extend: {
             colors: {
               'slctrips-navy': '#0D2A40',
-              'slctrips-blue': '#0085C7',
-              'slctrips-gold': '#F4B441',
-              'slctrips-orange': '#E57A2C',
               'slctrips-red': '#B33C1A',
-              'slctrips-green': '#4C8F5F',
-              'slctrips-dark-green': '#2F6B3C',
-              'slctrips-purple': '#5C398E',
-              'slctrips-light-purple': '#B465B8',
-              'slctrips-light': '#F7F0E8',
-              'slctrips-mid': '#C4C9CE',
+              'slctrips-gold': '#F4B441',
               'slctrips-black': '#101820',
+              'slctrips-light': '#F7F0E8',
+              'slctrips-mid': '#E5E7EB',
+              'slctrips-sky': '#0085C7',
+              'slctrips-green': '#2F6B3C',
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
@@ -61,5 +58,6 @@
 </head>
   <body class="bg-slctrips-light text-slctrips-black">
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

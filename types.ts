@@ -1,78 +1,46 @@
 
-export interface BuddyLink {
-  category: string;
-  text: string;
-  url: string;
+export interface EvidenceItem {
+    note: string;
+    photo?: string;
+    id: string;
 }
 
-export enum Category {
-  UTAH = "UTAH - The Paranormal Epicenter",
-  COLORADO = "COLORADO - Mile High Mysteries",
-  NEVADA = "NEVADA - The Extraterrestrial State",
-  ARIZONA = "ARIZONA - Desert of the Damned",
-  WYOMING = "WYOMING - The Frontier Void",
-  MONTANA = "MONTANA - Big Sky Darkness",
-  IDAHO = "IDAHO - The Forgotten Realm",
-  NEW_MEXICO = "NEW MEXICO - Land of Enchantment",
-  BONUS = "BONUS ZONES",
-  CRYPTID = "Cryptid Territories",
+export enum State {
+  UTAH = "Utah",
+  COLORADO = "Colorado",
+  NEVADA = "Nevada",
+  ARIZONA = "Arizona",
+  WYOMING = "Wyoming",
+  MONTANA = "Montana",
+  IDAHO = "Idaho",
+  NEW_MEXICO = "New Mexico",
+  CALIFORNIA = "California",
 }
 
-export enum DangerLevel {
-    MODERATE = 'MODERATE',
-    HIGH = 'HIGH',
-    EXTREME = 'EXTREME',
-    LETHAL = 'LETHAL'
+export enum NotorietyLevel {
+    LOCAL = 'LOCAL INFAMY',
+    NATIONAL = 'NATIONAL ATTENTION',
+    ICONIC = 'ICONIC CASE',
+    LEGENDARY = 'CRIMINAL LEGEND'
 }
 
-export interface Destination {
+export interface CrimeLocation {
   id: string;
   name: string;
-  subtitle: string;
-  category: Category;
-  location: string;
+  crime: string;
+  state: State;
+  region: string;
+  address?: string;
   driveTime: string;
-  visitDuration:string;
-  cost: string;
-  groupSize: string;
-  bestTime: string;
-  dangerLevel: DangerLevel;
-  dangerDescription: string;
+  story: string[];
+  accessibility: string;
   gps: string;
-  what3words: string;
-  story: string[]; // array of paragraphs
-  evidence: { title: string; points: string[] };
-  hook: string;
-  media: {
-    youtubeId: string;
-    title: string;
-  }[];
-  safety: {
-    title: string;
-    points: string[];
-  };
-  olympianInsight: {
-    character: string;
-    quote: string;
-    characterImage?: string;
-  };
-  equipment: { name: string; reason: string }[];
-  gettingThere?: {
-    from: string;
-    steps: string[];
-  };
-  parking?: string;
-  permits?: string;
-  whenToVisit?: {
-    bestTime: string;
-    seasonality: string;
-    peakActivity: string;
-  };
-  whatToExpect?: {
-    phenomena: string[];
-    encounters: string[];
-  };
-  relatedDestinationIds: string[];
-  buddyLinks?: BuddyLink[];
+  notorietyLevel: NotorietyLevel;
+  perpetrators?: string[];
+  victims?: string[];
+  dates: string;
+  relatedLocationIds?: string[];
   tags?: string[];
+  paranormal?: string;
+  status: string;
 }

@@ -1,1802 +1,1344 @@
-import { Destination, Category, DangerLevel } from '../types';
+import { CrimeLocation, State, NotorietyLevel } from '../types';
 
-export const destinations: Destination[] = [
+export const locations: CrimeLocation[] = [
+  // UTAH
   {
-    id: 'skinwalker-ranch',
-    name: "Skinwalker Ranch",
-    subtitle: "Where Reality Breaks Down",
-    category: Category.UTAH,
-    location: "Ballard, Utah (Uintah Basin)",
-    driveTime: "3 hours from SLC",
-    visitDuration: "2-4 hours (perimeter only)",
-    cost: "Free (public roads only)",
-    groupSize: "2-4 people minimum",
-    bestTime: "Dusk to dawn",
-    dangerLevel: DangerLevel.EXTREME,
-    dangerDescription: "ACTIVE PARANORMAL ZONE",
-    gps: "40.2583, -109.8849",
-    what3words: "///rocks.cutters.natural",
+    id: 'bundy-residence-1st-ave',
+    name: "Ted Bundy's Residence (1st Ave)",
+    crime: "Serial Killer's Base of Operations",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "565 1st Avenue, Salt Lake City, UT",
+    driveTime: "15 minutes from airport",
     story: [
-      "This 512-acre ranch is ground zero for the paranormal in America. Since the 1600s, the Ute tribe warned of shapeshifting witches dwelling in this valley. They called them 'skinwalkers' - beings that could take the form of any animal or person. The land was considered so cursed that tribal members refused to hunt here, even during harsh winters.",
-      "In 1994, the Sherman family bought the ranch and immediately encountered phenomena that defied explanation. What started as a dream ranch became their worst nightmare within weeks."
+      "This unassuming Avenues rooming house served as the primary residence for serial killer Ted Bundy from 1974 to 1975, a period of intense activity in his horrific timeline.",
+      "From his room (originally #2), Bundy planned his attacks and, by his own admission, brought at least two victims back to the property. The house's proximity to the University of Utah and downtown Salt Lake provided a fertile hunting ground.",
     ],
-    evidence: {
-        title: "The Evidence",
-        points: [
-            "The Bulletproof Wolf: A massive wolf, larger than a horse, attacked their cattle. Terry Sherman shot it multiple times with a .357 Magnum. The bullets had no effect.",
-            "Impossible Orbs: Glowing spheres of light would emerge from the ground, fly through the air, and disappear into solid rock faces.",
-            "Surgical Mutilations: Cattle found with organs removed using surgical precision. No blood, no tracks, no explanation.",
-            "The Teleporting Bull: A 400-pound bull vanished from a field and reappeared inside a locked metal trailer.",
-            "Interdimensional Portals: Witnesses reported seeing 'holes' open in mid-air, revealing glimpses of other landscapes.",
-            "Radiation Burns: Investigators develop radiation-like burns despite no detectable radioactive source."
-        ]
-    },
-    hook: "Billionaire Brandon Fugal purchased the ranch, assembling a team of PhD scientists to study the phenomena. Their findings are even more disturbing than the folklore. In 2023, his team recorded a UAP traveling at 46,000 mph.",
-    media: [
-      { youtubeId: "gFz058BJ2wE", title: "Skinwalker Ranch: The Most Haunted Place on Earth" },
-      { youtubeId: "VlrUKF4095Q", title: "History Channel: Secret of Skinwalker Ranch" }
-    ],
-    safety: {
-      title: "Dan Says: Wander Wisely",
-      points: [
-        "NEVER attempt to enter ranch property - Trespassing will result in immediate arrest.",
-        "Stay on public roads at ALL times.",
-        "Bring multiple recording devices - One will always malfunction mysteriously.",
-        "If electronics start glitching, leave immediately.",
-        "Travel in groups of 2+ minimum. Never investigate alone."
-      ]
-    },
-    olympianInsight: {
-      character: "Dreamwalker Elkshade (Uintah Guardian)",
-      quote: "This land dreams deeper than most. What you call 'phenomena' are just the echoes of its restless sleep. Tread lightly, lest you become part of the dream yourself.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-      { name: "Multiple Recording Devices", reason: "Expect one to fail completely" },
-      { name: "Analog Compass", reason: "GPS devices frequently malfunction" },
-      { name: "Geiger Counter", reason: "Unexplained radiation spikes documented" },
-      { name: "Extra Batteries", reason: "Electronics drain power at accelerated rates" },
-      { name: "Satellite Communicator", reason: "Cell service unreliable, emergency beacon essential" }
-    ],
-    gettingThere: {
-        from: "Salt Lake City International",
-        steps: [
-            "Take I-80 East to US-40 East toward Vernal.",
-            "Continue on US-191 North from Vernal.",
-            "Turn west onto the dirt road known locally as 'Skinwalker Ranch Road'.",
-            "Ranch perimeter is visible from the public road - DO NOT ENTER."
-        ]
-    },
-    parking: "Limited roadside parking. Respect private property boundaries. No facilities available.",
-    permits: "None for public road viewing. Ranch property is STRICTLY off-limits.",
-    whenToVisit: {
-        bestTime: "Sunset to sunrise - most phenomena reported during darkness.",
-        seasonality: "Year-round, but winter can bring severe weather.",
-        peakActivity: "New moon phases, 2-4 AM window shows highest activity."
-    },
-    whatToExpect: {
-        phenomena: ["Unexplained lights moving in impossible patterns.", "Electronic equipment malfunctioning.", "Feeling of being watched."],
-        encounters: ["Research team recorded 1.6 GHz signal emanating from underground (Mar 2023).", "Drone captured footage of object moving at impossible speeds (Aug 2023)."]
-    },
-    relatedDestinationIds: ['blind-frog-ranch', 'dugway-proving-ground', 'san-luis-valley', 'area-51-perimeter'],
-    buddyLinks: [
-      {
-        category: "Essential Gear",
-        text: "A reliable EMF meter to detect strange energy spikes.",
-        url: "https://www.amazon.com/s?k=emf+meter"
-      },
-      {
-        category: "Provisions & Lodging",
-        text: "Find a place to stay in nearby Vernal, Utah.",
-        url: "https://www.booking.com/city/us/vernal.html"
-      },
-      {
-        category: "Further Research",
-        text: "Read 'Hunt for the Skinwalker' by Colm Kelleher & George Knapp.",
-        url: "https://www.amazon.com/Hunt-Skinwalker-Science-Confronts-Unexplained/dp/1416505210"
-      }
-    ],
-    tags: ["Portal Locations (Alleged)", "Underground Base Network"]
+    accessibility: "The building still operates as a private rooming house. The exterior is viewable from the street, but access is restricted to residents. The room number was reportedly changed from 2 to 5 to deter unwanted attention. Please be respectful of the current residents' privacy.",
+    gps: "40.7745, -111.8785",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Ted Bundy"],
+    victims: ["Two unnamed victims", "and others"],
+    dates: "1974-1975",
+    relatedLocationIds: ['bundy-viewmont-high', 'fashion-place-mall-bundy', 'bundy-arrest-site'],
+    tags: ["Ted Bundy", "Serial Killer", "Salt Lake City"],
+    status: "Private Rooming House",
   },
   {
-    id: 'denver-airport',
-    name: "Denver International Airport",
-    subtitle: "The Illuminati's Western Headquarters",
-    category: Category.COLORADO,
-    location: "Denver, Colorado",
-    driveTime: "7 hours from SLC",
-    visitDuration: "3-6 hours",
-    cost: "Free (public areas)",
-    groupSize: "2-3 people",
-    bestTime: "Daylight hours",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "HEAVY SURVEILLANCE ZONE",
-    gps: "39.8561, -104.6737",
-    what3words: "///friend.exotic.stress",
+    id: 'fashion-place-mall-bundy',
+    name: "Fashion Place Mall (Bundy Abduction Attempt)",
+    crime: "Attempted Kidnapping",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "6191 S State St, Murray, UT",
+    driveTime: "20 minutes from airport",
     story: [
-        "Denver International Airport opened in 1995, 16 months late and $2 billion over budget. Officially, it replaced the perfectly functional Stapleton Airport.",
-        "Unofficially, it may be the most conspiracy-laden location in North America, sitting on 53 square miles. Construction workers tell stories of vast underground complexes and mysterious tunnels that required the highest security clearances."
+        "On November 8, 1974, this busy shopping mall became a key location in the Ted Bundy saga. Posing as a police officer, Bundy lured 18-year-old Carol DaRonch from a bookstore to his VW Bug.",
+        "When he attempted to handcuff her, she fought back and managed to escape. DaRonch's courageous resistance and detailed testimony were crucial in securing Bundy's first conviction, providing the first concrete link to his string of crimes."
     ],
-    evidence: {
-        title: "The Evidence",
-        points: [
-            "The Apocalyptic Murals: Art depicting children in coffins, Nazi soldiers, and peace achieved through world destruction.",
-            "Masonic Capstone: Dedication stone mentions 'New World Airport Commission' - an organization that doesn't exist.",
-            "Swastika Runways: Aerial view shows runways form a Nazi symbol.",
-            "Blucifer: A 32-foot demonic horse statue that killed its creator during construction.",
-            "Gargoyles: Medieval demon statues inexplicably placed in the luggage claim.",
-            "Underground Tunnels: An automated train system allegedly connecting to a massive underground bunker network."
-        ]
-    },
-    hook: "The airport itself now embraces the conspiracy theories, adding exhibits about them. Why draw attention unless they're hiding something bigger? In 2023, construction workers reported finding additional sealed tunnels during renovation work. Photos were confiscated, workers signed new NDAs.",
-    media: [
-      { youtubeId: "U_J_A_KDE-0", title: "Denver Airport Conspiracy Theories" },
-      { youtubeId: "JcO--_wB5VE", title: "The Dark Secrets of DIA" }
-    ],
-    safety: {
-      title: "Dan Says: Wander Wisely",
-      points: [
-        "Photography is restricted near security checkpoints.",
-        "Don't loiter excessively; airport security will question prolonged stays.",
-        "Stick to public art and areas.",
-        "Watch for unmarked personnel; not all security wears uniforms."
-      ]
-    },
-    olympianInsight: {
-      character: "A Colorado Counterpart",
-      quote: "Great works require great deception. What appears as a mere transportation hub may serve purposes beyond the movement of travelers. The symbols are hidden in plain sight.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "Discreet Camera", reason: "Phone photography only, professional equipment draws attention" },
-        { name: "Terminal Map", reason: "Know locations of controversial art before visiting" },
-        { name: "Comfortable Shoes", reason: "Lots of walking through massive terminals" },
-        { name: "Research Notes", reason: "Pre-loaded info about what to look for" }
-    ],
-    relatedDestinationIds: ['skinwalker-ranch', 'st-elmo-ghost-town', 'san-luis-valley', 'dugway-proving-ground'],
-    tags: ["Underground Base Network"]
+    accessibility: "The mall remains a major, operational shopping center but has undergone extensive renovations since the 1970s, bearing little resemblance to its appearance at the time of the crime.",
+    gps: "40.6386, -111.8924",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["Ted Bundy"],
+    victims: ["Carol DaRonch (survived)"],
+    dates: "November 8, 1974",
+    relatedLocationIds: ['bundy-residence-1st-ave', 'trolley-square-shooting'],
+    tags: ["Ted Bundy", "Abduction", "Survivor"],
+    status: "Commercial Mall",
   },
   {
-    id: 'berkeley-pit',
-    name: "The Berkeley Pit",
-    subtitle: "America's Most Toxic Lake",
-    category: Category.MONTANA,
-    location: "Butte, Montana",
-    driveTime: "6 hours from SLC",
-    visitDuration: "1-2 hours (viewing only)",
-    cost: "$2 viewing platform fee",
-    groupSize: "Any size",
-    bestTime: "Daylight hours only",
-    dangerLevel: DangerLevel.LETHAL,
-    dangerDescription: "TOXIC SUPERFUND SITE",
-    gps: "46.0038, -112.5006",
-    what3words: "///stage.diving.cuts",
+    id: 'bundy-arrest-site',
+    name: "Ted Bundy Arrest Site",
+    crime: "Key Arrest of a Serial Killer",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "Granger area, West Valley City, UT",
+    driveTime: "20 minutes from airport",
     story: [
-        "The Berkeley Pit is what happens when humans play god with the earth and lose. From 1955 to 1982, this was an open-pit copper mine. When it closed, they shut off the pumps.",
-        "What filled the mile-wide crater wasn't water - it was liquid death. A toxic soup so corrosive it dissolves metal, so acidic it burns through organic matter, so poisonous it kills everything that touches it."
+      "In the early morning hours of August 16, 1975, Utah Highway Patrol Sergeant Bob Hayward stopped a suspicious VW Bug in a suburban neighborhood. The driver was Ted Bundy.",
+      "Hayward's discovery of suspicious items—a ski mask, handcuffs, a crowbar—in the vehicle led to Bundy's first arrest. This routine traffic stop was the beginning of the end for Bundy's reign of terror."
     ],
-    evidence: {
-        title: "Evidence of Toxicity",
-        points: [
-            "pH Level 2.5: More acidic than lemon juice, approaching battery acid levels.",
-            "342 Snow Geese Died (1995): An entire flock landed on the water and died within hours, their bodies dissolving.",
-            "21 Heavy Metals: Arsenic, cadmium, zinc, and copper at lethal concentrations.",
-            "40 Billion Gallons: Enough poison to contaminate entire regional water supplies.",
-            "Rising Water Level: A ticking time bomb, it increases 6 inches per year, approaching a critical contamination level."
-        ]
-    },
-    hook: "This isn't just an environmental disaster - it's a glimpse into humanity's capacity for creating hell on earth. NASA studies it as an analogue for toxic alien environments. The question is not if, but when it will contaminate the regional aquifer.",
-    media: [
-      { youtubeId: "jJqG3y4-q-Y", title: "The Terrifying Truth Of The Berkeley Pit" },
-      { youtubeId: "yJ-iR5FSC6A", title: "Butte's Toxic Pit" }
-    ],
-    safety: {
-      title: "Dan Says: Wander Wisely",
-      points: [
-        "NEVER touch the water. Even droplets cause chemical burns.",
-        "Stay on designated platforms. The ground around the pit may be unstable.",
-        "Don't breathe deeply near the water, especially on windy days.",
-        "Contact with the water is lethal. No exceptions."
-      ]
-    },
-    olympianInsight: {
-      character: "A Montana Counterpart",
-      quote: "Behold what becomes of waters when we forget they are sacred. This pit is a wound upon the earth that will not heal for a thousand generations. The waters here cry out in anguish.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "Face Mask", reason: "Protect against toxic vapors and wind-blown particles" },
-        { name: "Camera with Zoom", reason: "Get close-up shots from a safe distance" },
-        { name: "Windbreaker", reason: "Montana weather changes rapidly" },
-        { name: "Closed-Toe Shoes", reason: "Protect feet from potentially contaminated ground" }
-    ],
-    relatedDestinationIds: ['st-elmo-ghost-town', 'nutty-putty-cave', 'devils-gate'],
-    buddyLinks: [
-      {
-        category: "Essential Gear",
-        text: "A good N95 or P100 mask for peace of mind.",
-        url: "https://www.amazon.com/s?k=n95+mask"
-      },
-      {
-        category: "Lodging",
-        text: "Find hotels in historic Butte, Montana.",
-        url: "https://www.booking.com/city/us/butte.html"
-      }
-    ]
+    accessibility: "The arrest took place on a public residential street in the Granger area. There is no specific marker. The neighborhood has changed significantly since 1975.",
+    gps: "40.7100, -111.9845",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Ted Bundy"],
+    victims: [],
+    dates: "August 16, 1975",
+    relatedLocationIds: ['bundy-residence-1st-ave', 'fashion-place-mall-bundy'],
+    tags: ["Ted Bundy", "Arrest", "Law Enforcement"],
+    status: "Public Residential Street"
   },
   {
-    id: 'area-51-perimeter',
-    name: "Area 51 Perimeter",
-    subtitle: "The Base That Doesn't Exist",
-    category: Category.NEVADA,
-    location: "Rachel, Nevada",
-    driveTime: "5 hours from SLC",
-    visitDuration: "3-5 hours",
-    cost: "Free (public land)",
-    groupSize: "2+ people",
-    bestTime: "3 AM on Wednesdays",
-    dangerLevel: DangerLevel.EXTREME,
-    dangerDescription: "FEDERAL RESTRICTED ZONE - LETHAL FORCE AUTHORIZED",
-    gps: "37.6450, -115.8111",
-    what3words: "///unrated.wiggling.repaying",
+    id: 'bundy-viewmont-high',
+    name: "Viewmont High School (Debra Kent Abduction)",
+    crime: "Kidnapping and Murder",
+    state: State.UTAH,
+    region: "Northern Utah",
+    address: "120 W 1000 N, Bountiful, UT",
+    driveTime: "25 minutes from airport",
     story: [
-        "The most famous secret base in the world. Officially a remote detachment of Edwards Air Force Base, it's the subject of intense speculation regarding UFOs and extraterrestrial technology.",
-        "Whistleblower Bob Lazar claimed he worked at 'Sector 4' near Papoose Lake, reverse-engineering alien spacecraft. His claims put this desolate piece of desert on the global map."
+      "During a school play at Viewmont High School, Ted Bundy abducted 17-year-old Debra Kent from the parking lot. He allegedly posed as a police officer to lure her to his vehicle.",
+      "Kent's remains were not found for years, eventually being discovered near Fairview, Utah. This abduction was one of the last crimes Bundy committed in Utah before moving to Colorado."
     ],
-    evidence: {
-        title: "What Happens Here",
-        points: [
-            "Bob Lazar's Sector 4: Nine alleged alien craft in underground hangars.",
-            "Wednesday 3 AM Lights: UFO watchers report lights performing impossible maneuvers over Tikaboo Peak every week without fail.",
-            "'Janet Airlines': A fleet of unmarked 737s flies workers from Las Vegas to the base daily. The workers cannot say where they work.",
-            "The 'Cammo Dudes': Infamous unmarked white SUVs patrol the perimeter, detaining anyone who gets too close.",
-            "The Death Line: Crossing the marked border is a federal crime punishable by 6 months prison, a $5,000 fine, and authorized lethal force."
-        ]
-    },
-    hook: "Locals in Rachel, the closest town, see lights performing impossible maneuvers nightly. The Little A'Le'Inn keeps a log of sightings dating back to 1989. The truth is out there, but get too close and you'll find out how serious the government is about keeping it secret.",
-    media: [
-      { youtubeId: "aF2krX-R8jA", title: "Driving the Extraterrestrial Highway" },
-      { youtubeId: "VbYa9dG00s0", title: "Confronted by Area 51 Guards" }
-    ],
-    safety: {
-      title: "Dan Says: Wander Wisely",
-      points: [
-        "DO NOT cross the boundary. The signs are not a joke. They are watching you.",
-        "No drones. They will be shot down or electronically captured.",
-        "Expect to be surveilled from the moment you get near the base.",
-        "Bring extra fuel, water, and a spare tire. There are no services for over 100 miles."
-      ]
-    },
-    olympianInsight: {
-      character: "A Nevada Counterpart",
-      quote: "Some secrets are kept not from the people, but for them. What is learned from the stars may not be ready for the world. The guardians of this place do not serve a country, but a timeline.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "High-Zoom Camera/Binoculars", reason: "View the base from a safe distance on Tikaboo Peak" },
-        { name: "Night Vision Goggles", reason: "For observing nocturnal light phenomena" },
-        { name: "Satellite Phone", reason: "Zero cell service in this area" },
-        { name: "Full-size Spare Tire", reason: "Roads are rough and unpaved" }
-    ],
-    relatedDestinationIds: ['skinwalker-ranch', 'dugway-proving-ground', 'san-luis-valley', 'rhyolite-ghost-town'],
-    buddyLinks: [
-      {
-        category: "Essential Gear",
-        text: "A powerful spotting scope for legal, long-distance viewing.",
-        url: "https://www.amazon.com/s?k=spotting+scope"
-      },
-      {
-        category: "Essential Gear",
-        text: "A satellite messenger for this no-service zone.",
-        url: "https://www.amazon.com/s?k=satellite+messenger"
-      },
-      {
-        category: "Provisions & Lodging",
-        text: "Stay at the world-famous Little A'Le'Inn in Rachel.",
-        url: "https://www.littlealeinn.com/"
-      }
-    ],
-    tags: ["Underground Base Network"]
+    accessibility: "The school remains an active educational institution with a changed layout since the 1970s. There is no memorial for the victim on school grounds. Please be respectful of school operations.",
+    gps: "40.8986, -111.8845",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Ted Bundy"],
+    victims: ["Debra Kent"],
+    dates: "November 8, 1974",
+    relatedLocationIds: ['bundy-residence-1st-ave'],
+    tags: ["Ted Bundy", "Abduction", "Bountiful"],
+    status: "Active High School",
   },
   {
-    id: 'nutty-putty-cave',
-    name: "Nutty Putty Cave",
-    subtitle: "The Sealed Tomb",
-    category: Category.UTAH,
-    location: "Utah County, near Eureka",
-    driveTime: "1.5 hours from SLC",
-    visitDuration: "30-60 mins (memorial)",
-    cost: "Free",
-    groupSize: "Any size",
-    bestTime: "Daylight hours",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "PSYCHOLOGICAL DISTRESS SITE",
-    gps: "39.9725, -112.0303",
-    what3words: "///sealing.whispers.forever",
+    id: 'hofmann-bombing-judge-building',
+    name: "Mark Hofmann Bombing (Judge Building)",
+    crime: "Murder by Bombing",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "15 E. South Temple, Salt Lake City, UT",
+    driveTime: "10 minutes from airport",
     story: [
-      "In 2009, this popular cave became the site of one of Utah's most infamous tragedies. John Edward Jones, a 26-year-old medical student, became wedged upside down in a narrow passage known as 'The Birth Canal'.",
-      "For 27 agonizing hours, a massive rescue team of over 100 people tried desperately to free him. They failed. Unable to recover his body, authorities made the heartbreaking decision to seal the cave forever, turning it into his final resting place."
+        "In October 1985, historical document forger Mark Hofmann turned to murder to cover his elaborate schemes. The first of his deadly package bombs detonated here, at the Judge Building, instantly killing document collector Steven Christensen.",
+        "The bombing sent shockwaves through the community, marking the start of a series of attacks that unraveled Hofmann's web of deceit and led to one of the most sensational criminal cases in Utah history."
     ],
-    evidence: {
-        title: "The Haunting Legacy",
-        points: [
-          "A Permanent Tomb: The cave was sealed with concrete with John's body still inside, making it a unique and tragic memorial.",
-          "Screams from the Earth: Locals and paranormal investigators report hearing faint screams and cries for help emanating from the sealed entrance on quiet nights.",
-          "Unexplained Lights: Photographs taken of the concrete seal sometimes show inexplicable orbs and light anomalies.",
-          "Emotional Vortex: Visitors to the memorial plaque report overwhelming feelings of sadness, claustrophobia, and despair, even without knowing the full story."
-        ]
-    },
-    hook: "The story of Nutty Putty Cave is a stark reminder of nature's unforgiving power. But the lingering question is whether John's spirit remains, trapped alongside his body, forever calling out from the darkness.",
-    media: [
-      { youtubeId: "WaioL3UP1yE", title: "The Full Story of John Jones" },
-      { youtubeId: "VN_J8o5iTNc", title: "Nutty Putty Cave Rescue Documentary" }
-    ],
-    safety: {
-      title: "Dan Says: Wander Wisely",
-      points: [
-        "The cave itself is permanently sealed and illegal to enter.",
-        "Be respectful of the memorial plaque and the gravity of the site.",
-        "The area is remote; travel with a reliable vehicle and tell someone your plans.",
-        "This site can be emotionally overwhelming. Be prepared for a somber experience."
-      ]
-    },
-    olympianInsight: {
-      character: "Sylvia the Scholar of Timp (Utah County Guardian)",
-      quote: "The earth sometimes claims its own. This place is a reminder that knowledge has limits, and not all passages can be navigated. It's a wound in the stone that teaches a hard lesson.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-      { name: "EVP Recorder", reason: "To potentially capture the reported screams" },
-      { name: "Sturdy Footwear", reason: "The memorial is in a rugged, remote area" },
-      { name: "Water and Snacks", reason: "No services are available nearby" }
-    ],
-    relatedDestinationIds: ['thistle-ghost-town', 'lilly-grays-grave', 'berkeley-pit', 'topaz-mountain']
+    accessibility: "The Judge Building remains an active office complex in downtown Salt Lake City. The exterior is publicly accessible, but there is no memorial.",
+    gps: "40.7684, -111.8893",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Mark Hofmann"],
+    victims: ["Steven Christensen", "Kathleen Sheets"],
+    dates: "October 15, 1985",
+    relatedLocationIds: ['trolley-square-shooting', 'lafferty-murders'],
+    tags: ["Bombing", "Forgery", "Salt Lake City"],
+    status: "Commercial Building",
   },
   {
-    id: 'thistle-ghost-town',
-    name: "Thistle Ghost Town",
-    subtitle: "The Instant Apocalypse",
-    category: Category.UTAH,
-    location: "Spanish Fork Canyon, Utah",
-    driveTime: "1.5 hours from SLC",
-    visitDuration: "1-2 hours",
-    cost: "Free (view from road)",
-    groupSize: "Any size",
-    bestTime: "Spring/Fall",
-    dangerLevel: DangerLevel.MODERATE,
-    dangerDescription: "UNSTABLE RUINS & TOXIC WATER",
-    gps: "39.9922, -111.4927",
-    what3words: "///flooded.memories.vanished",
+    id: 'susan-powell-disappearance',
+    name: "Susan Powell Disappearance Site",
+    crime: "Missing Person / Suspected Murder",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "West Valley City, UT (address withheld)",
+    driveTime: "30 minutes from airport",
     story: [
-      "In April 1983, the town of Thistle, Utah, vanished in a matter of days. A massive landslide, one of the costliest in U.S. history, created a natural dam on the Spanish Fork River.",
-      "The water backed up with terrifying speed. Residents fled with only what they could carry, leaving homes, businesses, and a century of history to be swallowed by the rising lake. Dinner was left on tables, lives abandoned in an instant."
+        "On December 6, 2009, Susan Powell vanished from her home in West Valley City, sparking one of Utah's most infamous and tragic missing person cases. Her husband, Josh Powell, was the primary suspect but was never charged.",
+        "Josh claimed he had taken their two young sons on a spontaneous, late-night camping trip to the remote Simpson Springs in freezing weather, a story investigators never believed. The case ended in a horrific murder-suicide in 2012 when Josh killed their sons and himself in Washington state."
     ],
-    evidence: {
-        title: "The Lingering Mystery",
-        points: [
-          "The Submerged Town: The tops of houses and a church steeple still emerge from the murky water, a ghostly reminder of the town that was.",
-          "Lights in the Deep: At night, witnesses report seeing strange lights appearing within the flooded, abandoned buildings, with no possible source of electricity.",
-          "Sudden Evacuation: The speed of the flood meant everything was left behind, creating a perfectly preserved, albeit underwater, time capsule of 1983.",
-          "Unexplained Temperature Shifts: The water temperature of the lake has been known to vary by as much as 40 degrees in different spots for no scientific reason."
-        ]
-    },
-    hook: "Thistle is not just a ghost town; it's an underwater graveyard of a community's life. The question remains: what is causing the lights that dance in the windows of the submerged houses long after the power went out forever?",
-    media: [
-      { youtubeId: "u-p4so3ET-I", title: "The Thistle Landslide Disaster" },
-      { youtubeId: "iGqjI1r_wGo", title: "Exploring the Remains of Thistle" }
-    ],
-    safety: {
-      title: "Dan Says: Wander Wisely",
-      points: [
-        "Do not attempt to enter the water; it is stagnant and potentially toxic.",
-        "The remaining structures are unstable and dangerous. Do not attempt to enter them.",
-        "Viewing is best done from the designated pull-offs along Highway 6/89.",
-        "Be aware of traffic, as the viewing area is right next to a busy highway."
-      ]
-    },
-    olympianInsight: {
-      character: "Sylvia the Scholar of Timp (Utah County Guardian)",
-      quote: "This valley is a lesson written in water and stone. It teaches that even the most permanent-seeming things can be swept away. The past is never as far beneath the surface as you think.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-      { name: "Binoculars", reason: "To get a closer look at the submerged structures" },
-      { name: "Camera with Zoom Lens", reason: "For capturing detailed photos from a distance" },
-      { name: "Drone (check local laws)", reason: "For a unique aerial perspective of the ruins" }
-    ],
-    relatedDestinationIds: ['nutty-putty-cave', 'skinwalker-ranch', 'lilly-grays-grave', 'utah-lake-water-babies']
-  },
-  {
-    id: 'lilly-grays-grave',
-    name: "Lilly Gray's Grave",
-    subtitle: "Victim of the Beast 666",
-    category: Category.UTAH,
-    location: "Salt Lake City Cemetery",
-    driveTime: "20 minutes from SLC",
-    visitDuration: "30 minutes",
-    cost: "Free",
-    groupSize: "1-3 people",
-    bestTime: "Dusk",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "OCCULT SIGNIFICANCE & EMF SPIKES",
-    gps: "40.7745, -111.8596",
-    what3words: "///beast.victim.stone",
-    story: [
-      "In a quiet corner of the sprawling Salt Lake City Cemetery lies a headstone that has puzzled and disturbed visitors for decades. It belongs to Lilly E. Gray, who died in 1958.",
-      "While her death was officially from natural causes, her paranoid and eccentric husband, Elmer Gray, had a chilling inscription carved into her stone: 'Victim of the Beast 666'. The meaning behind this cryptic accusation has been lost to time, but the grave itself seems to have absorbed the dark energy."
-    ],
-    evidence: {
-        title: "The Curse of the Grave",
-        points: [
-          "The Inscription: A clear, undeniable link to occult prophecy carved in stone.",
-          "Electronic Interference: Visitors report their fully charged phones dying instantly and car engines refusing to start upon trying to leave.",
-          "The Figure in Black: A shadowy figure is often seen standing over the grave, only to vanish when approached.",
-          "EMF Spikes: Paranormal investigators record significant, unexplained electromagnetic field spikes directly over the headstone.",
-          "Feelings of Dread: Many people report an immediate and overwhelming sense of being watched and unwelcomed."
-        ]
-    },
-    hook: "Was Lilly Gray truly a 'Victim of the Beast,' or was it the delusion of a grieving husband? The strange phenomena surrounding her final resting place suggest that whatever Elmer Gray believed, something dark has taken root in this small plot of land.",
-    media: [
-      { youtubeId: "c_p2rRxT_gI", title: "Utah's Most Mysterious Headstone" },
-      { youtubeId: "dZ9zZ3ZQ4Zc", title: "Ghost Hunt at Lilly Gray's Grave" }
-    ],
-    safety: {
-      title: "Dan Says: Wander Wisely",
-      points: [
-        "This is an active cemetery. Be respectful of other graves and any mourners present.",
-        "Adhere to the cemetery's posted hours (typically closes at dusk).",
-        "Don't touch or attempt to take rubbings of the headstone.",
-        "If your equipment fails, it might be a sign to leave."
-      ]
-    },
-    olympianInsight: {
-      character: "Jorah of the Two Currents (Salt Lake Guardian)",
-      quote: "Words have power, especially those carved in stone and watered with grief. A curse, once spoken, can echo through time, tethering a soul to a place of rest.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-      { name: "EMF Meter", reason: "To detect the reported electromagnetic spikes" },
-      { name: "Audio Recorder", reason: "To capture potential electronic voice phenomena (EVPs)" },
-      { name: "Extra Batteries", reason: "To counteract the reported electronic draining effect" }
-    ],
-    relatedDestinationIds: ['nutty-putty-cave', 'thistle-ghost-town', 'skinwalker-ranch']
-  },
-  {
-    id: 'bear-lake-monster',
-    name: "Bear Lake Monster",
-    subtitle: "The Serpent of the Saints",
-    category: Category.CRYPTID,
-    location: "Bear Lake, Utah/Idaho",
-    driveTime: "2.5 hours from SLC",
-    visitDuration: "Half to full day",
-    cost: "State Park entry fees",
-    groupSize: "Any size",
-    bestTime: "Summer dawn/dusk",
-    dangerLevel: DangerLevel.MODERATE,
-    dangerDescription: "UNCONFIRMED CRYPTID & DEEP WATER",
-    gps: "41.9724, -111.3360",
-    what3words: "///serpent.depths.legend",
-    story: [
-      "The stunning turquoise waters of Bear Lake hide a centuries-old secret. Long before Mormon pioneers settled the area, local Native American tribes spoke of a massive, serpent-like creature inhabiting the lake's depths.",
-      "In the 1860s, pioneer Joseph C. Rich began documenting numerous sightings from settlers, describing a creature up to 90 feet long with a crocodile-like head that could move 'faster than a locomotive'. The legend became so widespread that even Brigham Young sent a team to try and capture the beast."
-    ],
-    evidence: {
-        title: "A History of Sightings",
-        points: [
-          "Ancient Legends: Ute and Shoshone tribes have stories of the monster dragging swimmers to their deaths, predating white settlement by centuries.",
-          "Joseph Rich Account (1868): Documented dozens of credible sightings from early pioneers, launching the legend into the mainstream.",
-          "Preston Pond Sighting (1946): A Boy Scout leader gave a detailed account of seeing a massive creature with a 'head like a walrus but with a cow-like muzzle'.",
-          "The BYU Expedition (1980): Brigham Young University sent a 300-foot rope with a barbed hook and massive bait to capture it. The bait was stripped clean from the hook.",
-          "Modern Sightings (2002): Boater Brian Hirschi reported seeing a huge, dark shape rise from the water near his boat before sinking back into the depths."
-        ]
-    },
-    hook: "Unlike other cryptids with sparse evidence, the Bear Lake Monster has a continuous, 150-year-long chain of documented sightings. Reports of multiple creatures seen at once suggest a breeding population. Is there an ancient, undiscovered species living in the 208-foot deep, ice-age remnant lake?",
-    media: [
-      { youtubeId: "84mff_vXruw", title: "The Legend of the Bear Lake Monster" },
-      { youtubeId: "9oG1dC6y-e8", title: "Is the Bear Lake Monster Real?" }
-    ],
-    safety: {
-      title: "Dan Says: Wander Wisely",
-      points: [
-        "Bear Lake is extremely deep and the water is frigid even in summer. Always wear a life vest on the water.",
-        "Weather can change in an instant, creating dangerous conditions for boaters.",
-        "The real danger is hypothermia, not necessarily the monster.",
-        "Keep a safe distance from the shore if you are not a strong swimmer."
-      ]
-    },
-    olympianInsight: {
-      character: "Rich the Cryptid Poet (Rich County Guardian)",
-      quote: "The world has forgotten its first children. In the deep, cold places untouched by time, some of us still remain. The waters remember what the land has forgotten. Listen, and you can hear them sing.",
-      characterImage: './assets/water-monster.png',
-    },
-    equipment: [
-      { name: "Binoculars / Spotting Scope", reason: "To scan the vast surface of the lake from shore" },
-      { name: "Sonar / Fish Finder", reason: "For boaters to search for anomalous readings in the depths" },
-      { name: "High-Quality Camera", reason: "To be ready to capture definitive evidence" }
-    ],
-    relatedDestinationIds: ['utah-lake-water-babies', 'wasatch-wildman', 'skinwalker-ranch']
-  },
-  {
-    id: 'st-elmo-ghost-town',
-    name: "St. Elmo Ghost Town",
-    subtitle: "Frozen at 10,148 Feet",
-    category: Category.COLORADO,
-    location: "Chaffee County, Colorado",
-    driveTime: "7 hours from SLC",
-    visitDuration: "2-4 hours",
-    cost: "Free (donations accepted)",
-    groupSize: "Any size",
-    bestTime: "Summer/Fall",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "ACTIVE POLTERGEIST & EXTREME ELEVATION",
-    gps: "38.7022, -106.3453",
-    what3words: "///guards.store.spirit",
-    story: [
-      "Nestled high in the Sawatch Range of the Colorado Rockies, St. Elmo is one of the best-preserved ghost towns in the American West. Founded in 1880 during a gold and silver rush, the town thrived for decades before the mines ran dry.",
-      "While most residents left, one did not. Annabelle Stark, known as 'Dirty Annie', was a lifelong resident who ran the general store with her brother. She is said to still guard the town, her spirit tethered to the place she called home until her death in 1960."
-    ],
-    evidence: {
-        title: "The Ghost of Annabelle Stark",
-        points: [
-          "The General Store: The cash register has been heard ringing on its own, and objects fly off the shelves.",
-          "Invisible Hands: Visitors who try to steal souvenirs or disrespect the buildings report being shoved by unseen forces.",
-          "Window Apparition: Annabelle's figure, dressed in white, is frequently seen looking out the windows of the second-story of the general store, especially near closing time.",
-          "Disembodied Voices: The sounds of conversations and arguments are heard coming from empty buildings."
-        ]
-    },
-    hook: "Modern ghost hunters consistently rank St. Elmo in the top 5 most active paranormal sites in Colorado. The question isn't if you'll experience something, but what it will be.",
-    media: [
-      { youtubeId: "vBfV_i-sU5A", title: "Exploring St. Elmo, one of Colorado's best-preserved ghost towns" },
-      { youtubeId: "J2_a_pI5-k8", title: "Ghost Hunting in St. Elmo" }
-    ],
-    safety: {
-      title: "Dan Says: Wander Wisely",
-      points: [
-        "This is a preserved historical site. Do not take souvenirs or damage structures.",
-        "The town is at high altitude (over 10,000 ft). Be aware of altitude sickness and stay hydrated.",
-        "Weather changes rapidly in the mountains. Bring layers and be prepared for sudden storms.",
-        "Respect private property. Some buildings are privately owned."
-      ]
-    },
-    olympianInsight: {
-      character: "A Colorado Counterpart",
-      quote: "Some souls stand as eternal sentinels in the doorways between what was and what is. They are the guardians of memory, ensuring the past is never truly abandoned.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-      { name: "Audio Recorder", reason: "For capturing EVPs and disembodied voices" },
-      { name: "Full-Spectrum Camera", reason: "To potentially capture apparitions not visible to the naked eye" },
-      { name: "Warm Layers", reason: "Temperatures can drop dramatically at high altitude" }
-    ],
-    relatedDestinationIds: ['denver-airport', 'san-luis-valley', 'berkeley-pit', 'animas-forks']
-  },
-  {
-    id: 'san-luis-valley',
-    name: "San Luis Valley",
-    subtitle: "The FBI's X-File",
-    category: Category.COLORADO,
-    location: "Southern Colorado",
-    driveTime: "8 hours from SLC",
-    visitDuration: "1-2 days",
-    cost: "Free (public lands)",
-    groupSize: "2+ people",
-    bestTime: "Late summer nights",
-    dangerLevel: DangerLevel.EXTREME,
-    dangerDescription: "ACTIVE UFO HOTSPOT & ANIMAL MUTILATION ZONE",
-    gps: "37.7472, -105.8711",
-    what3words: "///laser.precision.vanished",
-    story: [
-      "The vast, flat San Luis Valley is one of North America's most active UFO hotspots and the epicenter of the baffling cattle mutilation phenomenon. Since the 1960s, ranchers have discovered their livestock dead under bizarre circumstances.",
-      "The animals are found with organs removed with surgical precision, completely drained of blood, with no tracks or evidence of predators anywhere nearby. The phenomenon became so prevalent that the FBI opened an official investigation, which remains unsolved to this day."
-    ],
-    evidence: {
-        title: "A Pattern of High Strangeness",
-        points: [
-          "Surgical Precision: Organs, particularly reproductive and sensory organs, are removed with clean, cauterized cuts that ranchers say are beyond the capability of any known predator.",
-          "No Blood: The animals are completely exsanguinated, yet there is no blood on the ground or the animal itself.",
-          "Unexplained Lights: The mutilations are often preceded by sightings of strange, silent lights in the sky.",
-          "Radiation Spikes: Elevated radiation levels are often found around the carcasses.",
-          "Official Investigation: The FBI's involvement and inability to find a conventional explanation lends significant credibility to the phenomenon."
-        ]
-    },
-    hook: "This isn't just folklore. Over 100 documented cases have been investigated by law enforcement, including the FBI. Ranchers now find horses dead inside locked stalls, turned completely inside out. Something is using this valley as a laboratory, and no one knows what it is or why.",
-    media: [
-      { youtubeId: "3u8Edkb3LdE", title: "Cattle Mutilations in the San Luis Valley" },
-      { youtubeId: "cWqi-QdZgCE", title: "UFOs Over the San Luis Valley" }
-    ],
-    safety: {
-      title: "Dan Says: Wander Wisely",
-      points: [
-        "This is remote ranching country. Respect private property and do not trespass.",
-        "Cell service is non-existent in many parts of the valley. A satellite communicator is essential.",
-        "Be prepared for encounters with ranchers who may be suspicious of outsiders.",
-        "If you discover a mutilated animal, DO NOT TOUCH IT. Report it to the local sheriff's office immediately."
-      ]
-    },
-    olympianInsight: {
-      character: "A Colorado Counterpart",
-      quote: "There are hunters whose domains are not the forests of Earth, but the voids between the stars. They do not hunt for sport or for sustenance, but for knowledge. Their arrows are beams of light, their blades are scalpels of fire.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-      { name: "Night Vision / Thermal Optics", reason: "To observe nocturnal aerial phenomena" },
-      { name: "Geiger Counter", reason: "To check for radiation around any unusual sites" },
-      { name: "Starlight Camera", reason: "For capturing high-quality images of the night sky" }
-    ],
-    relatedDestinationIds: ['denver-airport', 'area-51-perimeter', 'skinwalker-ranch', 'chaco-canyon'],
-    tags: ["Time Anomaly Zones"]
-  },
-  {
-    id: 'devils-gate',
-    name: "Devil's Gate",
-    subtitle: "The Portal to Hell",
-    category: Category.WYOMING,
-    location: "Near Independence Rock, WY",
-    driveTime: "4.5 hours from SLC",
-    visitDuration: "1-2 hours",
-    cost: "Free",
-    groupSize: "2+ people",
-    bestTime: "Daylight hours",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "GEOMAGNETIC ANOMALY & HISTORICAL DANGER ZONE",
-    gps: "42.4552, -107.2459",
-    what3words: "///gateway.screams.chasm",
-    story: [
-      "Devil's Gate is a natural rock formation, a deep chasm carved by the Sweetwater River. But for centuries, it has held a much darker reputation. Native American tribes actively avoided it, believing it to be a literal gateway to the underworld where evil spirits could cross into our world.",
-      "Pioneers on the Oregon Trail wrote of the 'unholy sounds' and feelings of dread they experienced when passing through the gorge. It became a place associated with bad omens, disappearances, and death."
-    ],
-    evidence: {
-        title: "The Portal's Influence",
-        points: [
-          "Historical Disappearances: In the 1970s, several prospectors vanished without a trace near the gate, their equipment found abandoned.",
-          "Auditory Phenomena: Visitors report hearing screams and whispers emerging from solid rock, even when there is no wind.",
-          "Temperature Drops: The temperature inside the chasm has been measured to be up to 30 degrees colder than the surrounding area, with no scientific explanation.",
-          "Animal Aversion: Animals, both wild and domestic, exhibit extreme fear and refuse to approach the entrance to the gorge.",
-          "Compass Malfunction: Compasses are known to spin wildly near the center of the formation, indicating a significant magnetic anomaly."
-        ]
-    },
-    hook: "Is Devil's Gate just a geological oddity with a spooky name, or is it something more? The persistent legends, combined with documented disappearances and measurable physical anomalies, suggest that the ancient tribes may have been right all along.",
-    media: [
-      { youtubeId: "dQw4w9WgXcQ", title: "The Legends of Devil's Gate, Wyoming" },
-      { youtubeId: "oHg5SJYRHA0", title: "Investigating the Devil's Gate Anomaly" }
-    ],
-    safety: {
-      title: "Dan Says: Wander Wisely",
-      points: [
-        "This is a remote location. Bring extra water, food, and a first-aid kit.",
-        "The terrain is rugged and steep. Wear appropriate hiking boots.",
-        "Rattlesnakes are common in this area, especially in warmer months.",
-        "Trust your gut. If you feel an overwhelming sense of dread, it's time to leave."
-      ]
-    },
-    olympianInsight: {
-      character: "A Wyoming Counterpart",
-      quote: "Not all passages to the underworld are across water. Some are cracks in the world, places where the veil is thin. You can feel the cold breath of my realm on the wind here.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-      { name: "Magnetometer / Compass", reason: "To document the magnetic anomalies" },
-      { name: "Parabolic Microphone", reason: "To attempt to capture the anomalous sounds" },
-      { name: "Digital Thermometer", reason: "To measure the unexplained temperature drops" }
-    ],
-    relatedDestinationIds: ['st-elmo-ghost-town', 'berkeley-pit', 'skinwalker-ranch']
-  },
-  {
-    id: 'blind-frog-ranch',
-    name: "Blind Frog Ranch",
-    subtitle: "The Cursed Gold Mine",
-    category: Category.UTAH,
-    location: "Vernal Area, Utah",
-    driveTime: "3.5 hours from SLC",
-    visitDuration: "1-2 hours (perimeter)",
-    cost: "Free (private property)",
-    groupSize: "2+ people",
-    bestTime: "Dusk",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "GEOMAGNETIC ANOMALIES & CURSE",
-    gps: "40.2650, -109.9150",
-    what3words: "///outlooks.remodels.bumping",
-    story: [
-        "Just a stone's throw from its infamous neighbor, Skinwalker Ranch, lies another property steeped in high strangeness. Blind Frog Ranch sits atop what locals claim is a network of ancient, flooded Aztec caves filled with gold.",
-        "The problem? A curse seems to protect the treasure. Everyone who gets close to finding it meets a mysterious, often violent, end. The land itself seems hostile to human intrusion."
-    ],
-    evidence: {
-        title: "Evidence of the Curse",
-        points: [
-            "Mysterious Deaths: At least 7 documented fatalities since the 1950s have been linked to treasure-hunting activities on the property.",
-            "Strange Lights: Unexplained lights are seen emerging from the ground and water, suggesting an underground energy source.",
-            "Compass Deviations: Compasses and GPS systems spin wildly, particularly over the cavern system, indicating a powerful magnetic anomaly.",
-            "Unidentified Metals: A strange, metallic box recovered from the caves was found to contain elements not of this earth.",
-            "Energy Pulses: Investigators have been knocked off their feet by invisible energy pulses emanating from the ground."
-        ]
-    },
-    hook: "The team currently investigating the ranch has used ground-penetrating radar to confirm a massive, unnatural cavern system. They believe they are on the verge of a discovery that could rewrite history, but the land's curse continues to plague their efforts. What is protecting the treasure, and is it worth the price?",
-    media: [
-        { youtubeId: "3tUuP2A4wXw", title: "Mystery at Blind Frog Ranch" },
-        { youtubeId: "i-Q81MMYn0E", title: "What Lies Beneath Blind Frog Ranch?" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "This is active, dangerous private property. Do NOT trespass.",
-            "The area shares many of the same risks as Skinwalker Ranch, including potential radiation and electronic interference.",
-            "Local legends are taken very seriously. Be respectful when inquiring with townsfolk.",
-            "The terrain is rugged and unforgiving."
-        ]
-    },
-    olympianInsight: {
-        character: "Dreamwalker Elkshade (Uintah Guardian)",
-        quote: "Some treasures are not meant to be possessed. They are anchors, placed in the earth to bind something ancient. To move the gold is to release the prisoner.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "Magnetometer", reason: "To measure the intense magnetic fields" },
-        { name: "Geiger Counter", reason: "To check for radiation, especially near the cavern entrance" },
-        { name: "First-Aid Kit", reason: "The 'curse' often manifests as bizarre accidents" }
-    ],
-    relatedDestinationIds: ['skinwalker-ranch', 'topaz-mountain', 'sego-canyon']
-  },
-  {
-    id: 'topaz-mountain',
-    name: "Topaz Mountain",
-    subtitle: "The Bermuda Triangle of Utah",
-    category: Category.UTAH,
-    location: "Juab County, Utah",
-    driveTime: "2.5 hours from SLC",
-    visitDuration: "Half to full day",
-    cost: "Free (BLM land)",
-    groupSize: "2+ people",
-    bestTime: "Spring/Fall",
-    dangerLevel: DangerLevel.EXTREME,
-    dangerDescription: "DISAPPEARANCES & NAVIGATIONAL FAILURE",
-    gps: "39.7128, -113.1039",
-    what3words: "///sugars.lumber.convinces",
-    story: [
-        "While known to rockhounds for its semi-precious gemstones, Topaz Mountain has a much darker reputation among pilots, law enforcement, and local search and rescue teams. This isolated peak in Utah's West Desert is considered an anomaly zone—a 'Bermuda Triangle' of the Great Basin.",
-        "Multiple planes have crashed here with no mechanical explanation. Hikers and prospectors have vanished without a trace, even in clear weather. The area seems to possess a unique ability to disorient and confuse those who enter it."
-    ],
-    evidence: {
-        title: "Anomalous Phenomena",
-        points: [
-            "Unexplained Crashes: A string of small aircraft crashes where pilots reported complete instrument failure just before impact.",
-            "Vanishing Hikers: Several documented cases of experienced hikers disappearing from the mountain's trails, with extensive searches finding nothing.",
-            "Compass and GPS Failure: Navigational tools are notoriously unreliable on and around the mountain, often pointing in random directions.",
-            "Missing Time: Survivors of disorientation events report losing hours of time with no memory of what happened.",
-            "The 'Topaz Hum': A low-frequency, disorienting hum has been reported by visitors, which cannot be recorded by standard equipment."
-        ]
-    },
-    hook: "Is a massive, underground magnetic deposit responsible for the navigational issues, or is something more esoteric at play? The sheer number of unexplained disappearances and crashes makes Topaz Mountain one of Utah's most genuinely dangerous and mysterious locations.",
-    media: [
-      { youtubeId: "dQw4w9WgXcQ", title: "The Missing 411 of Topaz Mountain" },
-      { youtubeId: "oHg5SJYRHA0", title: "Utah's Bermuda Triangle" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "DO NOT rely on electronic navigation. Bring a physical map and analog compass, but be prepared for them to fail.",
-            "This is extremely remote desert. Bring more water and fuel than you think you need.",
-            "Inform multiple people of your exact route and schedule, and stick to it.",
-            "If you feel disoriented or hear the 'hum', turn back immediately."
-        ]
-    },
-    olympianInsight: {
-        character: "Faye the Fossil Witch (Juab County Guardian)",
-        quote: "The stones here sing a song that unravels the mind. It is a song from a time before maps, a resonance that can erase a man's path, not just from the ground, but from his own memory.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "Personal Locator Beacon (PLB)", reason: "Essential for emergency situations with no cell service" },
-        { name: "Analog Watch, Map, and Compass", reason: "As a backup for when electronics inevitably fail" },
-        { name: "Extra Water and Food", reason: "A short trip can become a multi-day survival situation" }
-    ],
-    relatedDestinationIds: ['nutty-putty-cave', 'dugway-proving-ground', 'area-51-perimeter']
-  },
-  {
-    id: 'sego-canyon',
-    name: "Sego Canyon",
-    subtitle: "Where Ancient Aliens Met Miners",
-    category: Category.UTAH,
-    location: "Near Thompson Springs, Utah",
-    driveTime: "3.5 hours from SLC",
-    visitDuration: "2-3 hours",
-    cost: "Free",
-    groupSize: "Any size",
-    bestTime: "Spring/Fall",
-    dangerLevel: DangerLevel.MODERATE,
-    dangerDescription: "PARANORMAL ACTIVITY & REMOTE LOCATION",
-    gps: "39.0305, -109.7088",
-    what3words: "///unzip.outbound.unclaimed",
-    story: [
-        "Sego Canyon is home to some of the most bizarre and compelling rock art in North America. Long before the Fremont and Ute peoples carved their stories here, an even older culture, the Barrier Canyon people, left behind haunting, 8,000-year-old pictographs.",
-        "These life-sized figures have hollow eyes, antenna-like protrusions, and strange, otherworldly forms, bearing a striking resemblance to modern depictions of 'grey' aliens. Centuries later, a mining town was established in the canyon, only to be mysteriously abandoned after workers reported being terrorized by 'watchers' in the cliffs."
-    ],
-    evidence: {
-        title: "A Canyon of Watchers",
-        points: [
-            "The Ancient Astronaut Petroglyphs: The Barrier Canyon Style figures are unlike any other native art, strongly suggesting an encounter with non-human beings.",
-            "The Abandoned Town: The Sego mining town was deserted in a hurry. The mine foreman's final log entry reportedly read: 'They don't want us here.'",
-            "Shadow Figures: Modern visitors frequently report seeing tall, dark shadow figures moving along the canyon ridges at dusk.",
-            "Disembodied Whispers: The distinct feeling of being watched is often accompanied by faint, indecipherable whispers carried on the wind."
-        ]
-    },
-    hook: "Did the ancient inhabitants of Sego Canyon paint portraits of visitors from another world? And are those same visitors still standing sentinel in the canyon, driving away anyone who stays too long? The connection between the ancient art and the modern hauntings is too strong to ignore.",
-    media: [
-      { youtubeId: "2jdb98yEjs8", title: "Sego Canyon's Alien Petroglyphs" },
-      { youtubeId: "7z4EH54q2s8", title: "Ghost Town and Rock Art of Sego Canyon" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "This is a remote location. Roads can become impassable after rain.",
-            "Do not touch the petroglyphs. The oils from your skin cause irreparable damage.",
-            "Be aware of your surroundings, especially near dusk.",
-            "The abandoned mine shafts are extremely dangerous. Do not enter."
-        ]
-    },
-    olympianInsight: {
-        character: "Koda the Moab Runner (Grand County Guardian)",
-        quote: "Humanity was not always alone. There were teachers, long ago. They left their mark not only on the minds of men, but on the stone itself, a reminder that your cradle was once watched by others.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-      { name: "Binoculars", reason: "To view petroglyphs that are high on the canyon walls" },
-      { name: "Camera with a good zoom", reason: "To photograph the rock art in detail" },
-      { name: "Off-road capable vehicle", reason: "The road into the canyon can be rough" }
-    ],
-    relatedDestinationIds: ['skinwalker-ranch', 'chaco-canyon', 'four-corners-vortex']
-  },
-  {
-    id: 'rhyolite-ghost-town',
-    name: "Rhyolite Ghost Town",
-    subtitle: "Where Something Stayed",
-    category: Category.NEVADA,
-    location: "Near Beatty, Nevada",
-    driveTime: "7 hours from SLC",
-    visitDuration: "2-3 hours",
-    cost: "Free",
-    groupSize: "Any size",
-    bestTime: "Spring/Fall mornings",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "ACTIVE HAUNTINGS & REMOTE DESERT",
-    gps: "36.9042, -116.8289",
-    what3words: "///gurgled.handful.clattered",
-    story: [
-        "Rhyolite was once a booming gold rush town, with thousands of residents, a stock exchange, and an opera house. But like many boomtowns, it went bust, and was almost completely abandoned by 1920.",
-        "While the people left, the energy of that wild, desperate time seems to have remained. Rhyolite is now considered one of Nevada's most active paranormal hotspots, a place where the ghosts of the past are not always quiet."
-    ],
-    evidence: {
-        title: "The Spirits of the Gold Rush",
-        points: [
-            "The Bottle House: One of the most famous structures, made of 50,000 embedded beer bottles, is the source of disembodied party music and laughter at night.",
-            "The Lady in White: A spectral woman in a Victorian-era dress is often seen walking between the ruined buildings before vanishing.",
-            "Figures on Camera: Security cameras at the adjacent Goldwell Open Air Museum frequently capture figures and light anomalies that are not there in person.",
-            "Cold Spots and Touches: Visitors often report sudden, dramatic drops in temperature and the feeling of being touched or pushed by unseen hands."
-        ]
-    },
-    hook: "The desolation of the desert provides a silent backdrop for the echoes of Rhyolite's glory days. The spirits here are not shy, and the evidence of their continued existence is plentiful, making it a must-visit for any paranormal investigator.",
-    media: [
-      { youtubeId: "c_v2yH-u7tM", title: "Ghost Hunting Rhyolite" },
-      { youtubeId: "G-F3m99tWUY", title: "Exploring Rhyolite Ghost Town" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "This is the Mojave Desert. Summer temperatures are extreme. Bring more water than you think you need.",
-            "Watch for rattlesnakes and scorpions, especially around the ruins.",
-            "The remaining structures are fragile and unstable. Do not climb on or enter them.",
-            "Cell service is unreliable. Don't travel alone."
-        ]
-    },
-    olympianInsight: {
-      character: "A Nevada Counterpart",
-      quote: "A good party never truly ends. Its echoes can linger for a century, especially when fueled by gold, whiskey, and hope. They are still dancing in the dust.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "Thermal Camera", reason: "To capture temperature fluctuations and potential apparitions" },
-        { name: "Spirit Box / EVP Recorder", reason: "The spirits of Rhyolite are known to be communicative" },
-        { name: "Sun Protection and Water", reason: "The environmental dangers are as real as the paranormal ones" }
-    ],
-    relatedDestinationIds: ['area-51-perimeter', 'the-lost-dutchmans-mine', 'jerome-arizona']
-  },
-  {
-    id: 'animas-forks',
-    name: "Animas Forks",
-    subtitle: "The Vanishing Town",
-    category: Category.COLORADO,
-    location: "San Juan County, Colorado",
-    driveTime: "8 hours from SLC",
-    visitDuration: "2-4 hours",
-    cost: "Free",
-    groupSize: "2+ people",
-    bestTime: "July-August",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "EXTREME ELEVATION & UNEXPLAINED DISAPPEARANCES",
-    gps: "37.9300, -107.5709",
-    what3words: "///handwriting.dreading.overlooks",
-    story: [
-        "Perched at a dizzying 11,200 feet, Animas Forks is one of the highest and most remote ghost towns in the United States. It was a rugged mining settlement, where residents endured some of the harshest conditions imaginable.",
-        "The town's darkest legend stems from the brutal winter of 1891, when a blizzard lasted for 23 straight days. When the snow finally cleared and help arrived, they found something deeply unsettling: half the town's population had simply vanished. They were not dead, just gone."
-    ],
-    evidence: {
-        title: "The Mystery of the Lost Settlers",
-        points: [
-            "The Great Disappearance: Belongings were left behind, food was on the tables, but dozens of people were gone without a trace. No bodies were ever found.",
-            "The Phantom Saloon: Visitors to the town's ruins report hearing the sounds of a lively party—music, laughter, and clinking glasses—coming from the empty saloon.",
-            "Footprints to Nowhere: Fresh footprints are often found in the snow or mud around the town, leading into the wilderness before abruptly stopping.",
-            "Whispers on the Wind: The names of the vanished are sometimes heard being whispered on the strong alpine winds."
-        ]
-    },
-    hook: "What happened to the lost settlers of Animas Forks during that endless blizzard? Were they victims of starvation-induced madness, or did something else, something ancient and hungry from the mountains, find them? The strange phenomena suggest their story is not yet over.",
-    media: [
-      { youtubeId: "cZ4rTCUgxx8", title: "Exploring Animas Forks Ghost Town" },
-      { youtubeId: "dQw4w9WgXcQ", title: "The Vanishing at Animas Forks" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "A 4x4, high-clearance vehicle is absolutely required to reach this location.",
-            "The road is only passable for a few months in the summer. Check conditions before you go.",
-            "Altitude sickness is a serious danger. Acclimatize and stay hydrated.",
-            "Weather can change from sunny to a blizzard in minutes. Be prepared for anything."
-        ]
-    },
-    olympianInsight: {
-      character: "A Colorado Counterpart",
-      quote: "In the high places, the winter wind can do more than chill the bone. It can carry away the unwary, blowing them to a place between the here and the never.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "4x4 Vehicle", reason: "Access is via a rugged, high-altitude jeep trail" },
-        { name: "Oxygen Canister", reason: "To combat the effects of the extreme altitude" },
-        { name: "Emergency Survival Gear", reason: "You are hours away from any help" }
-    ],
-    relatedDestinationIds: ['st-elmo-ghost-town', 'san-luis-valley', 'chaco-canyon']
-  },
-  {
-    id: 'the-lost-dutchmans-mine',
-    name: "Lost Dutchman's Mine",
-    subtitle: "The Deadliest Treasure Hunt",
-    category: Category.ARIZONA,
-    location: "Superstition Mountains, AZ",
-    driveTime: "10 hours from SLC",
-    visitDuration: "Multi-day expedition",
-    cost: "Free (permits may apply)",
-    groupSize: "Experienced team of 3+",
-    bestTime: "Winter/Spring",
-    dangerLevel: DangerLevel.LETHAL,
-    dangerDescription: "DOCUMENTED DEATHS, CURSE & EXTREME TERRAIN",
-    gps: "33.4735, -111.1732",
-    what3words: "///perfection.snoring.legendary",
-    story: [
-        "The legend of the Lost Dutchman's Gold Mine is the deadliest treasure story in American history. In the 1870s, a German immigrant named Jacob Waltz supposedly discovered a mine of unimaginable wealth deep within the treacherous Superstition Mountains.",
-        "He died in 1891, taking the exact location with him. Since then, an estimated 600 or more people have died searching for it, falling victim to the mountain's brutal terrain, its mysterious guardians, or the greed of fellow treasure hunters."
-    ],
-    evidence: {
-        title: "The Curse of the Superstitions",
-        points: [
-            "A Body Count: The sheer number of documented deaths and disappearances is staggering and far exceeds normal accident rates.",
-            "Decapitated Victims: A number of bodies have been found mysteriously decapitated, a calling card of some unknown guardian of the mine.",
-            "The Adolph Ruth Case (1931): An amateur explorer, Adolph Ruth, vanished. His skull was found months later with two bullet holes in it. A note in his pocket read: 'Veni, vidi, vici' (I came, I saw, I conquered).",
-            "Apache Legends: The Apache believe the mountains are sacred and home to the Thunder God. They say the mine is protected by spirits who kill trespassers."
-        ]
-    },
-    hook: "The gold is real. The curse is real. The danger is real. The Lost Dutchman's Mine is not just a legend; it's an active, ongoing vortex of death and mystery that continues to claim lives to this day. Are you brave, or foolish, enough to be next?",
-    media: [
-      { youtubeId: "r-hYor2a32c", title: "The Curse of the Lost Dutchman's Mine" },
-      { youtubeId: "dQw4w9WgXcQ", title: "Searching for the Lost Dutchman" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "This is NOT a casual hike. This is a serious, multi-day expedition into one of America's most dangerous wilderness areas.",
-            "Summer is a death sentence. Temperatures exceed 120°F.",
-            "Water is the biggest killer. Carry at least two gallons per person, per day.",
-            "The greatest danger may be other treasure hunters. Some are armed and paranoid. Do not trust anyone.",
-            "Never search alone. Ever."
-        ]
-    },
-    olympianInsight: {
-      character: "An Arizona Counterpart",
-      quote: "Gold does not need a curse to make men kill. It is a curse in itself. This mountain is a temple where the greedy and the desperate make their offerings of blood.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "Professional Hiking/Survival Gear", reason: "This is a life-or-death expedition" },
-        { name: "Satellite Messenger/PLB", reason: "You will have no cell service and are days from help" },
-        { name: "Topographical Maps", reason: "GPS is unreliable; old-school navigation is key" },
-        { name: "Self-Defense Tools (as permitted)", reason: "Human and animal threats are significant" }
-    ],
-    relatedDestinationIds: ['jerome-arizona', 'rhyolite-ghost-town', 'chaco-canyon'],
-    buddyLinks: [
-      {
-        category: "Lethal-Grade Gear",
-        text: "Don't even think about it without a satellite messenger.",
-        url: "https://www.amazon.com/s?k=garmin+inreach"
-      },
-      {
-        category: "Lethal-Grade Gear",
-        text: "Start with a serious multi-day backpacking pack.",
-        url: "https://www.rei.com/c/backpacking-packs"
-      },
-      {
-        category: "Provisions & Lodging",
-        text: "Stock up and stay in Apache Junction before you go.",
-        url: "https://www.booking.com/city/us/apache-junction.html"
-      }
-    ]
-  },
-  {
-    id: 'jerome-arizona',
-    name: "Jerome, Arizona",
-    subtitle: "The Wickedest Town in the West",
-    category: Category.ARIZONA,
-    location: "Yavapai County, Arizona",
-    driveTime: "9 hours from SLC",
-    visitDuration: "1-2 days",
-    cost: "Varies (tourist town)",
-    groupSize: "Any size",
-    bestTime: "Spring/Fall",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "HIGHLY ACTIVE HAUNTINGS",
-    gps: "34.7483, -112.1132",
-    what3words: "///gurgling.snoring.corkscrew",
-    story: [
-        "Built precariously on the side of Cleopatra Hill, Jerome was once a booming copper mining town known as the 'Wickedest Town in the West' for its saloons, brothels, and gunfights. After the mines closed, the population dwindled from 15,000 to just 50, officially becoming America's largest ghost town.",
-        "Today, it's a thriving arts community, but the ghosts of its wicked past have never left. The town is considered one of the most haunted places in America, where the spirits are as much a part of the population as the living."
-    ],
-    evidence: {
-        title: "A Town of Ghosts",
-        points: [
-            "The Jerome Grand Hotel: Formerly a hospital where thousands died, it is the town's paranormal epicenter. Guests in Room 32 report being strangled by the ghost of a murdered man.",
-            "The Sliding Jail: The town is built on a 30-degree slope and is slowly sliding down the mountain. The original jail has moved 225 feet from its foundation.",
-            "The Spirit of Sammie Dean: The ghost of a prostitute murdered by a client is still seen walking the alleys, searching for her killer.",
-            "Constant Activity: Nearly every building in Jerome has a documented haunting, from disembodied voices in the saloons to full-bodied apparitions in the shops."
-        ]
-    },
-    hook: "In Jerome, the ghosts outnumber the living. The veil between worlds is thin here, worn down by a century of violence, greed, and tragedy. It's less a question of if you will have a paranormal experience, and more a question of what kind.",
-    media: [
-      { youtubeId: "G52Aa4fO_zM", title: "Haunted Jerome, Arizona" },
-      { youtubeId: "dQw4w9WgXcQ", title: "Ghost Adventures: Jerome Grand Hotel" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "Jerome is a popular tourist town, but be respectful of private residences.",
-            "The streets are narrow and winding. Be careful when driving and walking.",
-            "Book ghost tours and hotel stays well in advance.",
-            "Psychological sensitivity is a factor; the oppressive paranormal energy can affect visitors."
-        ]
-    },
-    olympianInsight: {
-      character: "An Arizona Counterpart",
-      quote: "This town is a waking dream, where the memories of the earth bleed into the present. The spirits you see are not trapped; they are simply re-living the moments that defined them, forever.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "Paranormal Investigation Kit", reason: "This is a target-rich environment for evidence collection" },
-        { name: "Digital Camera and Audio Recorder", reason: "Activity is frequent and often captured" },
-        { name: "An Open Mind", reason: "Skepticism is often challenged in Jerome" }
-    ],
-    relatedDestinationIds: ['the-lost-dutchmans-mine', 'rhyolite-ghost-town', 'four-corners-vortex']
-  },
-  {
-    id: 'craters-of-the-moon',
-    name: "Craters of the Moon",
-    subtitle: "The Most Alien Place on Earth",
-    category: Category.IDAHO,
-    location: "Central Idaho",
-    driveTime: "4 hours from SLC",
-    visitDuration: "Half to full day",
-    cost: "National Monument entry fees",
-    groupSize: "Any size",
-    bestTime: "Late Spring/Early Fall",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "ANOMALOUS ZONE & DANGEROUS TERRAIN",
-    gps: "43.4608, -113.5623",
-    what3words: "///unstable.geologist.revisit",
-    story: [
-        "Craters of the Moon is a vast, desolate landscape of lava flows, cinder cones, and sagebrush that looks so otherworldly that NASA used it to train Apollo astronauts for their moon missions. The Shoshone-Bannock tribes that lived here for centuries believed it was a cursed land, where a serpent god battled the sky.",
-        "Modern visitors find the ancient legends may have a basis in fact. The area is a known anomaly zone, where electronics fail, people experience missing time, and the overwhelming feeling of being watched is a common report."
-    ],
-    evidence: {
-        title: "The Idaho Anomaly",
-        points: [
-            "Electronic Failure: Compasses spin wildly, GPS units give false readings, and batteries drain at an accelerated rate.",
-            "Missing Time: Hikers have reported that short walks have taken hours longer than they should have, with no memory of the intervening time.",
-            "The Watchers: The feeling of being observed by an unseen presence is the most common report from visitors who venture off the main paths.",
-            "Unexplored Caves: The lava tubes and caves in the monument go deeper than anyone has ever explored. Search parties that have gone too deep have failed to return."
-        ]
-    },
-    hook: "Is Craters of the Moon simply a geological wonder, or does its alien appearance mask something truly not of this Earth? The combination of Native legends, astronaut training, and modern anomalous reports makes it a place of profound and unsettling mystery.",
-    media: [
-      { youtubeId: "fM_s-431T5Y", title: "Exploring Craters of the Moon" },
-      { youtubeId: "dQw4w9WgXcQ", title: "The Craters of the Moon Anomaly" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "The lava rock is incredibly sharp and can shred shoes and skin. Wear sturdy hiking boots.",
-            "There is no water available on the trails. Carry plenty with you.",
-            "Do not enter caves or lava tubes without proper equipment and notifying a ranger.",
-            "Trust your navigational tools, but verify with landmarks. If you feel disoriented, return to the trail."
-        ]
-    },
-    olympianInsight: {
-      character: "An Idaho Counterpart",
-      quote: "This is a workshop. A place where the earth's bones are laid bare, still cooling from the fires of creation. It is a raw, untamed place, and not all the things forged here are meant for mortal eyes.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "Reliable Navigation Tools", reason: "Essential due to reported electronic failures" },
-        { name: "Durable Hiking Boots", reason: "The volcanic rock is extremely abrasive" },
-        { name: "Headlamps and Safety Gear", reason: "If you plan to explore any of the designated caves" }
-    ],
-    relatedDestinationIds: ['bear-lake-monster', 'devils-gate', 'berkeley-pit']
-  },
-  {
-    id: 'chaco-canyon',
-    name: "Chaco Canyon",
-    subtitle: "The Anasazi Enigma",
-    category: Category.NEW_MEXICO,
-    location: "Northwestern New Mexico",
-    driveTime: "8 hours from SLC",
-    visitDuration: "1-2 days",
-    cost: "National Historical Park fees",
-    groupSize: "Any size",
-    bestTime: "Spring/Fall",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "ANCIENT SPIRITS & CULTURALLY SENSITIVE",
-    gps: "36.0645, -107.9599",
-    what3words: "///scariest.puzzles.blurs",
-    story: [
-        "Between 850 and 1250 AD, Chaco Canyon was the cultural and ceremonial center of the Anasazi (Ancestral Puebloan) civilization. They built massive, multi-story 'Great Houses' with hundreds of rooms, aligned perfectly with celestial events. Their knowledge of astronomy was staggering.",
-        "Then, around 1300 AD, they vanished. The entire civilization abandoned this magnificent city, leaving behind their homes and possessions. There are no graves, no signs of war, no explanation. Just silence."
-    ],
-    evidence: {
-        title: "The Mystery of the Vanished",
-        points: [
-            "The Great Abandonment: A thriving civilization of thousands disappeared from the historical record in a single generation.",
-            "Impossible Engineering: The construction required 200,000 trees, carried from mountains 70 miles away, without wheels or horses.",
-            "Celestial Alignments: Buildings are designed as astronomical observatories, with windows and doors that align perfectly with solstices, equinoxes, and lunar standstills.",
-            "Navajo Warnings: Modern Navajo elders refuse to enter the canyon after dark, saying simply, 'The ancient ones are still there.'"
-        ]
-    },
-    hook: "Why did the Chacoans leave? Where did they go? The scale of their city and the depth of their knowledge is breathtaking, but the silence they left behind is terrifying. The Navajo believe their spirits never left, and many visitors who stay after dark agree.",
-    media: [
-      { youtubeId: "uymmw-C4v4s", title: "The Mystery of Chaco Canyon" },
-      { youtubeId: "pP-aoEwe0s", title: "Exploring Chaco Culture National Historical Park" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "This is a sacred site to many Pueblo people. Behave with the utmost respect.",
-            "Do not climb on walls or enter restricted areas. Do not take any pottery shards.",
-            "The road to Chaco is notoriously rough and often unpaved. A high-clearance vehicle is highly recommended.",
-            "Services are extremely limited. Bring all the food, water, and fuel you will need."
-        ]
-    },
-    olympianInsight: {
-      character: "A New Mexico Counterpart",
-      quote: "They did not vanish. They simply followed the path in the sky that their star-maps showed them. They built a city not as a home, but as a gateway, and when the gateway opened, they left.",
-      characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "High-Clearance Vehicle", reason: "The access road is 13 miles of rough dirt" },
-        { name: "Camping Gear", reason: "To experience the park at night (reservations required)" },
-        { name: "Astrophotography Equipment", reason: "Chaco has some of the darkest night skies in the country" }
-    ],
-    relatedDestinationIds: ['san-luis-valley', 'four-corners-vortex', 'sego-canyon']
-  },
-  {
-    id: 'dugway-proving-ground',
-    name: "Dugway Proving Ground",
-    subtitle: "'Area 52'",
-    category: Category.UTAH,
-    location: "Tooele & Juab Counties, Utah",
-    driveTime: "2 hours from SLC",
-    visitDuration: "1-2 hours (perimeter)",
-    cost: "Free (public roads)",
-    groupSize: "2+ people",
-    bestTime: "Daylight",
-    dangerLevel: DangerLevel.EXTREME,
-    dangerDescription: "ACTIVE MILITARY BASE & BIOHAZARD RISK",
-    gps: "40.2222, -112.7556",
-    what3words: "///canyon.resembles.subway",
-    story: [
-        "Covering nearly 800,000 acres of the West Desert, Dugway Proving Ground is the U.S. Army's primary facility for testing chemical and biological weapons. Its restricted airspace is larger than that of Area 51, earning it the nickname 'Area 52'.",
-        "While its official mission is terrifying enough, rumors have persisted for decades that Dugway is also involved in the storage and analysis of recovered UFOs and non-terrestrial materials, making it a nexus of both terrestrial and extraterrestrial secrets."
-    ],
-    evidence: {
-        title: "Secrets in the Desert",
-        points: [
-            "The Skull Valley Sheep Kill (1968): An open-air nerve agent test went wrong, killing over 6,000 sheep in the adjacent valley. The military initially denied involvement.",
-            "Recovered UFO Storage: Insiders have claimed that materials recovered from UFO crash sites, including the Roswell incident, are stored and tested at Dugway.",
-            "Unusual Air Traffic: Locals report seeing bizarre, silent, and fast-moving aircraft in Dugway's restricted airspace that do not match any known military planes.",
-            "Extreme Secrecy: The level of security and secrecy surrounding Dugway is on par with, or even exceeds, that of Area 51."
-        ]
-    },
-    hook: "Dugway is where the government tests the deadliest things it doesn't want you to know about. The question is whether those things are all man-made. Given its proximity to the Uintah Basin and other hotspots, it's the perfect place to hide secrets from both this world and others.",
-    media: [
-      { youtubeId: "cShGl_0S5bQ", title: "Inside Dugway Proving Ground" },
-      { youtubeId: "dQw4w9WgXcQ", title: "Secrets of Area 52" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "This is an active and extremely sensitive military installation. DO NOT attempt to cross the boundary.",
-            "You will be watched. Expect to be followed or stopped by military police if you linger too long.",
-            "The risk of exposure to residual chemical or biological agents, while low, is not zero.",
-            "Stay on public highways. The perimeter is vast and heavily patrolled."
-        ]
-    },
-    olympianInsight: {
-        character: "Voss the Void-Rider (Tooele County Guardian)",
-        quote: "This is a place where men weaponize the unseen. They distill fear into powders and plagues. But even they are humbled by the things they find here, which were born of a fear far older and grander than their own.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "Long-Range Telephoto Lens", reason: "To photograph anything of interest from a legal, safe distance" },
-        { name: "Radio Scanner", reason: "To monitor unencrypted military frequencies for unusual activity" },
-        { name: "Dash Cam", reason: "To record any interactions with military police" }
-    ],
-    relatedDestinationIds: ['area-51-perimeter', 'topaz-mountain', 'skinwalker-ranch']
-  },
-  {
-    id: 'four-corners-vortex',
-    name: "Four Corners Vortex",
-    subtitle: "The Convergence",
-    category: Category.NEW_MEXICO,
-    location: "Four Corners Monument",
-    driveTime: "6 hours from SLC",
-    visitDuration: "1-3 hours",
-    cost: "Monument entry fee",
-    groupSize: "Any size",
-    bestTime: "Sunrise/Sunset",
-    dangerLevel: DangerLevel.EXTREME,
-    dangerDescription: "PARANORMAL CONVERGENCE ZONE",
-    gps: "36.9990, -109.0452",
-    what3words: "///puzzles.hiring.outlooks",
-    story: [
-        "The Four Corners Monument is the only place in the United States where four states meet: Utah, Colorado, Arizona, and New Mexico. But it is more than a geographical curiosity. It is considered by many to be a powerful spiritual vortex and a point of convergence for paranormal phenomena.",
-        "Ancient Anasazi legends refer to this area as an 'emergence point'. Modern paranormal investigators believe it acts as an intersection or gateway, where different forms of high strangeness bleed into one another."
-    ],
-    evidence: {
-        title: "A Nexus of Phenomena",
-        points: [
-            "Magnetic Anomalies: The central point is known to cause malfunctions in electronic equipment and compasses.",
-            "Skinwalker Hotspot: This region is the heart of Skinwalker territory, with sightings being most frequent at the convergence point.",
-            "UFO 'Doorway': UFO researchers believe the vortex acts as a dimensional door, with craft frequently seen entering or exiting the atmosphere directly above the monument.",
-            "Psychic Phenomena: Visitors often report heightened senses, prophetic dreams after visiting, and a tangible 'energy' at the center point."
-        ]
-    },
-    hook: "This is where multiple ley lines of the paranormal intersect. Cryptid activity, UFO sightings, and ancient spirits all seem to be drawn to this unique point on the earth. Standing in four states at once might be a tourist gimmick, but it might also mean standing in four different realities at once.",
-    media: [
-      { youtubeId: "dQw4w9WgXcQ", title: "The Four Corners Vortex Explained" },
-      { youtubeId: "oHg5SJYRHA0", title: "Paranormal Investigation at Four Corners" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "This is on the Navajo Nation. Be respectful of their land and customs.",
-            "The area is very exposed. Be prepared for intense sun, wind, or sudden storms.",
-            "Services are limited. Bring water and have a full tank of gas.",
-            "Pay attention to your emotional and psychological state. Vortex sites can be disorienting."
-        ]
-    },
-    olympianInsight: {
-        character: "Hob the Hollow-Tuned Hermit Sage (San Juan Guardian)",
-        quote: "Crossroads are powerful places. They are points of decision, of transition. This is a crossroads not just of mortal lands, but of worlds. Be careful which path you choose to see.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [
-        { name: "Full-Spectrum Camera", reason: "To capture phenomena outside the visible spectrum" },
-        { name: "Dowsing Rods / Pendulum", reason: "For those who practice energy detection" },
-        { name: "A grounding object", reason: "To help stay centered in the intense energy" }
-    ],
-    relatedDestinationIds: ['chaco-canyon', 'san-luis-valley', 'skinwalker-ranch', 'sego-canyon'],
-    tags: ["Ley Line Intersections"]
-  },
-  {
-    id: 'wasatch-wildman',
-    name: "Wasatch Wildman",
-    subtitle: "Utah's Aggressive Bigfoot",
-    category: Category.CRYPTID,
-    location: "Uinta & Wasatch Mountains, UT",
-    driveTime: "1-2 hours from SLC",
-    visitDuration: "Multi-day expedition",
-    cost: "Free (National Forest)",
-    groupSize: "Experienced team of 3+",
-    bestTime: "Late Summer/Early Fall",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "AGGRESSIVE CRYPTID & REMOTE WILDERNESS",
-    gps: "40.3524, -111.5830",
-    what3words: "///sprinting.resemble.outbound",
-    story: [
-        "While the Pacific Northwest is famous for its reclusive Sasquatch, Utah is home to a different, more aggressive variant. Known as the Wasatch Wildman or the Uinta Bigfoot, this creature is reported to be larger, bolder, and far more territorial than its northwestern cousin.",
-        "For centuries, Native tribes have warned of these powerful, hair-covered giants that roam the high mountain forests. Modern encounters often involve intimidation tactics, such as deafening roars, rock throwing, and 'bluff charges'."
-    ],
-    evidence: {
-        title: "A Pattern of Aggression",
-        points: [
-            "Rock Throwing: Numerous campers and hikers have had large rocks hurled at their campsites from the darkness.",
-            "Deafening Roars: The creature's vocalizations are said to be so powerful they can be felt as a vibration in the chest.",
-            "Unusual Structures: Strange, woven wood structures and massive tree breaks, far beyond the capability of man or bear, are found in sighting areas.",
-            "The 1980 Provo Canyon Encounter: A group of campers was terrorized for hours by a large, hairy creature that circled their camp and threw rocks before vanishing."
-        ]
-    },
-    hook: "This isn't a gentle giant. The Wasatch Wildman is a powerful, intelligent primate that views humans as intruders in its territory. The challenge isn't just finding evidence of its existence, but doing so without provoking a dangerous, and potentially violent, response.",
-    media: [
-      { youtubeId: "dQw4w9WgXcQ", title: "Utah's Bigfoot Hotspots" },
-      { youtubeId: "oHg5SJYRHA0", title: "Searching for the Wasatch Wildman" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "This is serious backcountry. You are hours from help.",
-            "Do not go alone. A team of experienced outdoorsmen is essential.",
-            "Carry bear spray and know how to use it, though its effectiveness is unknown.",
-            "If you have an encounter, do not run. Make yourself look large, do not show fear, and back away slowly.",
-            "These creatures are most active at night. Secure your camp accordingly."
-        ]
-    },
-    olympianInsight: {
-        character: "Dan the Sasquatch Ranger (Wasatch Guardian)",
-        quote: "There are ancient things in the deep woods. They are the true kings of the forest. You trespass in their court at your own peril. Show respect, or they will teach it to you. Some of us are just... bigger neighbors.",
-        characterImage: './assets/dan-mascot-transparent-bg.png',
-    },
-    equipment: [
-        { name: "Thermal Imaging Camera", reason: "The best tool for spotting a large, warm-blooded creature at night" },
-        { name: "Parabolic Microphone", reason: "To capture distant vocalizations and wood knocks" },
-        { name: "Casting Kits", reason: "To preserve any footprints you may find" }
-    ],
-    relatedDestinationIds: ['bear-lake-monster', 'utah-lake-water-babies', 'skinwalker-ranch']
-  },
-  {
-    id: 'utah-lake-water-babies',
-    name: "Utah Lake Water Babies",
-    subtitle: "The Child-Eating Spirits",
-    category: Category.CRYPTID,
-    location: "Utah Lake, Utah",
-    driveTime: "45 minutes from SLC",
-    visitDuration: "Evening/Night vigil",
-    cost: "State Park entry fees",
-    groupSize: "2-4 people",
-    bestTime: "Summer nights",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "MALEVOLENT ENTITIES & WATER HAZARD",
-    gps: "40.0655, -111.7895",
-    what3words: "///waters.crying.luring",
-    story: [
-        "Utah Lake is a large, shallow, and often murky body of water with a dark secret. Ute tribal legends, passed down for generations, warn of the 'Water Babies' - murderous water spirits that mimic the cries of infants to lure unsuspecting victims to the water's edge.",
-        "The lake has one of the highest drowning rates per capita of any similar-sized lake in the country. Many of the bodies recovered have unexplained scratches or bite marks, and boaters report their vessels being bumped or grabbed from below."
-    ],
-    evidence: {
-        title: "The Lure of the Lake",
-        points: [
-            "The Cries: The most common report is the unmistakable sound of a crying baby coming from the water at night, especially near the swampy southern shore.",
-            "Anomalous Drownings: A statistically high number of drownings, often involving experienced swimmers in calm water.",
-            "Unexplained Marks: Coroners have occasionally noted strange bite marks or claw-like scratches on the bodies of drowning victims.",
-            "The Impossible Depths: While officially only 14 feet deep, divers and sonar have reported finding inexplicable, sudden drop-offs and holes that are over 100 feet deep."
-        ]
-    },
-    hook: "Are the Water Babies a folk tale to keep children from the water, or are they a genuine threat? The Ute tribe is adamant they are real, and the lake's grim statistics suggest that something malevolent lurks beneath its murky surface.",
-    media: [
-      { youtubeId: "dQw4w9WgXcQ", title: "The Legend of Utah's Water Babies" },
-      { youtubeId: "oHg5SJYRHA0", title: "Investigating the Drownings at Utah Lake" }
-    ],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: [
-            "Never swim in Utah Lake at night. No exceptions.",
-            "If you hear crying, do not approach the water's edge. It is a lure.",
-            "Be aware of sudden storms, which can make the shallow lake extremely dangerous for boats.",
-            "The real and paranormal dangers here are both significant."
-        ]
-    },
-    olympianInsight: {
-      character: "Sylvia the Scholar of Timp (Utah County Guardian)",
-      quote: "Not all water spirits are gentle nymphs. Some are ancient, hungry things born of silt and sorrow. They envy the warm-blooded and pull them down into the cold embrace of the mud.",
-      characterImage: './assets/water-monster.png',
-    },
-    equipment: [
-        { name: "Hydrophone (Underwater Microphone)", reason: "To attempt to record the crying sounds from beneath the surface" },
-        { name: "Night Vision Goggles", reason: "To scan the shoreline and water surface from a safe distance" },
-        { name: "Life Vests", reason: "A critical safety item for anyone near or on the water" }
-    ],
-    relatedDestinationIds: ['bear-lake-monster', 'thistle-ghost-town', 'wasatch-wildman']
-  },
-  // START OF NEW DESTINATIONS FROM MEGA LIST
-  {
-    id: 'tooele-army-depot',
-    name: "Tooele Army Depot",
-    subtitle: "Stockpiling the Apocalypse",
-    category: Category.UTAH,
-    location: "Tooele, Utah",
-    driveTime: "Varies",
-    visitDuration: "Perimeter only",
-    cost: "Free",
-    groupSize: "Any",
-    bestTime: "Daylight",
-    dangerLevel: DangerLevel.EXTREME,
-    dangerDescription: "CHEMICAL WEAPONS",
-    gps: "40.5369, -112.3552",
-    what3words: "///depot.army.tooele",
-    story: ["Home to one of the nation's largest stockpiles of chemical and biological weapons, the Tooele Army Depot is a place where the end of the world is kept under lock and key. Its proximity to other high-strangeness zones raises questions about what else might be stored here."],
-    evidence: {
-        title: "Apocalyptic Arsenal",
-        points: ["Site of nerve agent and mustard gas storage and incineration.", "Reports of strange lights and perimeter breaches from locals.", "Extreme security measures far exceeding a typical depot."]
-    },
-    hook: "What does it mean to live next door to doomsday?",
-    media: [],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: ["This is a highly secure military facility. Do not approach or linger. Observation from a distance on public roads only."]
-    },
-    olympianInsight: {
-        character: "Voss the Void-Rider",
-        quote: "The deadliest poisons are often the most quiet. Men build fortresses to contain their fears, but the desert keeps its own secrets.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [{ name: "Long-range camera", reason: "For safe, legal observation." }],
-    relatedDestinationIds: ['dugway-proving-ground']
+    accessibility: "The former Powell residence is a private home. Out of respect for the current occupants and the victim's family, visiting the location is strongly discouraged.",
+    gps: "40.6727, -112.0250",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["Josh Powell (suspected)"],
+    victims: ["Susan Powell"],
+    dates: "December 6, 2009",
+    relatedLocationIds: ['simpson-springs-powell'],
+    tags: ["Missing Person", "Unsolved", "West Valley City"],
+    status: "Private Residence",
   },
    {
-    id: 'hill-air-force-base',
-    name: "Hill Air Force Base",
-    subtitle: "Where UFOs Meet the F-35",
-    category: Category.UTAH,
-    location: "Layton, Utah",
-    driveTime: "Varies",
-    visitDuration: "Varies",
-    cost: "Varies",
-    groupSize: "Any",
-    bestTime: "Varies",
-    dangerLevel: DangerLevel.HIGH,
-    dangerDescription: "ACTIVE MILITARY BASE",
-    gps: "41.123, -111.973",
-    what3words: "///hill.force.base",
-    story: ["A major Air Force base known for its advanced F-35 fighter jets, and a long history of UFO sightings reported by pilots and locals alike. The infamous 'UFO Crash at North Ogden' in 1967 is rumored to have had its debris transported here."],
-    evidence: {
-        title: "Skyward Secrets",
-        points: ["Numerous pilot reports of unidentified aerial phenomena.", "Home to advanced aircraft and technology.", "Proximity to a major 1967 UFO incident."]
-    },
-    hook: "Are the strange lights seen near the base ours, or someone else's?",
-    media: [],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: ["Do not trespass on military property. The Hill Aerospace Museum is open to the public and a safe way to visit."]
-    },
-    olympianInsight: {
-        character: "A Local Guardian",
-        quote: "The sky holds more traffic than you know.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [{ name: "Binoculars", reason: "For skywatching from public areas." }],
-    relatedDestinationIds: []
+    id: 'simpson-springs-powell',
+    name: "Simpson Springs (Powell Alibi Site)",
+    crime: "False Alibi Location",
+    state: State.UTAH,
+    region: "West Desert",
+    address: "Simpson Springs, Tooele County, UT",
+    driveTime: "90 minutes from airport",
+    story: [
+      "This remote desert campground was the location Josh Powell claimed to have taken his two young sons for a sudden midnight camping trip in freezing weather on the night his wife, Susan, disappeared.",
+      "Investigators found the story highly improbable and considered it a weak alibi meant to cover his activities related to Susan's disposal. The desolate landscape here holds the key to the lingering questions in this unsolved case."
+    ],
+    accessibility: "Simpson Springs is a public campground managed by the BLM. It is in a remote desert location and requires travel on unpaved roads. Be prepared for desert conditions.",
+    gps: "39.9927, -112.7936",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Josh Powell (suspected)"],
+    victims: ["Susan Powell"],
+    dates: "December 6-7, 2009",
+    relatedLocationIds: ['susan-powell-disappearance'],
+    tags: ["Missing Person", "Unsolved", "Alibi"],
+    status: "Public Campground",
   },
   {
-    id: 'green-river-launch-complex',
-    name: "Green River Launch Complex",
-    subtitle: "Echoes of the Cold War",
-    category: Category.UTAH,
-    location: "Green River, Utah",
-    driveTime: "3 hours from SLC",
-    visitDuration: "1-2 hours",
-    cost: "Free (view from distance)",
-    groupSize: "Any",
-    bestTime: "Daylight",
-    dangerLevel: DangerLevel.MODERATE,
-    dangerDescription: "UNSTABLE STRUCTURES",
-    gps: "38.9958, -110.0717",
-    what3words: "///launch.complex.green",
-    story: ["Once a frontline in the Cold War, the Green River Launch Complex tested missiles aimed at the heart of the Soviet Union. Now, its abandoned bunkers and launch pads are a haunting reminder of a world on the brink."],
-    evidence: {
-        title: "Cold War Remnants",
-        points: ["Abandoned launch sites and concrete bunkers.", "Reports of shadowy figures patrolling the perimeter at night.", "Unexplained electronic interference near the main complex."]
-    },
-    hook: "The missiles are gone, but what energy remains in a place built for Armageddon? Urban explorers and ghost hunters find this isolated site to be particularly active.",
-    media: [{ youtubeId: "dQw4w9WgXcQ", title: "Exploring Green River Launch Complex" }],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: ["This is private and potentially government-controlled land. Do not trespass.", "Structures are dilapidated and extremely dangerous.", "The desert environment is harsh and unforgiving."]
-    },
-    olympianInsight: {
-        character: "Voss the Void-Rider",
-        quote: "Places built for the end of the world never forget their purpose. They wait patiently.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [{ name: "High-zoom camera", reason: "To photograph the site from a safe, legal distance." }, { name: "Sturdy boots", reason: "The terrain is rough and littered with debris." }],
-    relatedDestinationIds: ['dugway-proving-ground', 'area-51-perimeter', 'cisco-ghost-town']
-  },
-   {
-    id: 'sedona-vortexes',
-    name: "Sedona Vortexes",
-    subtitle: "The Healing Energy Centers",
-    category: Category.ARIZONA,
-    location: "Sedona, Arizona",
-    driveTime: "Varies",
-    visitDuration: "Varies",
-    cost: "Varies",
-    groupSize: "Any",
-    bestTime: "Varies",
-    dangerLevel: DangerLevel.MODERATE,
-    dangerDescription: "PSYCHOLOGICAL EFFECTS",
-    gps: "34.8697, -111.7610",
-    what3words: "///sedona.vortex.healing",
-    story: ["Sedona is world-renowned for its powerful spiritual vortexes, locations where the earth's energy is said to be exceptionally strong, leading to healing and spiritual awakening."],
-    evidence: {
-        title: "Vortex Phenomena",
-        points: ["Four main vortexes: Airport Mesa, Cathedral Rock, Bell Rock, and Boynton Canyon.", "Reports of heightened spiritual awareness and physical healing.", "Twisted juniper trees are said to be evidence of the powerful energy."]
-    },
-    hook: "Whether you're a believer or a skeptic, the stunning beauty and palpable energy of Sedona are undeniable.",
-    media: [],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: ["Stay hydrated in the desert environment.", "Be respectful of the sacred nature of these sites."]
-    },
-    olympianInsight: {
-        character: "An Arizona Counterpart",
-        quote: "Some places are thin, where the world breathes.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [{ name: "Comfortable hiking shoes", reason: "Accessing the vortexes often requires hiking." }],
-    relatedDestinationIds: ['jerome-arizona'],
-    tags: ["Ley Line Intersections", "Portal Locations (Alleged)"]
+    id: 'trolley-square-shooting',
+    name: "Trolley Square Shooting",
+    crime: "Mass Shooting",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "700 E 500 S, Salt Lake City, UT",
+    driveTime: "15 minutes from airport",
+    story: [
+        "On February 12, 2007, the historic Trolley Square shopping center became a scene of terror. Armed with a shotgun and a pistol, 18-year-old Sulejman Talović went on a shooting rampage, killing five people and wounding four others before he was shot and killed by police.",
+        "The entire attack lasted only eight minutes, transforming a beloved local landmark into a massacre site and leaving a lasting impact on the Salt Lake City community."
+    ],
+    accessibility: "The shopping center is fully operational. It has undergone renovations since the shooting, and there is no permanent memorial on site dedicated to the victims of the tragedy.",
+    gps: "40.7594, -111.8722",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Sulejman Talović"],
+    victims: ["5 deceased", "4 wounded"],
+    dates: "February 12, 2007",
+    relatedLocationIds: ['hofmann-bombing-judge-building', 'fashion-place-mall-bundy'],
+    tags: ["Mass Shooting", "Salt Lake City"],
+    status: "Commercial Mall",
   },
   {
-    id: 'roswell',
-    name: "Roswell",
-    subtitle: "The UFO Crash That Started It All",
-    category: Category.NEW_MEXICO,
-    location: "Roswell, New Mexico",
-    driveTime: "Varies",
-    visitDuration: "Varies",
-    cost: "Varies",
-    groupSize: "Any",
-    bestTime: "Varies",
-    dangerLevel: DangerLevel.MODERATE,
-    dangerDescription: "TOURIST AREA",
-    gps: "33.3943, -104.5230",
-    what3words: "///roswell.crash.alien",
-    story: ["In 1947, something crashed in the desert near Roswell. The military first called it a 'flying disc' and then quickly retracted the statement, claiming it was a weather balloon. The incident sparked the modern UFO phenomenon and a government cover-up that continues to this day."],
-    evidence: {
-        title: "The Roswell Incident",
-        points: ["Initial reports of a crashed flying saucer and alien bodies.", "The military's changing story from saucer to weather balloon.", "Eyewitness accounts of strange, non-terrestrial debris."]
-    },
-    hook: "What really crashed in the desert outside Roswell? The truth is still out there, and this town is ground zero.",
-    media: [],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: ["Enjoy the museums and tourist attractions.", "Respect private property when exploring the alleged crash sites."]
-    },
-    olympianInsight: {
-        character: "A New Mexico Counterpart",
-        quote: "A single spark of truth can light a fire of curiosity that burns for generations.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [{ name: "A healthy dose of skepticism", reason: "Separate the history from the tourist traps." }],
-    relatedDestinationIds: ['dulce-base']
+    id: 'lori-hacking-murder',
+    name: "Lori Hacking Murder Site",
+    crime: "Spousal Murder & Deception",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "Near University of Utah, Salt Lake City, UT (address withheld)",
+    driveTime: "15 minutes from airport",
+    story: [
+      "This case shocked Salt Lake City with its layers of deception. After years of lying about his enrollment in medical school, Mark Hacking murdered his pregnant wife, Lori, when she discovered the truth on July 19, 2004.",
+      "He shot her in her sleep in their apartment near the university, disposed of her body and the mattress in a dumpster, then purchased a new mattress the same morning. He then initiated a massive public search, claiming she'd disappeared while jogging."
+    ],
+    accessibility: "The apartment complex is private property. Visiting is strongly discouraged out of respect for current residents and the victim. The public face of the deception is better understood by visiting Memory Grove Park.",
+    gps: "40.7650, -111.8480",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Mark Hacking"],
+    victims: ["Lori Hacking"],
+    dates: "July 19, 2004",
+    relatedLocationIds: ['memory-grove-hacking-search', 'lori-hacking-landfill'],
+    tags: ["Murder", "Deception", "Salt Lake City"],
+    status: "Private Residence",
   },
   {
-    id: 'dulce-base',
-    name: "Dulce Base",
-    subtitle: "The Underground Alien Horror Show",
-    category: Category.NEW_MEXICO,
-    location: "Dulce, New Mexico",
-    driveTime: "Varies",
-    visitDuration: "Varies",
-    cost: "Varies",
-    groupSize: "Any",
-    bestTime: "Varies",
-    dangerLevel: DangerLevel.EXTREME,
-    dangerDescription: "ALLEGED UNDERGROUND BASE",
-    gps: "36.9350, -106.9898",
-    what3words: "///dulce.base.underground",
-    story: ["According to UFO lore, beneath the Archuleta Mesa lies the Dulce Base, a seven-story underground facility where humans and aliens work together on horrific genetic experiments. The stories, originating from whistleblower Phil Schneider, are the stuff of nightmares."],
-    evidence: {
-        title: "The Dulce Papers",
-        points: ["Alleged photographic and documentary evidence of the base's existence.", "High frequency of cattle mutilations and UFO sightings in the area.", "Extreme military presence and unmarked helicopters patrolling the region."]
-    },
-    hook: "Is Dulce Base a paranoid delusion or the most terrifying secret on Earth?",
-    media: [],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: ["This is on the Jicarilla Apache Reservation. Be extremely respectful.", "Do not trespass or attempt to find a non-existent base entrance."]
-    },
-    olympianInsight: {
-        character: "A New Mexico Counterpart",
-        quote: "The deepest horrors are not in the sky, but beneath our feet.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [{ name: "High-quality camera", reason: "Document any unusual activity in the sky or on the ground." }],
-    relatedDestinationIds: ['roswell', 'san-luis-valley'],
-    tags: ["Underground Base Network"]
+    id: 'memory-grove-hacking-search',
+    name: "Lori Hacking Search Area (Memory Grove)",
+    crime: "False Missing Person Report Site",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "Memory Grove Park, Salt Lake City, UT",
+    driveTime: "10 minutes from airport",
+    story: [
+      "This tranquil park became the epicenter of a massive public deception when Mark Hacking reported his wife Lori missing here on July 19, 2004. He claimed she never returned from a morning run in the park and the adjacent City Creek Canyon.",
+      "Hacking made tearful public pleas for her return from this location, galvanizing thousands of volunteers to search the area for days, all while knowing he had already murdered her. The park stands as a poignant symbol of the community's betrayed trust and goodwill."
+    ],
+    accessibility: "Memory Grove Park is a public space, fully accessible to visitors. It contains memorials for veterans but none specific to this case. It offers a place for reflection on the public-facing aspect of the crime.",
+    gps: "40.7740, -111.8845",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Mark Hacking"],
+    victims: ["Lori Hacking"],
+    dates: "July 19-22, 2004 (False Search)",
+    relatedLocationIds: ['lori-hacking-murder', 'lori-hacking-landfill'],
+    tags: ["Missing Person", "Deception", "Salt Lake City"],
+    status: "Public Park",
   },
   {
-    id: 'devils-tower',
-    name: "Devils Tower",
-    subtitle: "This Means Something",
-    category: Category.WYOMING,
-    location: "Crook County, Wyoming",
-    driveTime: "Varies",
-    visitDuration: "Varies",
-    cost: "Varies",
-    groupSize: "Any",
-    bestTime: "Varies",
-    dangerLevel: DangerLevel.MODERATE,
-    dangerDescription: "SACRED SITE",
-    gps: "44.5902, -104.7154",
-    what3words: "///devils.tower.means",
-    story: ["A stunning geological formation that rises dramatically from the prairie, Devils Tower is a sacred site to many Native American tribes and was famously the UFO landing site in 'Close Encounters of the Third Kind'."],
-    evidence: {
-        title: "A Place of Power",
-        points: ["Considered a spiritual center by over 20 Native American tribes.", "Reports of strange lights and sounds near the tower.", "Its unique formation has puzzled geologists for centuries."]
-    },
-    hook: "Whether a sacred site or an alien beacon, the power of Devils Tower is undeniable.",
-    media: [],
-    safety: {
-        title: "Dan Says: Wander Wisely",
-        points: ["Be respectful of cultural sensitivities, especially during the June climbing closure.", "Stay on designated trails."]
-    },
-    olympianInsight: {
-        character: "A Wyoming Counterpart",
-        quote: "Some places are antennas, built to receive messages from the stars.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [{ name: "Good hiking shoes", reason: "The trail around the base is worth the walk." }],
-    relatedDestinationIds: [],
-    tags: ["Portal Locations (Alleged)"]
+    id: 'lori-hacking-landfill',
+    name: "Lori Hacking Recovery Site (Landfill)",
+    crime: "Body Recovery Site",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "3060 W. California Ave, Salt Lake City, UT",
+    driveTime: "20 minutes from airport",
+    story: [
+      "After a grueling, nearly three-month search involving over 1,200 volunteers sifting through 4,300 tons of refuse, Lori Hacking's remains were discovered at the Salt Lake County Landfill on October 1, 2004.",
+      "The massive effort highlighted the community's determination to bring her home and provided the final, tragic evidence needed to confirm her murder and expose her husband's lies."
+    ],
+    accessibility: "This is an active county landfill and is not accessible to the public for safety reasons. It can be viewed from a distance from public roads.",
+    gps: "40.7380, -111.9680",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Mark Hacking"],
+    victims: ["Lori Hacking"],
+    dates: "October 1, 2004 (Discovery)",
+    relatedLocationIds: ['lori-hacking-murder', 'memory-grove-hacking-search'],
+    tags: ["Investigation", "Recovery", "Salt Lake City"],
+    status: "Industrial Site (Inaccessible)"
   },
-  // ADDING THE REST OF THE STUBS
-  // A helper function would be useful here but I have to do it manually.
-  ...[
-    // UTAH
-    { id: 'nine-mile-canyon', name: "Nine Mile Canyon", category: Category.UTAH },
-    { id: 'hovenweep', name: "Hovenweep", category: Category.UTAH },
-    { id: 'newspaper-rock', name: "Newspaper Rock", category: Category.UTAH },
-    { id: 'parowan-gap', name: "Parowan Gap", category: Category.UTAH },
-    { id: 'fremont-indian-state-park', name: "Fremont Indian State Park", category: Category.UTAH },
-    { id: 'spiral-jetty', name: "Spiral Jetty", category: Category.UTAH },
-    { id: 'factory-butte', name: "Factory Butte", category: Category.UTAH },
-    { id: 'goblin-valley', name: "Goblin Valley", category: Category.UTAH },
-    { id: 'coral-pink-sand-dunes', name: "Coral Pink Sand Dunes", category: Category.UTAH, tags: ["Time Anomaly Zones"] },
-    { id: 'fantasy-canyon', name: "Fantasy Canyon", category: Category.UTAH },
-    { id: 'capitol-reef-waterpocket-fold', name: "Capitol Reef Waterpocket Fold", category: Category.UTAH },
-    { id: 'little-cottonwood-canyon', name: "Little Cottonwood Canyon", category: Category.UTAH },
-    { id: 'escalante-petrified-forest', name: "Escalante Petrified Forest", category: Category.UTAH, tags: ["Time Anomaly Zones"] },
-    { id: 'paria-canyon-buckskin-gulch', name: "Paria Canyon/Buckskin Gulch", category: Category.UTAH },
-    { id: 'sego-ghost-town', name: "Sego Ghost Town", category: Category.UTAH },
-    { id: 'grafton-ghost-town', name: "Grafton Ghost Town", category: Category.UTAH },
-    { id: 'silver-reef-ghost-town', name: "Silver Reef Ghost Town", category: Category.UTAH },
-    { id: 'frisco-ghost-town', name: "Frisco Ghost Town", category: Category.UTAH },
-    { id: 'cisco-ghost-town', name: "Cisco Ghost Town", category: Category.UTAH },
-    { id: 'gilgal-sculpture-garden', name: "Gilgal Sculpture Garden", category: Category.UTAH },
-    { id: 'dream-mine-relief-mine', name: "Dream Mine/Relief Mine", category: Category.UTAH },
-    { id: 'manti-temple', name: "Manti Temple", category: Category.UTAH },
-    { id: 'temple-square-tunnels', name: "Temple Square tunnels", category: Category.UTAH },
-    { id: 'three-nephites-sightings', name: "Three Nephites sightings", category: Category.UTAH },
-    { id: 'timpanogos-cave', name: "Timpanogos Cave", category: Category.UTAH },
-    { id: 'minnetonka-cave', name: "Minnetonka Cave", category: Category.UTAH },
-    // COLORADO
-    { id: 'norad-cheyenne-mountain', name: "NORAD/Cheyenne Mountain", category: Category.COLORADO, tags: ["Underground Base Network"] },
-    { id: 'rocky-flats', name: "Rocky Flats", category: Category.COLORADO },
-    { id: 'fort-carson', name: "Fort Carson", category: Category.COLORADO },
-    { id: 'ashcroft-ghost-town', name: "Ashcroft Ghost Town", category: Category.COLORADO },
-    { id: 'independence-ghost-town', name: "Independence Ghost Town", category: Category.COLORADO },
-    { id: 'crystal-mill', name: "Crystal Mill", category: Category.COLORADO },
-    { id: 'the-stanley-hotel', name: "The Stanley Hotel", category: Category.COLORADO },
-    { id: 'cheesman-park', name: "Cheesman Park", category: Category.COLORADO },
-    { id: 'red-rocks-amphitheatre', name: "Red Rocks Amphitheatre", category: Category.COLORADO },
-    { id: 'bishop-castle', name: "Bishop Castle", category: Category.COLORADO },
-    { id: 'buffalo-creek', name: "Buffalo Creek", category: Category.COLORADO },
-    { id: 'great-sand-dunes', name: "Great Sand Dunes", category: Category.COLORADO },
-    { id: 'blanca-peak', name: "Blanca Peak", category: Category.COLORADO },
-    { id: 'mount-evans', name: "Mount Evans", category: Category.COLORADO },
-    { id: 'mesa-verde', name: "Mesa Verde", category: Category.COLORADO, tags: ["Missing 411 Hotspots"] },
-    { id: 'garden-of-the-gods', name: "Garden of the Gods", category: Category.COLORADO },
-    { id: 'pikes-peak', name: "Pikes Peak", category: Category.COLORADO },
-    // NEVADA
-    { id: 's-4', name: "S-4", category: Category.NEVADA },
-    { id: 'tonopah-test-range', name: "Tonopah Test Range", category: Category.NEVADA },
-    { id: 'nevada-test-site', name: "Nevada Test Site", category: Category.NEVADA },
-    { id: 'goldfield-ghost-town', name: "Goldfield Ghost Town", category: Category.NEVADA },
-    { id: 'virginia-city-nv', name: "Virginia City", category: Category.NEVADA },
-    { id: 'belmont-ghost-town', name: "Belmont Ghost Town", category: Category.NEVADA },
-    { id: 'extraterrestrial-highway', name: "Extraterrestrial Highway", category: Category.NEVADA },
-    { id: 'black-mailbox', name: "Black Mailbox", category: Category.NEVADA },
-    { id: 'little-ale-inn', name: "Little A'Le'Inn", category: Category.NEVADA },
-    { id: 'fly-geyser', name: "Fly Geyser", category: Category.NEVADA },
-    { id: 'valley-of-fire', name: "Valley of Fire", category: Category.NEVADA },
-    { id: 'pyramid-lake', name: "Pyramid Lake", category: Category.NEVADA },
-    // ARIZONA
-    { id: 'superstition-mountains', name: "Superstition Mountains", category: Category.ARIZONA },
-    { id: 'mogollon-monster-territory', name: "Mogollon Monster territory", category: Category.ARIZONA },
-    { id: 'skeleton-cave-massacre-site', name: "Skeleton Cave Massacre site", category: Category.ARIZONA },
-    { id: 'grand-canyon', name: "Grand Canyon", category: Category.ARIZONA },
-    { id: 'montezuma-castle', name: "Montezuma Castle", category: Category.ARIZONA },
-    { id: 'wupatki-ruins', name: "Wupatki ruins", category: Category.ARIZONA },
-    { id: 'meteor-crater', name: "Meteor Crater", category: Category.ARIZONA },
-    { id: 'tombstone', name: "Tombstone", category: Category.ARIZONA },
-    { id: 'bisbee', name: "Bisbee", category: Category.ARIZONA },
-    { id: 'vulture-mine', name: "Vulture Mine", category: Category.ARIZONA },
-    // WYOMING
-    { id: 'medicine-wheel', name: "Medicine Wheel", category: Category.WYOMING, tags: ["Portal Locations (Alleged)"] },
-    { id: 'vedauwoo', name: "Vedauwoo", category: Category.WYOMING },
-    { id: 'yellowstone-zone-of-death', name: "Yellowstone Zone of Death", category: Category.WYOMING },
-    { id: 'heart-mountain', name: "Heart Mountain", category: Category.WYOMING },
-    { id: 'fort-laramie', name: "Fort Laramie", category: Category.WYOMING },
-    { id: 'wyoming-state-penitentiary', name: "Wyoming State Penitentiary", category: Category.WYOMING },
-    // MONTANA
-    { id: 'libby', name: "Libby", category: Category.MONTANA },
-    { id: 'malmstrom-afb', name: "Malmstrom AFB", category: Category.MONTANA },
-    { id: 'bannack-ghost-town', name: "Bannack Ghost Town", category: Category.MONTANA },
-    { id: 'garnet-ghost-town', name: "Garnet Ghost Town", category: Category.MONTANA },
-    { id: 'virginia-city-mt', name: "Virginia City, MT", category: Category.MONTANA },
-    { id: 'nevada-city', name: "Nevada City", category: Category.MONTANA },
-    { id: 'flathead-lake-monster', name: "Flathead Lake Monster", category: Category.CRYPTID },
-    { id: 'glacier-national-park', name: "Glacier National Park", category: Category.MONTANA, tags: ["Missing 411 Hotspots"] },
-    // IDAHO
-    { id: 'city-of-rocks', name: "City of Rocks", category: Category.IDAHO },
-    { id: 'shoshone-ice-caves', name: "Shoshone Ice Caves", category: Category.IDAHO },
-    { id: 'bruneau-sand-dunes', name: "Bruneau Sand Dunes", category: Category.IDAHO },
-    { id: 'old-idaho-penitentiary', name: "Old Idaho Penitentiary", category: Category.IDAHO },
-    { id: 'silver-city-ghost-town', name: "Silver City Ghost Town", category: Category.IDAHO },
-    { id: 'bayhorse-ghost-town', name: "Bayhorse Ghost Town", category: Category.IDAHO },
-    { id: 'minnetonka-cave-system', name: "Minnetonka Cave system", category: Category.IDAHO },
-    { id: 'crystal-ice-cave', name: "Crystal Ice Cave", category: Category.IDAHO },
-    // NEW MEXICO
-    { id: 'white-sands', name: "White Sands", category: Category.NEW_MEXICO },
-    { id: 'socorro', name: "Socorro", category: Category.NEW_MEXICO },
-    { id: 'aztec-ufo-crash-site', name: "Aztec UFO crash site", category: Category.NEW_MEXICO },
-    { id: 'shiprock', name: "Shiprock", category: Category.NEW_MEXICO },
-    { id: 'carlsbad-caverns', name: "Carlsbad Caverns", category: Category.NEW_MEXICO },
-    { id: 'taos-hum', name: "Taos Hum", category: Category.NEW_MEXICO },
-    { id: 'los-alamos', name: "Los Alamos", category: Category.NEW_MEXICO },
-    { id: 'madrid', name: "Madrid", category: Category.NEW_MEXICO },
-    { id: 'villanueva-state-park', name: "Villanueva State Park", category: Category.NEW_MEXICO },
-    // BONUS
-    { id: 'rocky-mountain-national-park', name: "Rocky Mountain National Park", category: Category.BONUS, tags: ["Missing 411 Hotspots"] },
-    { id: 'great-basin', name: "Great Basin", category: Category.BONUS, tags: ["Missing 411 Hotspots"] },
-    { id: 'mount-shasta', name: "Mount Shasta", category: Category.BONUS, tags: ["Ley Line Intersections"] },
-    { id: 'death-valley', name: "Death Valley", category: Category.BONUS },
-    { id: 'salton-sea', name: "Salton Sea", category: Category.BONUS },
-    { id: 'crater-lake', name: "Crater Lake", category: Category.BONUS },
-    { id: 'oregon-vortex', name: "Oregon Vortex", category: Category.BONUS },
-    { id: 'hanford-site', name: "Hanford Site", category: Category.BONUS },
-    { id: 'mount-rainier', name: "Mount Rainier", category: Category.BONUS },
-    { id: 'marfa-lights', name: "Marfa Lights", category: Category.BONUS },
-    { id: 'aurora-ufo-crash', name: "Aurora UFO crash", category: Category.BONUS },
-  ].map(stub => ({
-    ...stub,
-    subtitle: "Investigation Pending",
-    location: "Varies",
-    driveTime: "Varies",
-    visitDuration: "Varies",
-    cost: "Varies",
-    groupSize: "Varies",
-    bestTime: "Varies",
-    dangerLevel: DangerLevel.MODERATE,
-    dangerDescription: "RESEARCH REQUIRED",
-    gps: "0,0",
-    what3words: "///pending.investigation.report",
-    story: ["This location is currently under investigation by the SLCTrips team. A full report is pending."],
-    evidence: {
-        title: "Preliminary Intel",
-        points: ["Reports of anomalous activity are being compiled."]
-    },
-    hook: "Further research is required to understand the full scope of the mystery here.",
-    media: [],
-    safety: {
-      title: "Dan Says: Wander Wisely",
-      points: ["Full safety briefing will be available once our field report is complete."]
-    },
-    olympianInsight: {
-        character: "Field Office",
-        quote: "Patience, investigator. Good intelligence takes time. This file will be declassified soon.",
-        characterImage: './assets/otter-wizard.png',
-    },
-    equipment: [{ name: "Standard Field Kit", reason: "Be prepared for anything until more is known." }],
-    relatedDestinationIds: [],
-  }))
+  {
+    id: 'elizabeth-smart-home',
+    name: "Elizabeth Smart Kidnapping Site (Home)",
+    crime: "Kidnapping at Knifepoint",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "Federal Heights, Salt Lake City, UT (address withheld)",
+    driveTime: "15 minutes from airport",
+    story: [
+      "On June 5, 2002, 14-year-old Elizabeth Smart was abducted at knifepoint from her bedroom in the family's Federal Heights home by Brian David Mitchell.",
+      "The brazen kidnapping from a seemingly safe, affluent neighborhood sparked a massive, nationwide search and captured public attention for months, becoming one of the most famous kidnapping cases in American history."
+    ],
+    accessibility: "The Smart family home is a private residence. It is not accessible to the public and its specific address is withheld out of respect for the family's privacy.",
+    gps: "40.7800, -111.8400",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Brian David Mitchell", "Wanda Barzee"],
+    victims: ["Elizabeth Smart"],
+    dates: "June 5, 2002",
+    relatedLocationIds: ['elizabeth-smart-rescue'],
+    tags: ["Kidnapping", "Survivor", "Salt Lake City"],
+    status: "Private Residence"
+  },
+  {
+    id: 'elizabeth-smart-rescue',
+    name: "Elizabeth Smart Rescue Site",
+    crime: "Rescue of a Kidnapping Victim",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "Sandy, UT",
+    driveTime: "25 minutes from airport",
+    story: [
+      "After nine months in captivity, Elizabeth Smart was rescued on March 12, 2003, in Sandy, Utah, just 18 miles from her home. Alert citizens recognized her captors, Brian David Mitchell and Wanda Barzee, from media reports and notified police.",
+      "The rescue was a moment of national celebration and relief. Elizabeth's resilience and subsequent advocacy work have made her a powerful voice for survivors of abduction and sexual assault."
+    ],
+    accessibility: "The rescue occurred on a public street in Sandy. There is no specific memorial at the location of the rescue.",
+    gps: "40.5724, -111.8597",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Brian David Mitchell", "Wanda Barzee"],
+    victims: ["Elizabeth Smart"],
+    dates: "March 12, 2003",
+    relatedLocationIds: ['elizabeth-smart-home'],
+    tags: ["Kidnapping", "Survivor", "Rescue"],
+    status: "Public Street"
+  },
+  {
+    id: 'hi-fi-murders',
+    name: "Hi-Fi Murders Site",
+    crime: "Mass Murder & Torture",
+    state: State.UTAH,
+    region: "Northern Utah",
+    address: "2323 Washington Boulevard, Ogden, UT",
+    driveTime: "45 minutes from airport",
+    story: [
+        "The Hi-Fi Shop at this location was the scene of one of Utah's most sadistic and brutal crimes. On April 22, 1974, Dale Pierre and William Andrews took five people hostage during a robbery.",
+        "The victims were taken to the basement, bound, and forced to drink liquid Drano before being shot in the head. Three people died, while two survived with horrific, permanent injuries. The crime's sheer brutality left a lasting scar on the community.",
+    ],
+    accessibility: "The original building still stands but now houses different businesses. There is no public access to the basement, which is the primary crime scene. Please be respectful of the businesses operating at this location.",
+    gps: "41.2294, -111.9708",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["Dale Pierre", "William Andrews"],
+    victims: ["Stanley Walker", "Michelle Ansley", "Carol Naisbitt", "Cortney Naisbitt (survived)", "Orren Walker (survived)"],
+    dates: "April 22, 1974",
+    relatedLocationIds: ['bundy-residence-1st-ave', 'lafferty-murders'],
+    tags: ["Mass Murder", "Ogden", "Utah Crime"],
+    status: "Commercial Building",
+    paranormal: "Tenants and visitors in the building have reported paranormal activity in the basement, including unexplained noises and shadowy figures."
+  },
+  {
+    id: 'lafferty-murders',
+    name: "Lafferty Murders Site",
+    crime: "Double Murder Driven by Religious Extremism",
+    state: State.UTAH,
+    region: "Utah Valley",
+    address: "American Fork, UT (address withheld)",
+    driveTime: "50 minutes from airport",
+    story: [
+        "On July 24, 1984, brothers Ron and Dan Lafferty committed a brutal double murder in this American Fork duplex, claiming to have received a 'removal revelation' from God. Their victims were their sister-in-law, Brenda Lafferty, and her 15-month-old daughter, Erica.",
+        "The murders, committed with ritualistic fervor, exposed a dark side of religious fundamentalism and became the subject of the book 'Under the Banner of Heaven'."
+    ],
+    accessibility: "The duplex remains a private residence. Previous tenants have reported unexplained phenomena. Please respect the privacy of the current residents and view only from the street.",
+    gps: "40.3805, -111.7991",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["Ron Lafferty", "Dan Lafferty"],
+    victims: ["Brenda Lafferty", "Erica Lafferty"],
+    dates: "July 24, 1984",
+    relatedLocationIds: ['hi-fi-murders', 'mountain-meadows-massacre'],
+    tags: ["Religious Extremism", "Familicide", "American Fork"],
+    status: "Private Residence",
+    paranormal: "Previous tenants have reported unexplained phenomena within the residence."
+  },
+  {
+    id: 'gary-gilmore-murders',
+    name: "Gary Gilmore Murder Sites",
+    crime: "Murder Spree",
+    state: State.UTAH,
+    region: "Utah Valley",
+    address: "Orem & Provo, UT",
+    driveTime: "50-55 minutes from airport",
+    story: [
+      "In July 1976, Gary Gilmore committed two senseless murders in two days, robbing and killing a Sinclair gas station attendant in Orem and a motel manager at the City Center Motel in Provo.",
+      "What made his case infamous was his demand to be executed, fighting all attempts to appeal his sentence. His execution by firing squad on January 17, 1977, at the Utah State Prison was the first in the U.S. after the reinstatement of the death penalty, and his final words were 'Let's do it.'"
+    ],
+    accessibility: "The locations of the murders are now different businesses. The former Utah State Prison in Draper where he was executed was demolished in 2022.",
+    gps: "40.2655, -111.6946",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["Gary Gilmore"],
+    victims: ["Max Jensen", "Bennie Bushnell"],
+    dates: "July 19-20, 1976",
+    relatedLocationIds: ['old-utah-state-prison'],
+    tags: ["Murder", "Execution", "Utah Valley"],
+    status: "Commercial Properties"
+  },
+  {
+    id: 'charlie-kirk-assassination',
+    name: "Charlie Kirk Assassination Site (UVU)",
+    crime: "Political Assassination",
+    state: State.UTAH,
+    region: "Utah Valley",
+    address: "Utah Valley University, Orem, UT",
+    driveTime: "50 minutes from airport",
+    story: [
+      "In a shocking act of political violence on September 10, 2025, conservative activist Charlie Kirk was assassinated with a single rifle shot during an outdoor speaking event at Utah Valley University.",
+      "The perpetrator, Tyler Robinson, was arrested two days later. The weapon was found with messages engraved on the ammunition indicating a politically and ideologically charged motive, sending a chill through the nation's political discourse."
+    ],
+    accessibility: "UVU is a public university campus. The specific location of the outdoor event is accessible, though there is no permanent memorial for this recent and controversial event.",
+    gps: "40.2783, -111.7126",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Tyler Robinson"],
+    victims: ["Charlie Kirk"],
+    dates: "September 10, 2025",
+    tags: ["Assassination", "Political Violence", "Orem"],
+    status: "Public University Campus"
+  },
+  {
+    id: 'mountain-meadows-massacre',
+    name: "Mountain Meadows Massacre Site",
+    crime: "Massacre of Emigrants",
+    state: State.UTAH,
+    region: "Southern Utah",
+    address: "Near Enterprise, UT",
+    driveTime: "5 hours from airport",
+    story: [
+      "In September 1857, the Baker-Fancher emigrant wagon train was attacked by a coalition of local Mormon militia and Paiute allies. After a five-day siege, the emigrants surrendered under a false flag of truce, only to be systematically murdered.",
+      "Over 120 men, women, and children were killed; only 17 small children were spared. It remains one of the largest and most controversial mass murders of civilians in U.S. history. John D. Lee was the only participant ever executed for the crime, taking place at the massacre site itself.",
+    ],
+    accessibility: "The site is a U.S. National Historic Landmark with several monuments and interpretive trails. It is managed by The Church of Jesus Christ of Latter-day Saints. The area is remote but accessible via paved roads. It is a somber and historically significant site.",
+    gps: "37.4764, -113.6425",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Mormon Militia", "Paiute allies"],
+    victims: ["120+ members of the Baker-Fancher party"],
+    dates: "September 7-11, 1857",
+    relatedLocationIds: ['lafferty-murders', 'bear-river-massacre'],
+    tags: ["Massacre", "Historical", "Utah"],
+    status: "National Historic Landmark"
+  },
+  {
+    id: 'old-utah-state-prison',
+    name: "Old Utah State Prison Site",
+    crime: "Historic Prison & Execution Site",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "Draper, UT",
+    driveTime: "25 minutes from airport",
+    story: [
+      "For over 70 years, the prison at 'Point of the Mountain' in Draper housed Utah's most dangerous criminals. It was the site of 38 executions, including notable figures like Gary Gilmore (1977), Hi-Fi killer Dale Pierre (1987), and Ronnie Lee Gardner, the last American to be executed by firing squad in 2010.",
+      "The aging facility was known for its harsh conditions and several riots. It was decommissioned and fully demolished in 2022 to make way for commercial development, closing a significant chapter in Utah's criminal justice history."
+    ],
+    accessibility: "The entire prison complex was demolished in 2022. The site, known as 'The Point,' is currently under redevelopment. There is nothing left of the original prison to see.",
+    gps: "40.485, -111.890",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["State of Utah"],
+    victims: ["38 executed individuals"],
+    dates: "1951-2022",
+    relatedLocationIds: ['new-utah-state-prison', 'gary-gilmore-murders'],
+    tags: ["Prison", "Execution", "Demolished"],
+    status: "Redevelopment Site"
+  },
+  {
+    id: 'new-utah-state-prison',
+    name: "Utah State Correctional Facility",
+    crime: "Modern Correctional Facility",
+    state: State.UTAH,
+    region: "Salt Lake City Metropolitan Area",
+    address: "1480 N 8000 W, Salt Lake City, UT",
+    driveTime: "25 minutes from airport",
+    story: [
+      "Opened in 2022, this state-of-the-art facility replaced the aging Draper prison. It houses all of Utah's death row inmates and is the designated site for all future executions in the state.",
+      "The facility represents the modern era of Utah's correctional system, continuing the state's long history with capital punishment. Its first execution was carried out in 2024."
+    ],
+    accessibility: "This is a high-security, active correctional facility. It is not open to the public. The exterior can be viewed from a distance from public roads.",
+    gps: "40.793, -112.086",
+    notorietyLevel: NotorietyLevel.LOCAL,
+    perpetrators: ["State of Utah"],
+    victims: [],
+    dates: "2022-Present",
+    relatedLocationIds: ['old-utah-state-prison'],
+    tags: ["Prison", "Execution", "Modern"],
+    status: "Active Correctional Facility"
+  },
+  // WYOMING
+  {
+    id: 'tom-horn-execution-site',
+    name: "Tom Horn Execution Site",
+    crime: "Controversial Execution of a Frontier Scout",
+    state: State.WYOMING,
+    region: "Cheyenne",
+    address: "Historic Laramie County Courthouse, Cheyenne, WY",
+    driveTime: "6.5 hours from airport",
+    story: [
+        "On November 20, 1903, famed frontier scout and alleged hired killer Tom Horn was executed at the Historic Laramie County Courthouse in Cheyenne. His conviction for the murder of 14-year-old Willie Nickell remains highly controversial, with many believing he was framed.",
+        "The execution utilized a unique hydraulic 'Julian Gallows,' designed for a more humane death. Today, the courthouse contains exhibits dedicated to the infamous case."
+    ],
+    accessibility: "The historic courthouse is accessible to the public, with the second floor housing exhibits related to Tom Horn's case and trial.",
+    gps: "41.1408, -104.8189",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["State of Wyoming"],
+    victims: ["Tom Horn"],
+    dates: "November 20, 1903",
+    relatedLocationIds: ['wyoming-frontier-prison', 'matthew-shepard-murder-site'],
+    tags: ["Execution", "Wild West", "Cheyenne"],
+    status: "Historic Courthouse",
+  },
+  {
+    id: 'matthew-shepard-murder-site',
+    name: "Matthew Shepard Murder Site",
+    crime: "Anti-Gay Hate Crime & Murder",
+    state: State.WYOMING,
+    region: "Laramie",
+    address: "Pilot Peak Road & Snowy View Road, Laramie, WY",
+    driveTime: "5.85 hours from airport",
+    story: [
+        "This desolate stretch of prairie east of Laramie is the site of one of America's most infamous anti-gay hate crimes. On the night of October 6, 1998, 21-year-old University of Wyoming student Matthew Shepard was brutally beaten, tortured, and tied to a buck-rail fence here by Aaron McKinney and Russell Henderson.",
+        "He was discovered 18 hours later by a cyclist who initially mistook him for a scarecrow. Shepard never regained consciousness and died six days later. The murder became a watershed moment for LGBTQ+ rights in the United States, leading to the passage of federal hate crime legislation."
+    ],
+    accessibility: "The site is on public land and is accessible via dirt roads, though conditions can be poor depending on the weather. The original fence has been removed. There is no official monument at the exact location. Discretion and respect are advised.",
+    gps: "41.3333, -105.3916",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Aaron McKinney", "Russell Henderson"],
+    victims: ["Matthew Shepard"],
+    dates: "October 6, 1998",
+    relatedLocationIds: ['wyoming-frontier-prison', 'columbine-high-school'],
+    tags: ["Hate Crime", "LGBTQ+ History", "Wyoming"],
+    status: "Public Land (Undeveloped)",
+    paranormal: "Visitors report overwhelming negative energy and a profound sense of sadness at the location."
+  },
+  {
+    id: 'wyoming-frontier-prison',
+    name: "Wyoming Frontier Prison",
+    crime: "State Penitentiary & Execution Site",
+    state: State.WYOMING,
+    region: "Rawlins",
+    address: "500 West Walnut Street, Rawlins, WY",
+    driveTime: "5 hours from airport",
+    story: [
+      "Operating from 1901 to 1981, the Wyoming Frontier Prison was a brutal, overcrowded facility that housed over 13,500 inmates. Known for its harsh conditions, it saw numerous riots, escape attempts, and deaths.",
+      "The prison carried out 14 executions, including hangings and the use of the gas chamber. Today, the preserved facility operates as a museum, offering a chilling glimpse into a century of prison life and death. One inmate, Andrew Pixley, famously laughed for seven minutes in the gas chamber before expiring."
+    ],
+    accessibility: "The prison is now a museum offering guided tours, including historical tours and paranormal investigations. Visitors can see death row, the gas chamber, and solitary confinement cells. It is one of the most accessible dark tourism locations in the region.",
+    gps: "41.7876, -107.2403",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["State of Wyoming"],
+    victims: ["250+ inmates died within walls"],
+    dates: "1901-1981",
+    relatedLocationIds: ['matthew-shepard-murder-site', 'rock-springs-massacre'],
+    tags: ["Prison", "Executions", "Haunted"],
+    status: "Museum",
+    paranormal: "Considered one of Wyoming's most haunted locations, with extensive reports of footsteps, voices, cell doors slamming, and physical contact during ghost tours."
+  },
+  {
+    id: 'rock-springs-massacre',
+    name: "Rock Springs Chinese Massacre",
+    crime: "Anti-Chinese Race Riot & Massacre",
+    state: State.WYOMING,
+    region: "Rock Springs",
+    address: "Rock Springs, WY",
+    driveTime: "3.5 hours from airport",
+    story: [
+        "On September 2, 1885, racial and economic tensions erupted into one of America's worst anti-Chinese massacres. White miners in Rock Springs, angry over Chinese laborers being used as strikebreakers, attacked the local Chinatown.",
+        "They murdered at least 28 Chinese miners, wounded many more, and burned 78 homes to the ground, driving the entire Chinese population out of the city. Despite the public nature of the violence, no one was ever prosecuted for the crimes."
+    ],
+    accessibility: "There are no specific historical markers for the massacre within the town itself, though a memorial statue is planned. The history is preserved in local museums and historical records.",
+    gps: "41.5872, -109.2201",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["White miners of Rock Springs"],
+    victims: ["28-30 Chinese miners"],
+    dates: "September 2, 1885",
+    relatedLocationIds: ['wyoming-frontier-prison', 'mountain-meadows-massacre'],
+    tags: ["Massacre", "Historical", "Wyoming"],
+    status: "City-wide historical event",
+  },
+  {
+    id: 'johnson-county-war',
+    name: "Johnson County War Battlefields (TA Ranch)",
+    crime: "Range War Siege",
+    state: State.WYOMING,
+    region: "Northern Wyoming",
+    address: "South of Buffalo, WY",
+    driveTime: "7-8 hours from airport",
+    story: [
+      "The TA Ranch was the site of the final siege of the Johnson County War in April 1892. A group of wealthy cattle barons, known as 'The Invaders,' hired gunmen to eliminate suspected rustlers (mostly smaller homesteaders).",
+      "After murdering two men, Nate Champion and Nick Ray, at the KC Ranch, the Invaders were besieged at the TA Ranch by over 400 armed local citizens. They were saved from being wiped out only by the intervention of the U.S. Cavalry. The event epitomized the violent conflicts of the open-range era."
+    ],
+    accessibility: "The TA Ranch is now a working guest ranch and a Smithsonian Historic Landmark. The original ranch house and bullet-riddled barn are preserved and can be visited.",
+    gps: "44.2000, -106.7000",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["The Invaders (Cattle Barons)"],
+    victims: ["Nate Champion", "Nick Ray", "and others"],
+    dates: "April 1892",
+    relatedLocationIds: ['fetterman-massacre'],
+    tags: ["Wild West", "Range War", "Wyoming"],
+    status: "Historic Guest Ranch"
+  },
+  {
+    id: 'fetterman-massacre',
+    name: "Fetterman Massacre Site",
+    crime: "Military Ambush & Massacre",
+    state: State.WYOMING,
+    region: "Near Story, WY",
+    address: "Fort Phil Kearny State Historic Site",
+    driveTime: "8 hours from airport",
+    story: [
+      "On December 21, 1866, near Fort Phil Kearny, a coalition of Lakota, Cheyenne, and Arapaho warriors led by Red Cloud and Crazy Horse executed a brilliant ambush. They lured a command of 81 U.S. soldiers, led by the arrogant Captain William J. Fetterman, into a trap.",
+      "The entire U.S. command was annihilated in less than an hour, representing the U.S. Army's worst defeat on the Great Plains until the Battle of the Little Bighorn a decade later. The event dramatically altered the balance of power in the region during Red Cloud's War."
+    ],
+    accessibility: "The site is part of the Fort Phil Kearny State Historic Site and is accessible to the public. An interpretive trail follows the ridge where the battle took place, offering insights into the military disaster.",
+    gps: "44.5583, -106.8189",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Lakota, Cheyenne, and Arapaho warriors"],
+    victims: ["81 U.S. soldiers"],
+    dates: "December 21, 1866",
+    relatedLocationIds: ['sand-creek-massacre', 'bear-river-massacre'],
+    tags: ["Massacre", "Military History", "Native American History"],
+    status: "State Historic Site",
+  },
+  {
+    id: 'amy-wroe-bechtel',
+    name: "Amy Wroe Bechtel Disappearance Area",
+    crime: "Unsolved Missing Person",
+    state: State.WYOMING,
+    region: "Wind River Mountains",
+    address: "Loop Road between Lander and South Pass, WY",
+    driveTime: "6-7 hours from airport",
+    story: [
+      "On July 24, 1997, Amy Wroe Bechtel, a 24-year-old Olympic marathon hopeful, vanished while scouting a race route in the Shoshone National Forest. Her car was found parked at Burnt Gulch with her keys inside, but no trace of her was ever found.",
+      "Her husband, Steve Bechtel, and convicted serial killer Dale Wayne Eaton have both been considered persons of interest, but the case remains a baffling and tragic unsolved mystery."
+    ],
+    accessibility: "The area is a remote and rugged part of the Shoshone National Forest. The Loop Road is unpaved and closes seasonally. This is a wilderness area requiring preparation to visit.",
+    gps: "42.6730, -108.8780",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Unknown"],
+    victims: ["Amy Wroe Bechtel"],
+    dates: "July 24, 1997",
+    relatedLocationIds: ['susan-powell-disappearance'],
+    tags: ["Missing Person", "Unsolved", "Wilderness"],
+    status: "National Forest"
+  },
+  // COLORADO
+  {
+    id: 'columbine-high-school',
+    name: "Columbine High School",
+    crime: "School Shooting / Domestic Terrorism",
+    state: State.COLORADO,
+    region: "Denver Metro Area",
+    address: "6201 S Pierce St, Littleton, CO",
+    driveTime: "8 hours from airport",
+    story: [
+      "On April 20, 1999, this suburban high school became the site of one of the most infamous school shootings in history. Seniors Eric Harris and Dylan Klebold murdered 12 students and one teacher and injured 21 others before committing suicide.",
+      "The massacre shocked the world and sparked national debates on gun control, school safety, and bullying. The original library, where most of the carnage occurred, was demolished and replaced with a new atrium. A memorial garden now stands on a hill adjacent to the school.",
+    ],
+    accessibility: "Columbine is an active high school with enhanced security. The campus is not open to the public during school hours. The Columbine Memorial is located in Clement Park, adjacent to the school, and is open to all. It is a place for quiet reflection.",
+    gps: "39.6039, -105.0741",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Eric Harris", "Dylan Klebold"],
+    victims: ["13 deceased", "21+ injured"],
+    dates: "April 20, 1999",
+    relatedLocationIds: ['aurora-theater-shooting', 'jonbenet-ramsey-house'],
+    tags: ["School Shooting", "True Crime", "Colorado"],
+    status: "Active High School / Public Memorial"
+  },
+  {
+    id: 'aurora-theater-shooting',
+    name: "Aurora Theater Shooting",
+    crime: "Mass Shooting",
+    state: State.COLORADO,
+    region: "Denver Metro Area",
+    address: "14300 E Alameda Ave, Aurora, CO",
+    driveTime: "8.5 hours from airport",
+    story: [
+        "During a midnight screening of 'The Dark Knight Rises' on July 20, 2012, James Holmes entered Theater 9 of the Century 16 cinema complex, set off tear gas grenades, and opened fire on the audience.",
+        "He killed 12 people and injured 70 others in one of the deadliest mass shootings in modern U.S. history. The attack's location and timing, during a popular movie premiere, amplified its cultural impact and horror."
+    ],
+    accessibility: "The theater complex was remodeled and has since reopened under a different name. The specific auditorium, Theater 9, has been converted into a large-screen auditorium. A memorial, the Aurora Memorial Garden, is located at the Municipal Center and features a sculpture of 83 metal cranes.",
+    gps: "39.7118, -104.8213",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["James Holmes"],
+    victims: ["12 deceased", "70 injured"],
+    dates: "July 20, 2012",
+    relatedLocationIds: ['columbine-high-school', 'jonbenet-ramsey-house'],
+    tags: ["Mass Shooting", "Aurora", "Colorado"],
+    status: "Commercial Theater / Public Memorial"
+  },
+  {
+    id: 'jonbenet-ramsey-house',
+    name: "JonBenét Ramsey House",
+    crime: "Unsolved Child Murder",
+    state: State.COLORADO,
+    region: "Boulder",
+    address: "749 15th St, Boulder, CO",
+    driveTime: "8.5 hours from airport",
+    story: [
+        "This upscale Boulder home became the center of a media firestorm on December 26, 1996, when 6-year-old beauty queen JonBenét Ramsey was found murdered in the basement.",
+        "The case remains one of America's most high-profile unsolved mysteries, filled with theories of an intruder versus family involvement. The convoluted crime scene, a lengthy ransom note, and the family's wealth created a perfect storm for public fascination and speculation that continues to this day."
+    ],
+    accessibility: "This is a private residence and has been sold multiple times since the murder. The address was changed from 755 to 749 to deter tourists. Viewable only from the street; please be extremely respectful of the owners' privacy.",
+    gps: "40.0098, -105.2718",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Unknown"],
+    victims: ["JonBenét Ramsey"],
+    dates: "December 25-26, 1996",
+    relatedLocationIds: ['columbine-high-school', 'aurora-theater-shooting'],
+    tags: ["Unsolved Mystery", "True Crime", "Boulder"],
+    status: "Private Residence"
+  },
+  {
+    id: 'sand-creek-massacre',
+    name: "Sand Creek Massacre Site",
+    crime: "Massacre of Native Americans",
+    state: State.COLORADO,
+    region: "Kiowa County",
+    address: "Sand Creek Massacre National Historic Site",
+    driveTime: "9 hours from airport",
+    story: [
+        "On November 29, 1864, a force of 675 U.S. volunteer soldiers led by Colonel John Chivington attacked a peaceful village of Cheyenne and Arapaho people camped along Sand Creek. The villagers were assured of their safety and were flying both an American flag and a white flag of truce.",
+        "Chivington's militia killed and mutilated an estimated 230 people, most of them women, children, and the elderly. The atrocity was a pivotal event in the American Indian Wars and permanently changed the relationship between the U.S. government and Native American tribes."
+    ],
+    accessibility: "The location is now a National Historic Site managed by the National Park Service. It features a visitor center and walking trails that provide context and a place for reflection on the massacre.",
+    gps: "38.5639, -102.5186",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Colonel John Chivington's Colorado Militia"],
+    victims: ["230+ Cheyenne and Arapaho people"],
+    dates: "November 29, 1864",
+    relatedLocationIds: ['fetterman-massacre', 'mountain-meadows-massacre'],
+    tags: ["Massacre", "Native American History", "Colorado"],
+    status: "National Historic Site",
+  },
+  {
+    id: 'ludlow-massacre',
+    name: "Ludlow Massacre Monument",
+    crime: "Massacre of Striking Coal Miners",
+    state: State.COLORADO,
+    region: "Ludlow",
+    address: "Ludlow, CO",
+    driveTime: "7 hours from airport",
+    story: [
+        "This monument marks the site of one of the deadliest events in American labor history. On April 20, 1914, during a coal strike, the Colorado National Guard and coal company guards attacked a tent colony of 1,200 striking miners and their families.",
+        "The attack culminated in the burning of the camp and the deaths of approximately 25 people, including two women and eleven children who suffocated in a 'death pit' beneath a burned tent. The massacre ignited a period of widespread labor violence in Colorado."
+    ],
+    accessibility: "The site is a National Historic Landmark maintained by the United Mine Workers of America. A granite monument marks the location of the 'death pit,' and interpretive panels explain the history of the event.",
+    gps: "37.3339, -104.5828",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Colorado National Guard", "Colorado Fuel & Iron Company Guards"],
+    victims: ["25 striking miners and family members"],
+    dates: "April 20, 1914",
+    relatedLocationIds: ['rock-springs-massacre', 'museum-of-colorado-prisons'],
+    tags: ["Massacre", "Labor History", "Colorado"],
+    status: "National Historic Landmark",
+    paranormal: "Visitors report apparitions of women and children near the monument and the 'death pit'."
+  },
+  {
+    id: 'alferd-packer-site',
+    name: "Alferd Packer Massacre Site",
+    crime: "Cannibalism",
+    state: State.COLORADO,
+    region: "San Juan Mountains",
+    address: "Near Lake City, CO",
+    driveTime: "10 hours from airport",
+    story: [
+      "In the winter of 1874, prospector Alferd Packer emerged from the wilderness as the sole survivor of a six-man expedition. He later confessed to having killed his companions and cannibalized their remains to survive.",
+      "Dubbed the 'Colorado Cannibal,' his story has become a grisly legend. The massacre site, where the remains of his victims were found, was a tourist attraction for years before being closed to the public."
+    ],
+    accessibility: "The site is on private property and was closed to visitors in 2021. Packer's grave in the Littleton Cemetery is cemented over to prevent vandalism and theft.",
+    gps: "38.001, -107.320",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["Alferd Packer"],
+    victims: ["Five prospectors"],
+    dates: "February 1874",
+    relatedLocationIds: [],
+    tags: ["Cannibalism", "Historical", "Colorado"],
+    status: "Private Property (Inaccessible)"
+  },
+  {
+    id: 'doc-holliday-grave',
+    name: "Doc Holliday's Grave",
+    crime: "Grave of a Gunfighter",
+    state: State.COLORADO,
+    region: "Glenwood Springs",
+    address: "Linwood Cemetery, Glenwood Springs, CO",
+    driveTime: "7.5 hours from airport",
+    story: [
+      "Famed gambler and gunfighter John Henry 'Doc' Holliday, best known for his role in the Gunfight at the O.K. Corral, died of tuberculosis in Glenwood Springs. His grave is located in the historic Linwood Cemetery.",
+      "Ironically, the man who lived by the gun died in bed, reportedly uttering 'This is funny' as his last words, amused that he was dying barefoot rather than 'with his boots on.' The nearby grave of fellow outlaw Kid Curry adds to the site's dark allure."
+    ],
+    accessibility: "The cemetery is open to the public but requires a moderate 0.7-mile hike up a steep trail from 12th Street and Bennett Avenue.",
+    gps: "39.5442, -107.3175",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: [],
+    victims: ["Doc Holliday"],
+    dates: "Died November 8, 1887",
+    relatedLocationIds: ['billy-the-kid-lincoln-courthouse'],
+    tags: ["Wild West", "Gunfighter", "Grave"],
+    status: "Public Cemetery"
+  },
+  // IDAHO
+  {
+    id: 'old-idaho-penitentiary',
+    name: "Old Idaho Penitentiary",
+    crime: "Historic Prison & Execution Site",
+    state: State.IDAHO,
+    region: "Boise",
+    address: "2445 Old Penitentiary Road, Boise, ID",
+    driveTime: "5 hours from airport",
+    story: [
+      "The 'Old Pen' operated from 1872 to 1973, housing some of the West's most notorious criminals, including 'Lady Bluebeard' Lyda Southard, who was convicted of poisoning multiple husbands. The prison also housed Harry Orchard, who assassinated former Governor Frank Steunenberg.",
+      "The imposing sandstone walls witnessed riots, daring escapes, and 10 executions. Today, it stands as a museum and one of Idaho's most popular historical sites."
+    ],
+    accessibility: "The site is open to the public as a museum. Visitors can explore cell blocks, solitary confinement, and the gallows. The complex also offers paranormal investigation tours.",
+    gps: "43.5958, -116.1640",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["State of Idaho"],
+    victims: ["130+ inmates died within walls"],
+    dates: "1872-1973",
+    relatedLocationIds: ['bear-river-massacre', 'daybell-vallow-murders'],
+    tags: ["Prison", "Haunted", "Boise"],
+    status: "Museum",
+    paranormal: "Considered Idaho's most haunted location, with frequent reports of apparitions, disembodied voices, and unexplained events, especially in the solitary confinement area known as 'Siberia'."
+  },
+  {
+    id: 'bear-river-massacre',
+    name: "Bear River Massacre Site",
+    crime: "Massacre of Native Americans",
+    state: State.IDAHO,
+    region: "Near Preston, ID",
+    address: "Near Preston, ID",
+    driveTime: "2 hours from airport",
+    story: [
+        "On January 29, 1863, a unit of the U.S. Army's California Volunteers, led by Colonel Patrick Connor, attacked a winter encampment of Northwestern Shoshone people along the Bear River. In a brutal, hours-long assault, the soldiers killed between 250 and 450 Shoshone, including at least 90 women and children.",
+        "It was the single deadliest documented massacre of Native Americans by the U.S. military in American history, yet it remains far less known than similar events like Wounded Knee."
+    ],
+    accessibility: "The site is a National Historic Landmark. Much of the land is now owned by the Northwestern Band of the Shoshone Nation, who are developing an interpretive center to tell the story from their perspective. The site is accessible and has markers explaining the event.",
+    gps: "42.1500, -111.9000",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Col. Patrick Connor's California Volunteers"],
+    victims: ["250-450+ Northwestern Shoshone"],
+    dates: "January 29, 1863",
+    relatedLocationIds: ['mountain-meadows-massacre', 'sand-creek-massacre'],
+    tags: ["Massacre", "Native American History", "Idaho"],
+    status: "National Historic Landmark",
+  },
+  {
+    id: 'daybell-vallow-murders',
+    name: "Chad Daybell / Lori Vallow Murder Site",
+    crime: "Doomsday-Motivated Double Murder of Children",
+    state: State.IDAHO,
+    region: "Rexburg",
+    address: "Rexburg, ID",
+    driveTime: "6 hours from airport",
+    story: [
+      "The Rexburg area became the center of a bizarre and tragic case involving doomsday author Chad Daybell and Lori Vallow. After the disappearance of Vallow's children, 7-year-old J.J. Vallow and 16-year-old Tylee Ryan, a nationwide search ensued.",
+      "In June 2020, their remains were discovered buried in Chad Daybell's backyard. The investigation revealed a complex web of doomsday beliefs, mysterious deaths, and manipulation, culminating in life sentences for both Daybell and Vallow for the murders."
+    ],
+    accessibility: "The property where the children's remains were found was demolished shortly after the discovery. It is now an empty lot. Please be respectful of the sensitive nature of this location and the privacy of neighbors.",
+    gps: "43.8236, -111.7214",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["Chad Daybell", "Lori Vallow"],
+    victims: ["J.J. Vallow", "Tylee Ryan"],
+    dates: "September 2019 (Murders)",
+    relatedLocationIds: ['old-idaho-penitentiary', 'lafferty-murders'],
+    tags: ["Cults", "Familicide", "Rexburg"],
+    status: "Empty Lot (Private Property)",
+  },
+  {
+    id: 'joseph-duncan-crimes',
+    name: "Groene Family Murders (Joseph Duncan III)",
+    crime: "Mass Murder & Kidnapping",
+    state: State.IDAHO,
+    region: "Coeur d'Alene",
+    address: "Wolf Lodge Road, Coeur d'Alene, ID",
+    driveTime: "8+ hours from airport",
+    story: [
+      "On May 16, 2005, convicted sexual predator Joseph Duncan III broke into the Groene family home near Coeur d'Alene. He murdered Brenda Groene, her boyfriend, and her 13-year-old son, then kidnapped her two youngest children, Dylan (9) and Shasta (8).",
+      "Duncan murdered Dylan in the Montana wilderness before being captured seven weeks later at a Denny's in Coeur d'Alene after a waitress recognized Shasta. His horrific crime spree shocked the nation."
+    ],
+    accessibility: "The home on Wolf Lodge Road is private property. The Denny's where Duncan was arrested is still operational. This case involves multiple remote and sensitive locations.",
+    gps: "47.633, -116.591",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["Joseph Duncan III"],
+    victims: ["Brenda Groene", "Mark McKenzie", "Slade Groene", "Dylan Groene", "Shasta Groene (survived)"],
+    dates: "May 16, 2005",
+    relatedLocationIds: ['ruby-ridge'],
+    tags: ["Mass Murder", "Kidnapping", "Survivor"],
+    status: "Private & Commercial Properties"
+  },
+  {
+    id: 'ruby-ridge',
+    name: "Ruby Ridge Siege Site",
+    crime: "Armed Standoff / Federal Siege",
+    state: State.IDAHO,
+    region: "Boundary County",
+    address: "Near Naples, ID",
+    driveTime: "10+ hours from airport",
+    story: [
+        "In August 1992, this remote mountaintop cabin became the site of an 11-day siege between the family of Randy Weaver and federal agents from the U.S. Marshals and FBI. The initial conflict resulted in the deaths of Deputy U.S. Marshal William Degan and the Weavers' 14-year-old son, Samuel.",
+        "The following day, an FBI sniper killed Randy's wife, Vicki Weaver, as she held her infant daughter. The event became a controversial and polarizing moment in U.S. law enforcement history and a rallying cry for anti-government extremists."
+    ],
+    accessibility: "The property is still privately owned by the Weaver family. It is located on a remote mountain and is not accessible to the public. The area is rugged and isolated.",
+    gps: "48.5866, -116.4833",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["U.S. Marshals", "FBI"],
+    victims: ["Vicki Weaver", "Samuel Weaver", "William Degan"],
+    dates: "August 21-31, 1992",
+    relatedLocationIds: ['unabomber-cabin-site'],
+    tags: ["Standoff", "Anti-Government", "Idaho"],
+    status: "Private Property",
+  },
+  {
+    id: 'chinese-massacre-cove',
+    name: "Chinese Massacre Cove",
+    crime: "Massacre of Chinese Gold Miners",
+    state: State.IDAHO,
+    region: "Hells Canyon",
+    address: "Hells Canyon National Recreation Area",
+    driveTime: "7.5 hours from airport",
+    story: [
+        "In May 1887, in the remote depths of Hells Canyon, a gang of white horse thieves ambushed and murdered as many as 34 Chinese gold miners for their gold. It was one of the most brutal and deadly anti-Chinese massacres in American history.",
+        "The crime was largely forgotten for over a century. Due to the extreme remoteness of the site, justice was never served, and the full story has only been pieced together in recent decades."
+    ],
+    accessibility: "This is one of the most remote sites in the compendium. It is located in the Hells Canyon National Recreation Area and is accessible only by jet boat or a very difficult multi-day hike. A granite memorial was placed at the site in 2012.",
+    gps: "45.4190, -116.7118",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["White horse thieves"],
+    victims: ["34 Chinese gold miners"],
+    dates: "May 1887",
+    relatedLocationIds: ['rock-springs-massacre', 'sand-creek-massacre'],
+    tags: ["Massacre", "Historical", "Remote"],
+    status: "National Recreation Area",
+  },
+  // NEVADA
+  {
+    id: 'route-91-harvest-festival',
+    name: "Route 91 Harvest Festival Site",
+    crime: "Deadliest Mass Shooting in U.S. History",
+    state: State.NEVADA,
+    region: "Las Vegas",
+    address: "3950 S Las Vegas Blvd, Las Vegas, NV",
+    driveTime: "6.5 hours from airport",
+    story: [
+      "On the night of October 1, 2017, this site became a killing field. During a country music festival, gunman Stephen Paddock opened fire from his suite on the 32nd floor of the Mandalay Bay hotel, located across the street.",
+      "In just over 10 minutes, he fired more than 1,000 rounds into the crowd, killing 60 people and wounding over 800 others in the deadliest mass shooting by a single individual in United States history. Paddock was found dead in his room from a self-inflicted gunshot wound."
+    ],
+    accessibility: "The festival site itself is now a parking lot for Allegiant Stadium. A permanent memorial, the 'Healing Garden,' is located downtown. The Mandalay Bay hotel is operational, but the two rooms used by the shooter (32-134 and 32-135) are permanently closed to the public.",
+    gps: "36.0950, -115.1764",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Stephen Paddock"],
+    victims: ["60 deceased", "867 injured"],
+    dates: "October 1, 2017",
+    relatedLocationIds: ['tupac-shakur-shooting-site', 'columbine-high-school'],
+    tags: ["Mass Shooting", "Las Vegas", "Modern Tragedy"],
+    status: "Parking Lot / Hotel",
+    paranormal: "Reports of paranormal activity have been noted in relation to the permanently closed Mandalay Bay rooms 32-134 and 32-135."
+  },
+  {
+    id: 'tupac-shakur-shooting-site',
+    name: "Tupac Shakur Shooting Site",
+    crime: "Unsolved Murder of a Music Icon",
+    state: State.NEVADA,
+    region: "Las Vegas",
+    address: "East Flamingo Road & Koval Lane, Las Vegas, NV",
+    driveTime: "6.5 hours from airport",
+    story: [
+        "On the night of September 7, 1996, following a Mike Tyson fight, a car carrying hip-hop superstar Tupac Shakur stopped at a red light at this intersection. A white Cadillac pulled up alongside, and an occupant opened fire, striking Shakur multiple times.",
+        "He died from his injuries six days later. The murder remains officially unsolved and has been the subject of intense speculation and countless theories, cementing its place in modern crime lore."
+    ],
+    accessibility: "This is a public intersection on the Las Vegas Strip. There is no official memorial, but fans often leave tributes on a nearby utility pole. The intersection itself remains largely unchanged since the shooting.",
+    gps: "36.1147, -115.1652",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Unknown"],
+    victims: ["Tupac Shakur"],
+    dates: "September 7, 1996",
+    relatedLocationIds: ['route-91-harvest-festival', 'binion-murder'],
+    tags: ["Unsolved Mystery", "Murder", "Las Vegas"],
+    status: "Public Intersection",
+  },
+  {
+    id: 'binion-murder',
+    name: "Ted Binion Murder House",
+    crime: "Murder of a Casino Heir",
+    state: State.NEVADA,
+    region: "Las Vegas",
+    address: "2408 Palomino Lane, Las Vegas, NV",
+    driveTime: "6.5 hours from airport",
+    story: [
+        "On September 17, 1998, wealthy casino executive Ted Binion was found dead in his Las Vegas home. Initially ruled a drug overdose, the case was later deemed a homicide, leading to the arrest of his girlfriend, Sandy Murphy, and her lover, Rick Tabish.",
+        "Prosecutors argued they had forced Binion to ingest a fatal cocktail of drugs and Xanax to steal his fortune, including a hidden vault of silver. The sensational case, dubbed the 'trial of the century,' ended in an acquittal on retrial, leaving the death officially unresolved."
+    ],
+    accessibility: "The house is a private residence. It is viewable only from the street. Please respect the privacy of the occupants.",
+    gps: "36.1432, -115.1923",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Sandy Murphy (acquitted)", "Rick Tabish (acquitted)"],
+    victims: ["Ted Binion"],
+    dates: "September 17, 1998",
+    relatedLocationIds: ['tupac-shakur-shooting-site', 'route-91-harvest-festival'],
+    tags: ["Unsolved Mystery", "Murder", "Las Vegas"],
+    status: "Private Residence",
+  },
+  {
+    id: 'nevada-state-prison',
+    name: "Nevada State Prison",
+    crime: "Historic Prison & Execution Site",
+    state: State.NEVADA,
+    region: "Carson City",
+    address: "Carson City, NV",
+    driveTime: "8 hours from airport",
+    story: [
+        "Operating from 1862 until 2012, the Nevada State Prison has a long and dark history. It was the site of 54 executions and housed America's very first gas chamber, used to execute Gee Jon on February 8, 1924.",
+        "The now-decommissioned facility is being preserved as a historic site, offering a window into the brutal realities of 150 years of incarceration and capital punishment in the American West."
+    ],
+    accessibility: "The prison is closed but offers historical and paranormal tours to the public. These tours provide access to the death house and other significant areas of the facility.",
+    gps: "39.1556, -119.7563",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["State of Nevada"],
+    victims: ["54 executed individuals"],
+    dates: "1862-2012",
+    relatedLocationIds: ['old-idaho-penitentiary', 'wyoming-frontier-prison'],
+    tags: ["Prison", "Executions", "Haunted"],
+    status: "Museum (Tours available)",
+    paranormal: "Paranormal investigators have documented 'hundreds' of spirits within the prison walls, particularly in the death house."
+  },
+  {
+    id: 'virginia-city-vigilantes',
+    name: "Virginia City Vigilante Justice",
+    crime: "Vigilante Justice & Mining Camp Violence",
+    state: State.NEVADA,
+    region: "Virginia City",
+    address: "Virginia City, NV",
+    driveTime: "8.5 hours from airport",
+    story: [
+      "This preserved mining town witnessed extensive vigilante justice during its boom years. The murder of beloved prostitute Julia Bulette in 1867 shocked the community. The town's Boot Hill Cemetery contains the graves of 24 victims of vigilante mobs.",
+      "The raw, often brutal, law of the Comstock Lode is preserved in the town's historic buildings and cemeteries, offering a stark look at frontier justice."
+    ],
+    accessibility: "Virginia City is a historic town with many preserved buildings, museums, and cemeteries open to the public. Multiple ghost tours operate year-round.",
+    gps: "39.3100, -119.6491",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Vigilantes"],
+    victims: ["24+ individuals"],
+    dates: "1860s-1880s",
+    relatedLocationIds: ['bannack-state-park', 'bodie-ghost-town'],
+    tags: ["Wild West", "Vigilante", "Ghost Town"],
+    status: "Historic Town"
+  },
+  {
+    id: 'pioche-nevada',
+    name: "Pioche, Nevada Cemetery",
+    crime: "Gunfighter Graveyard",
+    state: State.NEVADA,
+    region: "Eastern Nevada",
+    address: "Pioche, NV",
+    driveTime: "5 hours from airport",
+    story: [
+      "Pioche was one of the deadliest, most lawless towns in the Old West. It famously buried 72 men in gunfights before its first natural death. The town's violent legacy is best seen in its cemetery.",
+      "The cemetery's 'Murderers' Row' contains the graves of numerous men who 'died with their boots on,' a testament to the town's violent silver mining boom."
+    ],
+    accessibility: "The town and its historic cemetery are accessible to the public. It is a well-preserved example of a violent Nevada mining town.",
+    gps: "37.9288, -114.4530",
+    notorietyLevel: NotorietyLevel.LOCAL,
+    perpetrators: ["Various gunfighters"],
+    victims: ["72+ individuals"],
+    dates: "Late 1800s",
+    relatedLocationIds: ['bodie-ghost-town', 'doc-holliday-grave'],
+    tags: ["Wild West", "Gunfighter", "Ghost Town"],
+    status: "Historic Town"
+  },
+  // ARIZONA
+  {
+    id: 'jodi-arias-murder',
+    name: "Jodi Arias Murder Scene",
+    crime: "Murder",
+    state: State.ARIZONA,
+    region: "Phoenix Metro Area",
+    address: "11428 East Queensborough Avenue, Mesa, AZ",
+    driveTime: "11 hours from airport",
+    story: [
+        "On June 4, 2008, this suburban home became the site of a brutal and sensationalized murder. Jodi Arias killed her ex-boyfriend, Travis Alexander, stabbing him 27 times, slitting his throat, and shooting him in the head.",
+        "The subsequent trial became a media circus, filled with graphic details and bizarre testimony. Arias was convicted of first-degree murder and sentenced to life in prison. The case remains a touchstone of modern true crime fascination."
+    ],
+    accessibility: "The house is a private residence. It was featured on the television show 'Murder House Flip' in 2022. Please respect the privacy of the current occupants.",
+    gps: "33.4005, -111.6669",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["Jodi Arias"],
+    victims: ["Travis Alexander"],
+    dates: "June 4, 2008",
+    relatedLocationIds: ['binion-murder'],
+    tags: ["Murder", "Mesa", "True Crime"],
+    status: "Private Residence",
+  },
+  {
+    id: 'baseline-killer',
+    name: "Baseline Killer Crime Corridor",
+    crime: "Serial Murder, Rape, and Robbery Spree",
+    state: State.ARIZONA,
+    region: "Phoenix Metro Area",
+    address: "Baseline Road Corridor, Phoenix, AZ",
+    driveTime: "10.5 hours from airport",
+    story: [
+      "From August 2005 to June 2006, Mark Goudeau terrorized the Phoenix area in a crime spree that included 9 murders, 15 sexual assaults, and numerous other felonies, primarily along the Baseline Road corridor.",
+      "His random pattern of attacks created widespread fear until his capture, which was aided by DNA evidence. Goudeau was sentenced to death and remains on Arizona's death row."
+    ],
+    accessibility: "The crimes occurred over a wide area along a major public thoroughfare. There are no specific memorials. The locations are a mix of residential and commercial areas.",
+    gps: "33.3787, -112.0740",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Mark Goudeau (The Baseline Killer)"],
+    victims: ["9 deceased", "15+ assaulted"],
+    dates: "2005-2006",
+    relatedLocationIds: [],
+    tags: ["Serial Killer", "Phoenix", "Spree Killer"],
+    status: "Public Thoroughfare"
+  },
+  {
+    id: 'apache-death-cave',
+    name: "Apache Death Cave",
+    crime: "Massacre Site",
+    state: State.ARIZONA,
+    region: "Near Two Guns, AZ",
+    address: "Two Guns, AZ (Route 66)",
+    driveTime: "8-9 hours from airport",
+    story: [
+        "In 1878, this cave became a tomb. As revenge for an Apache raid, Navajo scouts tracked a group of 42 Apache warriors to this cave. The Navajo lit a large fire at the cave's entrance, blocking the only exit and asphyxiating every person trapped inside.",
+        "The site is part of the ghost town of Two Guns along historic Route 66 and is steeped in legends of curses and paranormal activity stemming from the massacre."
+    ],
+    accessibility: "The cave is located in an abandoned roadside attraction and is accessible, but extremely dangerous. The ground is unstable, and there are deep, unmarked crevices. Entry is not recommended. The area is littered with ruins and debris.",
+    gps: "35.1235, -111.0877",
+    notorietyLevel: NotorietyLevel.LOCAL,
+    perpetrators: ["Navajo Scouts"],
+    victims: ["42 Apache warriors"],
+    dates: "1878",
+    relatedLocationIds: ['mountain-meadows-massacre', 'sand-creek-massacre'],
+    tags: ["Massacre", "Haunted", "Route 66"],
+    status: "Abandoned Ruins",
+    paranormal: "Numerous paranormal reports are associated with the cave and the surrounding ghost town of Two Guns."
+  },
+  {
+    id: 'yuma-territorial-prison',
+    name: "Yuma Territorial Prison",
+    crime: "Historic Prison",
+    state: State.ARIZONA,
+    region: "Yuma",
+    address: "220 Prison Hill Rd, Yuma, AZ",
+    driveTime: "12 hours from airport",
+    story: [
+        "Operating from 1876 to 1909, the Yuma Territorial Prison was a notoriously harsh institution in the scorching Arizona desert. It housed 3,069 prisoners, including Pearl Hart, the last person to rob a stagecoach in the U.S.",
+        "Known for its brutal discipline, including the 'Dark Room' for solitary confinement, the prison is now a well-preserved historic state park that offers a stark look at justice and punishment in the Old West."
+    ],
+    accessibility: "The site is now the Yuma Territorial Prison State Historic Park and is fully accessible to the public. Visitors can explore the original cellblocks, guard tower, and a museum.",
+    gps: "32.7270, -114.6133",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Arizona Territory"],
+    victims: ["3,069 prisoners"],
+    dates: "1876-1909",
+    relatedLocationIds: ['wyoming-frontier-prison', 'old-idaho-penitentiary'],
+    tags: ["Prison", "Wild West", "Haunted"],
+    status: "State Historic Park",
+    paranormal: "The 'Dark Room' is considered the most haunted area, with reports of ghostly children and the sound of rattling chains."
+  },
+  // NEW MEXICO
+  {
+    id: 'west-mesa-bone-collector',
+    name: "West Mesa Bone Collector Site",
+    crime: "Serial Killer Burial Ground",
+    state: State.NEW_MEXICO,
+    region: "Albuquerque",
+    address: "118th Street SW, Albuquerque, NM",
+    driveTime: "9.75 hours from airport",
+    story: [
+      "In 2009, a woman walking her dog on this desolate mesa stumbled upon a human bone, leading to the discovery of one of America's largest crime scenes. Investigators ultimately unearthed the remains of 11 women and one unborn child, all of whom had disappeared between 2001 and 2005.",
+      "The unknown serial killer was dubbed the 'West Mesa Bone Collector.' The case remains unsolved, and the vast, empty landscape serves as a haunting, unmarked grave for the victims. The FBI continues to offer a $100,000 reward for information."
+    ],
+    accessibility: "The site is an undeveloped desert mesa on the outskirts of Albuquerque. It is publicly accessible but there are no official markers or trails. It is recommended to visit during daylight hours with a suitable vehicle. The area is vast and can be disorienting.",
+    gps: "35.0500, -106.8150",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Unknown ('West Mesa Bone Collector')"],
+    victims: ["11 women and one unborn child"],
+    dates: "2001-2005 (Disappearances)",
+    relatedLocationIds: ['david-parker-ray-toy-box', 'old-new-mexico-penitentiary'],
+    tags: ["Unsolved Mystery", "Serial Killer", "Albuquerque"],
+    status: "Undeveloped Public Land"
+  },
+  {
+    id: 'david-parker-ray-toy-box',
+    name: "David Parker Ray's 'Toy Box'",
+    crime: "Serial Torture & Suspected Murder",
+    state: State.NEW_MEXICO,
+    region: "Elephant Butte",
+    address: "513 Bass Road, Elephant Butte, NM",
+    driveTime: "11 hours from airport",
+    story: [
+        "At this location, David Parker Ray operated a torture chamber he called the 'Toy Box.' From the 1950s until his arrest in 1999, Ray is suspected of abducting, torturing, and murdering as many as 40 to 60 victims inside a soundproofed semi-trailer he had equipped with surgical tools, whips, and chains.",
+        "He was convicted of kidnapping and torture but never murder, as no bodies were ever recovered. He died in prison in 2002, taking his secrets with him."
+    ],
+    accessibility: "The original property is private. The soundproofed trailer, the 'Toy Box' itself, was retained by the FBI as evidence and is not at this location. The area around Elephant Butte Lake was extensively searched for victims.",
+    gps: "33.1751, -107.2144",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["David Parker Ray"],
+    victims: ["Estimated 40+"],
+    dates: "1950s-1999",
+    relatedLocationIds: ['west-mesa-bone-collector', 'old-new-mexico-penitentiary'],
+    tags: ["Serial Killer", "Torture", "New Mexico"],
+    status: "Private Property",
+  },
+  {
+    id: 'billy-the-kid-lincoln-courthouse',
+    name: "Billy the Kid's Lincoln Courthouse Escape",
+    crime: "Jailbreak & Murder of Deputies",
+    state: State.NEW_MEXICO,
+    region: "Lincoln",
+    address: "Lincoln Historic Site, Lincoln, NM",
+    driveTime: "11 hours from airport",
+    story: [
+        "On April 28, 1881, the legendary outlaw Billy the Kid made his most famous escape from this building, the former Lincoln County Courthouse. Sentenced to hang, Billy was being held on the top floor when he managed to acquire a weapon.",
+        "He killed his two guards, Deputy James Bell and Deputy Bob Olinger, in a dramatic and brazen escape, cementing his mythical status in the annals of the American West. The bullet hole from his shotgun blast is still visible in the wall."
+    ],
+    accessibility: "The Lincoln County Courthouse is a central feature of the Lincoln Historic Site, a remarkably preserved frontier town. The building is open to the public as a museum.",
+    gps: "33.4900, -105.3817",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Billy the Kid"],
+    victims: ["James Bell", "Bob Olinger"],
+    dates: "April 28, 1881",
+    relatedLocationIds: ['tom-horn-execution-site'],
+    tags: ["Wild West", "Outlaw", "New Mexico"],
+    status: "Historic Site / Museum",
+  },
+  {
+    id: 'old-new-mexico-penitentiary',
+    name: "Old New Mexico State Penitentiary Riot",
+    crime: "Deadliest Prison Riot in U.S. History",
+    state: State.NEW_MEXICO,
+    region: "Near Santa Fe",
+    address: "Santa Fe, NM",
+    driveTime: "10 hours from airport",
+    story: [
+        "On February 2-3, 1980, this prison exploded in what is considered the most violent prison riot in American history. Over 36 hours, inmates took control of the facility, took 12 guards hostage, and engaged in a brutal rampage of violence, torture, and murder against fellow inmates, particularly informants.",
+        "By the time law enforcement regained control, 33 inmates were dead, many having been tortured, dismembered, or burned alive in Cell Block 4. The riot exposed severe issues of overcrowding and mismanagement within the prison system."
+    ],
+    accessibility: "The facility was closed in 1998. It is not regularly open to the public but occasionally offers guided tours. It is also a popular filming location for movies and television shows.",
+    gps: "35.5901, -106.0792",
+    notorietyLevel: NotorietyLevel.ICONIC,
+    perpetrators: ["Inmates"],
+    victims: ["33 inmates"],
+    dates: "February 2-3, 1980",
+    relatedLocationIds: ['wyoming-frontier-prison', 'old-idaho-penitentiary'],
+    tags: ["Prison Riot", "Mass Casualty", "Santa Fe"],
+    status: "Closed Prison / Film Location",
+  },
+  // MONTANA
+  {
+    id: 'unabomber-cabin-site',
+    name: "Unabomber's Cabin Site",
+    crime: "Domestic Terrorist's Hideout",
+    state: State.MONTANA,
+    region: "Lincoln",
+    address: "Stemple Pass Road, Lincoln, MT",
+    driveTime: "8.5 hours from airport",
+    story: [
+      "Deep in the woods near Lincoln, Montana, Ted Kaczynski built a primitive 10x12-foot cabin with no electricity or running water. From this isolated lair, he waged a 17-year domestic terrorism campaign, mailing or hand-delivering sophisticated bombs that killed three people and injured 23 others.",
+      "His 'Unabomber' moniker came from the FBI's case name UNABOM (University and Airline Bomber). He was arrested at this site on April 3, 1996, after his brother recognized his writing style in the published 'Unabomber Manifesto'."
+    ],
+    accessibility: "The site is on private land and is fenced off. Nothing remains but a clearing in the woods where the cabin once stood. The actual cabin was removed as evidence and is now housed at the FBI Museum in Washington D.C. The location is remote and requires travel on unpaved roads.",
+    gps: "46.8523, -112.5539",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Theodore 'Ted' Kaczynski"],
+    victims: ["3 deceased", "23 injured"],
+    dates: "1978-1995 (Bombings)",
+    relatedLocationIds: ['old-montana-prison', 'ruby-ridge'],
+    tags: ["Domestic Terrorism", "FBI", "Montana"],
+    status: "Private Land (Empty Site)"
+  },
+  {
+    id: 'old-montana-prison',
+    name: "Old Montana Prison",
+    crime: "Historic Prison",
+    state: State.MONTANA,
+    region: "Deer Lodge",
+    address: "1106 Main St, Deer Lodge, MT",
+    driveTime: "8.5 hours from airport",
+    story: [
+        "Operating from 1871 to 1979, the Old Montana Prison was the first territorial prison in the state and has a history marked by violence, including the infamous 1959 riot where inmates took 18 prison staff hostage.",
+        "The imposing Gothic-style walls now contain a museum complex, offering visitors a look into over a century of Montana's penal history. The site is a popular destination for paranormal investigators."
+    ],
+    accessibility: "The prison is open to the public as part of a large museum complex. Admission allows for self-guided tours through the cellblocks and prison yard.",
+    gps: "46.3934, -112.7303",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["State of Montana"],
+    victims: ["Inmates and Staff"],
+    dates: "1871-1979",
+    relatedLocationIds: ['wyoming-frontier-prison', 'old-idaho-penitentiary', 'unabomber-cabin-site'],
+    tags: ["Prison", "Haunted", "Montana"],
+    status: "Museum",
+    paranormal: "Significant paranormal activity is reported throughout the complex, especially related to the 1959 prison riot."
+  },
+  {
+    id: 'bannack-state-park',
+    name: "Bannack State Park (Vigilante Hangings)",
+    crime: "Vigilante Justice",
+    state: State.MONTANA,
+    region: "Bannack",
+    address: "4200 Bannack Rd, Dillon, MT",
+    driveTime: "9 hours from airport",
+    story: [
+        "Bannack was Montana's first territorial capital, but it is perhaps more famous for its brutal vigilante justice. In 1864, the Montana Vigilantes hanged Sheriff Henry Plummer and his alleged gang of road agents, 'The Innocents,' from a gallows replica that still stands today.",
+        "Plummer is believed to have orchestrated a string of stagecoach robberies and murders while serving as sheriff. The well-preserved ghost town is now a state park and a stark reminder of the harsh justice of the frontier."
+    ],
+    accessibility: "Bannack is a state park and is open to the public. Visitors can explore over 60 preserved structures. The park offers tours and living history events, as well as ghost tours in October.",
+    gps: "45.1633, -112.9972",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Montana Vigilantes"],
+    victims: ["Sheriff Henry Plummer", "The Innocents"],
+    dates: "January 10, 1864",
+    relatedLocationIds: ['virginia-city-vigilantes', 'billy-the-kid-lincoln-courthouse'],
+    tags: ["Wild West", "Vigilante", "Ghost Town"],
+    status: "State Park",
+    paranormal: "The preserved buildings, particularly the gallows and the Hotel Meade, are sites of reported paranormal activity."
+  },
+  {
+    id: 'wayne-nance',
+    name: "Wayne Nance Crime Scenes",
+    crime: "Serial Killer Spree ('Missoula Mauler')",
+    state: State.MONTANA,
+    region: "Missoula",
+    address: "Missoula, MT",
+    driveTime: "8.67 hours from airport",
+    story: [
+      "Wayne Nance, known as the 'Missoula Mauler,' is suspected of at least 6 murders between 1974 and 1986. His reign of terror ended on September 4, 1986, when he broke into the home of Doug and Kris Wells at 100 Parker Court.",
+      "Nance murdered Doug and was attacking Kris when she managed to grab a gun and kill him. His death at the hands of his intended victims brought an end to his violent spree."
+    ],
+    accessibility: "The crime scenes are spread throughout the Missoula area. The house where he was killed is a private residence. Please be respectful of residents' privacy.",
+    gps: "46.8721, -113.9940",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Wayne Nance"],
+    victims: ["6+ victims", "Doug Wells"],
+    dates: "1974-1986",
+    relatedLocationIds: [],
+    tags: ["Serial Killer", "Missoula", "Justice"],
+    status: "Private Residences"
+  },
+  // CALIFORNIA
+  {
+    id: 'barker-ranch',
+    name: "Barker Ranch (Manson Hideout)",
+    crime: "Cult Hideout",
+    state: State.CALIFORNIA,
+    region: "Death Valley",
+    address: "Death Valley National Park, CA",
+    driveTime: "9 hours from airport",
+    story: [
+      "After the infamous Tate-LaBianca murders in 1969, Charles Manson and his 'Family' fled to this remote, dilapidated ranch in the Mojave Desert. They believed an apocalyptic race war, which they called 'Helter Skelter,' was imminent, and planned to wait it out in the desert.",
+      "Manson was ultimately arrested here on October 12, 1969, found hiding in a small cabinet under a bathroom vanity. The ranch served as the last holdout for one of America's most notorious cults."
+    ],
+    accessibility: "The site is located in a very remote part of Death Valley National Park. A high-clearance 4WD vehicle is required to access the area. Most of the original wooden structures burned down in a 2009 fire, but the stone and concrete foundations remain. This is a challenging location to visit.",
+    gps: "35.8569, -117.1158",
+    notorietyLevel: NotorietyLevel.LEGENDARY,
+    perpetrators: ["Charles Manson", "The Manson Family"],
+    victims: ["Sharon Tate", "Leno & Rosemary LaBianca", "and others"],
+    dates: "1968-1969",
+    relatedLocationIds: ['route-91-harvest-festival', 'daybell-vallow-murders'],
+    tags: ["Cults", "Manson Family", "California"],
+    status: "Historic Ruins"
+  },
+  {
+    id: 'bodie-ghost-town',
+    name: "Bodie Ghost Town",
+    crime: "Lawless Mining Camp",
+    state: State.CALIFORNIA,
+    region: "Eastern Sierra",
+    address: "Bodie State Historic Park, CA",
+    driveTime: "8.5 hours from airport",
+    story: [
+        "Bodie was once one of California's most infamous and lawless mining camps. With a reputation for violence, its Main Street, once a mile long, was lined with 65 saloons. Murders were a daily occurrence, so common that a young girl moving to the town reportedly prayed, 'Goodbye God, we're going to Bodie.'",
+        "The town's decline was swift, and it is now preserved by the California State Parks system in a state of 'arrested decay,' offering an authentic and haunting glimpse into the violent reality of the Gold Rush era."
+    ],
+    accessibility: "The town is a California State Historic Park. About 170 buildings remain. The final miles of road are unpaved, and access can be limited in winter due to snow. The park offers tours, including ghost tours.",
+    gps: "38.2124, -119.0121",
+    notorietyLevel: NotorietyLevel.NATIONAL,
+    perpetrators: ["Miners, Gamblers, Outlaws"],
+    victims: ["Numerous"],
+    dates: "Late 1800s",
+    relatedLocationIds: ['bannack-state-park', 'virginia-city-vigilantes'],
+    tags: ["Wild West", "Ghost Town", "California"],
+    status: "State Historic Park",
+  }
 ];

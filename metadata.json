@@ -1,6 +1,6 @@
 {
-  "name": "SLCTrips - TK-001 - Utah's Hidden Mysteries",
-  "description": "Utah's premier insider travel authority. We publish grounded, Google-native guides and TripKits that make Utah adventure easy, family-friendly, and trustworthy.",
+  "name": "Dark Tourism West: A True Crime Compendium",
+  "description": "Explore infamous true crime locations across the American West. An interactive guide to dark tourism.",
   "requestFramePermissions": [
     "camera"
   ]
