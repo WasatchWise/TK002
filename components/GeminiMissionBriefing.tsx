@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback } from 'react';
 import { GoogleGenAI } from '@google/genai';
 import { CrimeLocation } from '../types';
@@ -6,6 +7,23 @@ import { createCaseFilePrompt } from '../data/prompts';
 interface GeminiCaseBriefingProps {
   destination: CrimeLocation;
 }
+
+const SkeletonLoader = () => (
+    <div className="space-y-4 animate-pulse-slow">
+        <div className="h-4 bg-slctrips-light/10 rounded w-3/4"></div>
+        <div className="h-4 bg-slctrips-light/10 rounded w-full"></div>
+        <div className="h-4 bg-slctrips-light/10 rounded w-5/6"></div>
+        <div className="h-4 bg-slctrips-light/10 rounded w-1/2 mt-4"></div>
+    </div>
+);
+
+const ErrorDisplay = ({ message }: { message: string }) => (
+    <div className="bg-red-900/50 border border-red-500 text-red-300 px-4 py-3 rounded-md">
+        <p className="font-bold">Analysis Failed</p>
+        <p className="text-sm">{message}</p>
+    </div>
+);
+
 
 const GeminiCaseBriefing: React.FC<GeminiCaseBriefingProps> = ({ destination }) => {
   const [briefing, setBriefing] = useState('');
@@ -74,7 +92,7 @@ const GeminiCaseBriefing: React.FC<GeminiCaseBriefingProps> = ({ destination }) 
 
 
   return (
-    <div className="bg-slctrips-navy border-2 border-slctrips-gold p-6 rounded-lg mb-8 shadow-lg text-white">
+    <div className="bg-slctrips-navy border-2 border-slctrips-gold p-6 rounded-lg shadow-lg text-white">
       <h2 className="font-heading text-3xl font-bold text-slctrips-gold mb-4">AI Case Briefing</h2>
       
       {!isGenerated && (
@@ -92,14 +110,14 @@ const GeminiCaseBriefing: React.FC<GeminiCaseBriefingProps> = ({ destination }) 
 
       {isGenerated && (
         <div>
-            {isLoading && !briefing && <p className="text-slctrips-mid animate-pulse">Accessing criminal archives...</p>}
+            {isLoading && !briefing && <SkeletonLoader />}
             
-            <div className="prose prose-invert max-w-none whitespace-pre-wrap">
+            <div className="prose prose-invert max-w-none">
                 {renderFormattedText(briefing)}
                  {isLoading && briefing && <span className="inline-block w-2 h-4 bg-slctrips-gold animate-pulse ml-1"></span>}
             </div>
 
-            {error && <p className="text-red-400 mt-4">{error}</p>}
+            {error && <ErrorDisplay message={error} />}
         </div>
       )}
     </div>

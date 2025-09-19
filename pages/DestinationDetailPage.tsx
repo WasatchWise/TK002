@@ -1,26 +1,26 @@
 
-import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { locations } from '../data/destinations';
-import { EvidenceItem } from '../types';
+import { EvidenceItem, CrimeLocation } from '../types';
 import NotorietyBadge from '../components/FameBadge';
 import GeminiCaseBriefing from '../components/GeminiMissionBriefing';
 import MapComponent from '../components/MapComponent';
 import InvestigationPlanner from '../components/FieldInvestigationKit';
 import FieldLog from '../components/FieldReport';
 import CaseBoard from '../components/EvidenceBoard';
+import Tabs from '../components/ui/Tabs';
 
 const DestinationDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const location = locations.find(d => d.id === id);
+  const routerLocation = useLocation();
+
+  // If location data is passed via state, use it. Otherwise, find it in the static list.
+  const locationFromState = routerLocation.state?.location as CrimeLocation | undefined;
+  const location = locationFromState || locations.find(d => d.id === id);
 
   const [evidenceItems, setEvidenceItems] = useState<EvidenceItem[]>([]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setEvidenceItems([]); // Reset evidence when changing pages
-  }, [id]);
 
   if (!location) {
     return (
@@ -38,9 +38,37 @@ const DestinationDetailPage: React.FC = () => {
     setEvidenceItems(prev => [...prev, { ...item, id: `evidence-${Date.now()}` }]);
   };
 
-
   const nextLocationId = location.relatedLocationIds?.[0];
   const nextLocation = locations.find(d => d.id === nextLocationId);
+
+  const TABS = [
+    {
+      label: 'AI Briefing',
+      content: <GeminiCaseBriefing destination={location} />
+    },
+    {
+      label: 'Plan Visit',
+      content: <InvestigationPlanner destination={location} />
+    },
+    {
+      label: 'Field Investigation',
+      content: (
+        <>
+          <FieldLog onPinEvidence={handlePinEvidence} />
+          <CaseBoard destination={location} evidenceItems={evidenceItems} />
+        </>
+      )
+    },
+    {
+        label: 'Historical Narrative',
+        content: (
+            <div className="bg-white p-6 rounded-lg shadow-md">
+                <h2 className="font-heading text-3xl font-bold text-slctrips-red pb-2 mb-4">Case Details</h2>
+                {location.story.map((p, i) => <p key={i} className="mb-4 text-gray-700 leading-relaxed">{p}</p>)}
+            </div>
+        )
+    }
+  ];
 
   return (
     <div className="bg-slctrips-light">
@@ -61,16 +89,7 @@ const DestinationDetailPage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Main Content */}
                 <div className="lg:col-span-2">
-                    <GeminiCaseBriefing destination={location} />
-                    <InvestigationPlanner destination={location} />
-                    <FieldLog onPinEvidence={handlePinEvidence} />
-                    <CaseBoard destination={location} evidenceItems={evidenceItems} />
-
-                    <section className="bg-white p-6 rounded-lg mb-8 shadow-md">
-                        <h2 className="font-heading text-3xl font-bold text-slctrips-red pb-2 mb-4">Historical Narrative</h2>
-                        {location.story.map((p, i) => <p key={i} className="mb-4 text-gray-700 leading-relaxed">{p}</p>)}
-                    </section>
-
+                    <Tabs tabs={TABS} />
                     {nextLocation && (
                         <div className="bg-slctrips-navy text-center p-8 rounded-lg mt-12">
                             <h3 className="font-heading text-2xl font-bold text-white">Next Location in Dossier</h3>
@@ -84,14 +103,14 @@ const DestinationDetailPage: React.FC = () => {
 
                 {/* Sidebar */}
                 <aside className="space-y-6 lg:sticky lg:top-24 h-min">
-                    <div className="bg-white p-4 rounded-lg shadow-md">
+                    <div className="bg-white p-4 rounded-lg shadow-md border-t-4 border-slctrips-navy">
                         <h3 className="font-heading font-bold text-slctrips-navy border-b border-slctrips-mid pb-2 mb-4">Case Vitals</h3>
                         <div className="space-y-3 text-sm">
                             <p><strong className="text-slctrips-red w-28 inline-block">Dates:</strong> {location.dates}</p>
                             <p><strong className="text-slctrips-red w-28 inline-block">Location:</strong> {location.address || location.region}</p>
                             <p><strong className="text-slctrips-red w-28 inline-block">Status:</strong> {location.status}</p>
-                            {location.perpetrators && <p><strong className="text-slctrips-red w-28 inline-block">Perpetrator(s):</strong> {location.perpetrators.join(', ')}</p>}
-                             {location.victims && <p><strong className="text-slctrips-red w-28 inline-block">Victim(s):</strong> {location.victims.join(', ')}</p>}
+                            {location.perpetrators && location.perpetrators.length > 0 && <p><strong className="text-slctrips-red w-28 inline-block">Perpetrator(s):</strong> {location.perpetrators.join(', ')}</p>}
+                            {location.victims && location.victims.length > 0 && <p><strong className="text-slctrips-red w-28 inline-block">Victim(s):</strong> {location.victims.join(', ')}</p>}
                         </div>
                     </div>
 

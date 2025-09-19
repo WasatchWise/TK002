@@ -9,6 +9,22 @@ interface CaseBoardProps {
   evidenceItems: EvidenceItem[];
 }
 
+const SkeletonLoader = () => (
+    <div className="space-y-3 animate-pulse-slow">
+      <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+      <div className="h-3 bg-gray-200 rounded w-full"></div>
+      <div className="h-3 bg-gray-200 rounded w-5/6"></div>
+    </div>
+);
+
+const ErrorDisplay = ({ message }: { message: string }) => (
+    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md text-sm">
+        <p className="font-bold">Analysis Error</p>
+        <p>{message}</p>
+    </div>
+);
+
+
 const CaseBoard: React.FC<CaseBoardProps> = ({ destination, evidenceItems }) => {
   const [summary, setSummary] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -18,6 +34,7 @@ const CaseBoard: React.FC<CaseBoardProps> = ({ destination, evidenceItems }) => 
   const generateSummary = useCallback(async () => {
     if (evidenceItems.length === 0) {
       setError("Add some field notes or photos to the case board before requesting an analysis!");
+      setTimeout(() => setError(''), 3000); // Clear error after 3s
       return;
     }
     setIsLoading(true);
@@ -65,7 +82,7 @@ const CaseBoard: React.FC<CaseBoardProps> = ({ destination, evidenceItems }) => 
 
 
   return (
-    <div className="bg-yellow-100 p-6 rounded-lg mb-8 shadow-lg border-2 border-yellow-300 relative overflow-hidden">
+    <div className="bg-yellow-100 p-6 rounded-lg shadow-lg border-2 border-yellow-300 relative overflow-hidden">
         <div className="absolute top-2 right-2 text-yellow-400 font-mono text-xs z-0">CASE-FILE-{destination.id.toUpperCase()}</div>
       <h2 className="font-heading text-3xl font-bold text-slctrips-navy mb-2 relative z-10">Case Board</h2>
       <p className="text-gray-700 mb-6 relative z-10">Your field logs appear here. When ready, submit them for a psychological and geographical profile of the location.</p>
@@ -89,6 +106,7 @@ const CaseBoard: React.FC<CaseBoardProps> = ({ destination, evidenceItems }) => 
       {/* Analysis Section */}
       <div className="mt-6">
         <h3 className="font-heading text-2xl font-bold text-slctrips-red mb-4">Profiler's Analysis</h3>
+        {error && !isGenerated && <ErrorDisplay message={error} />}
         {!isGenerated ? (
              <button
                 onClick={generateSummary}
@@ -99,19 +117,20 @@ const CaseBoard: React.FC<CaseBoardProps> = ({ destination, evidenceItems }) => 
             </button>
         ) : (
             <div className="bg-white p-4 rounded-md border border-slctrips-mid min-h-[150px]">
-                 {isLoading && !summary && <p className="text-slctrips-navy animate-pulse">Running psychological profile...</p>}
+                 {isLoading && !summary && <SkeletonLoader />}
+                 {!isLoading && error && <ErrorDisplay message={error} />}
+
                  <div className="prose prose-sm max-w-none text-slctrips-black">
                     {renderFormattedText(summary)}
                     {isLoading && summary && <span className="inline-block w-2 h-4 bg-slctrips-navy animate-pulse ml-1"></span>}
                  </div>
-                 {!isLoading && (
+                 {!isLoading && !error && (
                     <button onClick={() => setIsGenerated(false)} className="text-xs text-slctrips-sky hover:underline mt-4">
-                        Request Re-Analysis
+                        Create New Analysis
                     </button>
                  )}
             </div>
         )}
-         {error && <p className="text-red-600 mt-2 text-sm">{error}</p>}
       </div>
     </div>
   );

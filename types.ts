@@ -15,6 +15,7 @@ export enum State {
   IDAHO = "Idaho",
   NEW_MEXICO = "New Mexico",
   CALIFORNIA = "California",
+  OREGON = "Oregon",
 }
 
 export enum NotorietyLevel {
@@ -22,6 +23,12 @@ export enum NotorietyLevel {
     NATIONAL = 'NATIONAL ATTENTION',
     ICONIC = 'ICONIC CASE',
     LEGENDARY = 'CRIMINAL LEGEND'
+}
+
+export interface UnverifiedCrimeLocation {
+  id: string;
+  name: string;
+  state: State;
 }
 
 export interface CrimeLocation {

@@ -3,9 +3,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { locations } from '../data/destinations';
 import DestinationCard from '../components/DestinationCard';
+import AICaseSuggester from '../components/AICaseSuggester';
 
 const HomePage: React.FC = () => {
-  const featuredLocations = locations.slice(0, 3);
+  const featuredLocations = locations.filter(l => 
+    l.id === 'bundy-residence-1st-ave' || 
+    l.id === 'columbine-high-school' || 
+    l.id === 'route-91-harvest-festival'
+  );
 
   return (
     <div className="bg-slctrips-light text-slctrips-black">
@@ -90,6 +95,13 @@ const HomePage: React.FC = () => {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* AI Case Suggester */}
+      <div className="py-16">
+        <div className="container mx-auto px-4">
+          <AICaseSuggester />
         </div>
       </div>
 

@@ -85,3 +85,24 @@ export const createProfilerAnalysisPrompt = (location: CrimeLocation, evidenceIt
 
   return promptParts;
 };
+
+export const createCaseSuggestionPrompt = (allLocationNames: string[]): string => {
+    return `
+      You are an AI guide for "Dark Tourism West," an app about true crime locations.
+      Your task is to suggest one compelling case for a user to investigate.
+  
+      Here is a list of available case files:
+      ${allLocationNames.join(', ')}
+  
+      **Instructions:**
+      1.  Randomly select ONE case from the list.
+      2.  Provide a one-sentence, intriguing reason why this case is a great starting point for an investigation. Your reason should be thematic and engaging (e.g., "because it represents the brutal reality of frontier justice" or "because it remains one of America's most baffling unsolved mysteries").
+      3.  Format your response as a JSON object with two keys: "caseName" and "reason".
+      
+      Example Response:
+      {
+        "caseName": "JonBenét Ramsey House",
+        "reason": "Because it remains one of America's most baffling and high-profile unsolved child murders."
+      }
+    `;
+  };

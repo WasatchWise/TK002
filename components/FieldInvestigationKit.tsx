@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback } from 'react';
 import { GoogleGenAI } from '@google/genai';
 import { CrimeLocation } from '../types';
@@ -6,6 +7,23 @@ import { createInvestigationPlanPrompt } from '../data/prompts';
 interface InvestigationPlannerProps {
   destination: CrimeLocation;
 }
+
+const SkeletonLoader = () => (
+    <div className="space-y-3 animate-pulse-slow">
+      <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+      <div className="h-3 bg-gray-200 rounded w-full ml-4"></div>
+      <div className="h-3 bg-gray-200 rounded w-5/6 ml-4"></div>
+      <div className="h-4 bg-gray-200 rounded w-1/2 mt-2"></div>
+      <div className="h-3 bg-gray-200 rounded w-full ml-4"></div>
+    </div>
+);
+
+const ErrorDisplay = ({ message }: { message: string }) => (
+    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md">
+        <p className="font-bold">Planning Error</p>
+        <p className="text-sm">{message}</p>
+    </div>
+);
 
 const InvestigationPlanner: React.FC<InvestigationPlannerProps> = ({ destination }) => {
   const [focus, setFocus] = useState('Historical Context');
@@ -90,7 +108,7 @@ const InvestigationPlanner: React.FC<InvestigationPlannerProps> = ({ destination
 
 
   return (
-    <div className="bg-white p-6 rounded-lg mb-8 shadow-md border-t-4 border-slctrips-sky">
+    <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-slctrips-sky">
       <h2 className="font-heading text-3xl font-bold text-slctrips-navy mb-2">Investigation Planner</h2>
       <p className="text-gray-600 mb-6">Create a custom plan for your visit. Select your focus and available time to generate a respectful and efficient itinerary.</p>
 
@@ -130,16 +148,16 @@ const InvestigationPlanner: React.FC<InvestigationPlannerProps> = ({ destination
         </div>
       ) : (
         <div className="bg-slctrips-light p-4 rounded-md border border-slctrips-mid min-h-[200px]">
-          {isLoading && !itinerary && <p className="text-slctrips-navy animate-pulse">Mapping coordinates and timelines...</p>}
+          {isLoading && !itinerary && <SkeletonLoader />}
           
           <div className="prose max-w-none text-slctrips-black">
             {renderFormattedText(itinerary)}
             {isLoading && itinerary && <span className="inline-block w-2 h-4 bg-slctrips-sky animate-pulse ml-1"></span>}
           </div>
 
-          {error && <p className="text-red-600 mt-4">{error}</p>}
+          {error && <ErrorDisplay message={error} />}
           
-          {!isLoading && (
+          {!isLoading && !error && (
             <button
                 onClick={() => setIsGenerated(false)}
                 className="mt-4 bg-slctrips-mid text-slctrips-navy font-bold py-2 px-4 rounded-full hover:bg-gray-300 text-sm"

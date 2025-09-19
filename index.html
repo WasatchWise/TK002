@@ -36,13 +36,22 @@
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
               heading: ['Bebas Neue', 'sans-serif'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             }
           }
         }
       }
     </script>
     <style>
-      /* Additional global styles if needed */
+      body {
+        background-color: #F7F0E8;
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23101820' fill-opacity='0.02' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+      }
+      .leaflet-container {
+        cursor: grab !important;
+      }
     </style>
   <script type="importmap">
 {
@@ -58,6 +67,6 @@
 </head>
   <body class="bg-slctrips-light text-slctrips-black">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
