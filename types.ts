@@ -47,7 +47,36 @@ export interface CrimeLocation {
   victims?: string[];
   dates: string;
   relatedLocationIds?: string[];
+  dossierIds?: string[];
   tags?: string[];
   paranormal?: string;
   status: string;
+  darknessLevel?: number;
+  podcastCoverage?: string[];
+}
+
+export interface DossierSummaryItem {
+    label: string;
+    value: string | string[];
+}
+
+export interface DossierSection {
+  title: string;
+  content: React.ReactNode;
+}
+
+export interface MediaLink {
+    title: string;
+    url: string;
+    type: 'Watch Now' | 'Archival Video' | 'Photo & Document Archives' | 'Primary (Deep-dive)' | 'TV & Documentaries' | 'Timelines & Official Records' | 'Location Context';
+}
+
+export interface Dossier {
+  id: string;
+  name: string;
+  subtitle: string;
+  category: string;
+  summary: DossierSummaryItem[];
+  sections: DossierSection[];
+  mediaArchive?: MediaLink[];
 }

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { locations } from '../data/destinations';
+import { dossiers } from '../data/dossiers';
 import { EvidenceItem, CrimeLocation } from '../types';
 import NotorietyBadge from '../components/FameBadge';
 import GeminiCaseBriefing from '../components/GeminiMissionBriefing';
@@ -109,10 +110,39 @@ const DestinationDetailPage: React.FC = () => {
                             <p><strong className="text-slctrips-red w-28 inline-block">Dates:</strong> {location.dates}</p>
                             <p><strong className="text-slctrips-red w-28 inline-block">Location:</strong> {location.address || location.region}</p>
                             <p><strong className="text-slctrips-red w-28 inline-block">Status:</strong> {location.status}</p>
+                            {location.darknessLevel && <p><strong className="text-slctrips-red w-28 inline-block">Darkness Level:</strong> {location.darknessLevel} / 5</p>}
                             {location.perpetrators && location.perpetrators.length > 0 && <p><strong className="text-slctrips-red w-28 inline-block">Perpetrator(s):</strong> {location.perpetrators.join(', ')}</p>}
                             {location.victims && location.victims.length > 0 && <p><strong className="text-slctrips-red w-28 inline-block">Victim(s):</strong> {location.victims.join(', ')}</p>}
                         </div>
                     </div>
+
+                    {location.dossierIds && location.dossierIds.length > 0 && (
+                        <div className="bg-white p-4 rounded-lg shadow-md border-t-4 border-slctrips-red">
+                            <h3 className="font-heading font-bold text-slctrips-navy border-b border-slctrips-mid pb-2 mb-4">Related Dossiers</h3>
+                            <div className="space-y-2">
+                                {location.dossierIds.map(dossierId => {
+                                    const dossier = dossiers.find(d => d.id === dossierId);
+                                    if (!dossier) return null;
+                                    return (
+                                        <Link key={dossier.id} to={`/dossier/${dossier.id}`} className="block text-center bg-slctrips-navy text-white font-bold py-2 px-4 rounded-full text-sm uppercase hover:bg-slctrips-black transition-colors duration-300">
+                                            View Dossier: {dossier.name}
+                                        </Link>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    )}
+
+                    {location.podcastCoverage && location.podcastCoverage.length > 0 && (
+                        <div className="bg-white p-4 rounded-lg shadow-md">
+                            <h3 className="font-heading font-bold text-slctrips-navy border-b border-slctrips-mid pb-2 mb-4">Podcast Coverage</h3>
+                            <ul className="space-y-2 text-sm list-disc list-inside">
+                                {location.podcastCoverage.map((podcast, index) => (
+                                    <li key={index} className="text-gray-700">{podcast}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
 
                      <div className="bg-white p-4 rounded-lg text-center shadow-md">
                         <h3 className="font-heading font-bold text-slctrips-navy mb-3">Case Notoriety</h3>

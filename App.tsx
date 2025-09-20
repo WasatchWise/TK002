@@ -8,6 +8,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import CreateCaseFilePage from './pages/CreateCaseFilePage';
+import UpgradePage from './pages/UpgradePage';
+import DossierPage from './pages/DossierPage';
+import DossierListPage from './pages/DossierListPage';
 
 const App: React.FC = () => {
   return (
@@ -20,7 +23,10 @@ const App: React.FC = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/destinations" element={<DestinationListPage />} />
             <Route path="/destinations/:id" element={<DestinationDetailPage />} />
+            <Route path="/dossiers" element={<DossierListPage />} />
+            <Route path="/dossier/:id" element={<DossierPage />} />
             <Route path="/create-case/:id" element={<CreateCaseFilePage />} />
+            <Route path="/upgrade" element={<UpgradePage />} />
           </Routes>
         </main>
         <Footer />

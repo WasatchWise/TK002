@@ -16,23 +16,38 @@ const Header: React.FC = () => {
             DARK TOURISM <span className="text-slctrips-red">WEST</span>
           </div>
         </Link>
-        <nav className="hidden md:flex items-center space-x-8">
-          <NavLink
-            to="/"
-            end
-            className="text-slctrips-navy hover:text-slctrips-red font-bold transition-colors pb-1 text-lg"
-            style={({ isActive }) => isActive ? activeLinkStyle : {}}
+        <div className="flex items-center space-x-4 md:space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
+            <NavLink
+              to="/"
+              end
+              className="text-slctrips-navy hover:text-slctrips-red font-bold transition-colors pb-1 text-lg"
+              style={({ isActive }) => isActive ? activeLinkStyle : {}}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/destinations"
+              className="text-slctrips-navy hover:text-slctrips-red font-bold transition-colors pb-1 text-lg"
+              style={({ isActive }) => isActive ? activeLinkStyle : {}}
+            >
+              Locations
+            </NavLink>
+            <NavLink
+              to="/dossiers"
+              className="text-slctrips-navy hover:text-slctrips-red font-bold transition-colors pb-1 text-lg"
+              style={({ isActive }) => isActive ? activeLinkStyle : {}}
+            >
+              Dossiers
+            </NavLink>
+          </nav>
+          <Link
+            to="/upgrade"
+            className="bg-slctrips-gold text-slctrips-navy font-bold py-2 px-5 rounded-full text-sm uppercase hover:bg-yellow-300 transition-colors duration-300 transform hover:scale-105"
           >
-            Home
-          </NavLink>
-          <NavLink
-            to="/destinations"
-            className="text-slctrips-navy hover:text-slctrips-red font-bold transition-colors pb-1 text-lg"
-            style={({ isActive }) => isActive ? activeLinkStyle : {}}
-          >
-            Locations
-          </NavLink>
-        </nav>
+            Upgrade
+          </Link>
+        </div>
       </div>
     </header>
   );
