@@ -10,7 +10,8 @@ interface MapComponentProps {
 
 const MapComponent: React.FC<MapComponentProps> = ({ gps, name }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
-  const mapInstanceRef = useRef<any>(null);
+  const mapInstanceRef = useRef<L.Map | null>(null);
+  const markerRef = useRef<L.Marker | null>(null);
 
   useEffect(() => {
     if (!mapContainerRef.current || !gps) return;
@@ -25,18 +26,25 @@ const MapComponent: React.FC<MapComponentProps> = ({ gps, name }) => {
 
     // Prevent map re-initialization
     if (mapInstanceRef.current) {
-        mapInstanceRef.current.setView([lat, lng], 10);
-        // Ensure marker is also updated if it exists
-        const markerLayer = mapInstanceRef.current.getPane('markerPane').firstChild;
-        if(markerLayer) {
-            markerLayer.setLatLng([lat,lng]).setPopupContent(`<b>${name}</b>`).openPopup();
-        }
-        return;
+      mapInstanceRef.current.setView([lat, lng], 10);
+
+      if (markerRef.current) {
+        markerRef.current
+          .setLatLng([lat, lng])
+          .bindPopup(`<b>${name}</b>`)
+          .openPopup();
+      } else {
+        const newMarker = L.marker([lat, lng]).addTo(mapInstanceRef.current);
+        newMarker.bindPopup(`<b>${name}</b>`).openPopup();
+        markerRef.current = newMarker;
+      }
+
+      return;
     }
 
     // Initialize map
     const map = L.map(mapContainerRef.current, {
-        scrollWheelZoom: false, // More user-friendly on scrollable pages
+      scrollWheelZoom: false, // More user-friendly on scrollable pages
     }).setView([lat, lng], 10);
     mapInstanceRef.current = map;
 
@@ -48,6 +56,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ gps, name }) => {
     // Add marker
     const marker = L.marker([lat, lng]).addTo(map);
     marker.bindPopup(`<b>${name}</b>`).openPopup();
+    markerRef.current = marker;
 
     // Cleanup on component unmount
     return () => {
@@ -55,6 +64,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ gps, name }) => {
         mapInstanceRef.current.remove();
         mapInstanceRef.current = null;
       }
+      markerRef.current = null;
     };
   }, [gps, name]);
 
