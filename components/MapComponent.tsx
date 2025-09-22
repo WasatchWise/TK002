@@ -11,6 +11,7 @@ interface MapComponentProps {
 const MapComponent: React.FC<MapComponentProps> = ({ gps, name }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
+  const markerRef = useRef<L.Marker | null>(null);
 
   useEffect(() => {
     if (!mapContainerRef.current || !gps) return;
@@ -25,13 +26,16 @@ const MapComponent: React.FC<MapComponentProps> = ({ gps, name }) => {
 
     // Prevent map re-initialization
     if (mapInstanceRef.current) {
-        mapInstanceRef.current.setView([lat, lng], 10);
-        // Ensure marker is also updated if it exists
-        const markerLayer = mapInstanceRef.current.getPane('markerPane').firstChild;
-        if(markerLayer) {
-            markerLayer.setLatLng([lat,lng]).setPopupContent(`<b>${name}</b>`).openPopup();
+      mapInstanceRef.current.setView([lat, lng], 10);
+      if (markerRef.current) {
+        markerRef.current.setLatLng([lat, lng]);
+        if (typeof markerRef.current.setPopupContent === 'function') {
+          markerRef.current.setPopupContent(`<b>${name}</b>`).openPopup();
+        } else {
+          markerRef.current.bindPopup(`<b>${name}</b>`).openPopup();
         }
-        return;
+      }
+      return;
     }
 
     // Initialize map
@@ -48,12 +52,17 @@ const MapComponent: React.FC<MapComponentProps> = ({ gps, name }) => {
     // Add marker
     const marker = L.marker([lat, lng]).addTo(map);
     marker.bindPopup(`<b>${name}</b>`).openPopup();
+    markerRef.current = marker;
 
     // Cleanup on component unmount
     return () => {
       if (mapInstanceRef.current) {
         mapInstanceRef.current.remove();
         mapInstanceRef.current = null;
+      }
+      if (markerRef.current) {
+        markerRef.current.remove();
+        markerRef.current = null;
       }
     };
   }, [gps, name]);
