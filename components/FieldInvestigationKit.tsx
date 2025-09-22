@@ -77,6 +77,13 @@ const InvestigationPlanner: React.FC<InvestigationPlannerProps> = ({ destination
       setIsLoading(false);
     }
   }, [destination, focus, duration]);
+
+  const handleRetry = useCallback(() => {
+    setItinerary('');
+    setError('');
+    setIsGenerated(false);
+    generateItinerary();
+  }, [generateItinerary]);
   
   const renderFormattedText = (text: string) => {
     return text.split('\n').map((line, i) => {
@@ -155,7 +162,20 @@ const InvestigationPlanner: React.FC<InvestigationPlannerProps> = ({ destination
             {isLoading && itinerary && <span className="inline-block w-2 h-4 bg-slctrips-sky animate-pulse ml-1"></span>}
           </div>
 
-          {error && <ErrorDisplay message={error} />}
+          {error && (
+            <div className="space-y-3">
+              <ErrorDisplay message={error} />
+              {!isLoading && (
+                <button
+                  onClick={handleRetry}
+                  disabled={isLoading}
+                  className="w-full bg-slctrips-sky text-white font-bold py-2 px-4 rounded-lg hover:bg-slctrips-navy disabled:bg-slate-400 transition-colors duration-300"
+                >
+                  Try Again
+                </button>
+              )}
+            </div>
+          )}
           
           {!isLoading && !error && (
             <button
