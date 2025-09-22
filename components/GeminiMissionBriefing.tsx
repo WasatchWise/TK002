@@ -117,7 +117,20 @@ const GeminiCaseBriefing: React.FC<GeminiCaseBriefingProps> = ({ destination }) 
                  {isLoading && briefing && <span className="inline-block w-2 h-4 bg-slctrips-gold animate-pulse ml-1"></span>}
             </div>
 
-            {error && <ErrorDisplay message={error} />}
+            {error && (
+                <div className="mt-4 space-y-3">
+                    <ErrorDisplay message={error} />
+                    {!isLoading && (
+                        <button
+                            onClick={generateBriefing}
+                            disabled={isLoading}
+                            className="bg-slctrips-gold text-slctrips-navy font-bold py-2 px-6 rounded-full hover:bg-yellow-300 disabled:bg-slate-600 transition-colors duration-300"
+                        >
+                            Try Again
+                        </button>
+                    )}
+                </div>
+            )}
         </div>
       )}
     </div>

@@ -67,6 +67,13 @@ const CaseBoard: React.FC<CaseBoardProps> = ({ destination, evidenceItems }) => 
     }
   }, [destination, evidenceItems]);
 
+  const handleRetry = useCallback(() => {
+    setSummary('');
+    setError('');
+    setIsGenerated(false);
+    generateSummary();
+  }, [generateSummary]);
+
   const renderFormattedText = (text: string) => {
     return text.split('\n').map((line, i) => {
         const parts = line.split('**');
@@ -118,7 +125,18 @@ const CaseBoard: React.FC<CaseBoardProps> = ({ destination, evidenceItems }) => 
         ) : (
             <div className="bg-white p-4 rounded-md border border-slctrips-mid min-h-[150px]">
                  {isLoading && !summary && <SkeletonLoader />}
-                 {!isLoading && error && <ErrorDisplay message={error} />}
+                 {!isLoading && error && (
+                    <div className="space-y-3">
+                        <ErrorDisplay message={error} />
+                        <button
+                            onClick={handleRetry}
+                            disabled={isLoading}
+                            className="w-full bg-slctrips-navy text-white font-semibold py-2 px-4 rounded-md hover:bg-slctrips-black disabled:bg-slate-400 transition-colors duration-300"
+                        >
+                            Try Again
+                        </button>
+                    </div>
+                 )}
 
                  <div className="prose prose-sm max-w-none text-slctrips-black">
                     {renderFormattedText(summary)}
