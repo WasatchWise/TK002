@@ -1,7 +1,5 @@
 {
-  "name": "SLCTrips - TK003 - Utah's Morbid Misdeeds: A True Crime Compendium",
-  "description": "Explore infamous true crime locations across the American West. An interactive guide to dark tourism.",
-  "requestFramePermissions": [
-    "camera"
-  ]
+  "name": "SLCTrips - TK-000 - Mt. Olympians TripKit",
+  "description": "A comprehensive educational TripKit that transforms Utah's 29 county guardians into grade-appropriate adventures for 4th-grade teachers. Blends mythic storytelling with Utah Core Standards through location-based learning, featuring magical animal guardians who teach geography, history, and conservation. Includes safety protocols and field trip guides to turn Utah's landscape into a classroom for discovery, where students become junior guardians protecting the state's natural and cultural treasures.\n\n*One-liner: \"Where Utah folklore meets 4th-grade field trips - a teacher-ready, safety-first educational guide.\"*",
+  "requestFramePermissions": []
 }

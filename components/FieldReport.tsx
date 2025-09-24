@@ -1,10 +1,11 @@
+
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 
-interface FieldLogProps {
+interface FieldReportProps {
   onPinEvidence: (item: { note: string; photo?: string }) => void;
 }
 
-const FieldLog: React.FC<FieldLogProps> = ({ onPinEvidence }) => {
+const FieldReport: React.FC<FieldReportProps> = ({ onPinEvidence }) => {
   const [note, setNote] = useState('');
   const [photo, setPhoto] = useState<string | undefined>(undefined);
   const [stream, setStream] = useState<MediaStream | null>(null);
@@ -56,7 +57,7 @@ const FieldLog: React.FC<FieldLogProps> = ({ onPinEvidence }) => {
 
   const handlePin = () => {
     if (!note && !photo) {
-      setError("Add a note or photo to create a log entry.");
+      setError("Add a note or photo to create a journal entry.");
       return;
     }
     onPinEvidence({ note, photo });
@@ -69,12 +70,12 @@ const FieldLog: React.FC<FieldLogProps> = ({ onPinEvidence }) => {
 
   return (
     <div className="bg-white p-6 rounded-lg mb-8 shadow-md border-t-4 border-slctrips-red">
-      <h2 className="font-heading text-3xl font-bold text-slctrips-navy mb-2">Field Log</h2>
-      <p className="text-gray-600 mb-6">You're on scene. Document your observations and photographic evidence here to add them to your case board.</p>
+      <h2 className="font-heading text-3xl font-bold text-slctrips-navy mb-2">Field Journal Entry</h2>
+      <p className="text-gray-600 mb-6">You're the explorer. Capture your photos and notes here to add them to your Field Journal.</p>
       
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-bold text-slctrips-navy mb-1">Photographic Evidence</label>
+          <label className="block text-sm font-bold text-slctrips-navy mb-1">Field Photo</label>
           <div className="p-2 border border-gray-300 rounded-md bg-slctrips-light min-h-[100px] flex justify-center items-center">
             {photo ? (
               <div className="text-center">
@@ -86,7 +87,7 @@ const FieldLog: React.FC<FieldLogProps> = ({ onPinEvidence }) => {
                   <video ref={videoRef} autoPlay playsInline className="w-full rounded-lg bg-black"></video>
                   <canvas ref={canvasRef} className="hidden"></canvas>
                   <div className="flex gap-2">
-                      <button onClick={handleSnapPhoto} className="flex-grow bg-slctrips-sky text-white font-bold py-2 px-4 rounded-lg hover:bg-slctrips-navy">Capture Evidence</button>
+                      <button onClick={handleSnapPhoto} className="flex-grow bg-slctrips-sky text-white font-bold py-2 px-4 rounded-lg hover:bg-slctrips-navy">Snap Photo</button>
                       <button onClick={stopCamera} className="bg-gray-200 text-slctrips-navy font-bold py-2 px-4 rounded-lg hover:bg-gray-300">Close</button>
                   </div>
               </div>
@@ -99,14 +100,14 @@ const FieldLog: React.FC<FieldLogProps> = ({ onPinEvidence }) => {
         </div>
         
         <div>
-            <label htmlFor="field-notes" className="block text-sm font-bold text-slctrips-navy mb-1">Investigator's Notes</label>
+            <label htmlFor="field-notes" className="block text-sm font-bold text-slctrips-navy mb-1">Explorer's Notes</label>
             <textarea
                 id="field-notes"
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
-                placeholder="Log your observations on the atmosphere, surroundings, and any points of interest..."
+                placeholder="Log your observations about plants, animals, geology, or history..."
                 className="w-full h-24 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-slctrips-gold focus:border-slctrips-gold"
-                aria-label="Investigator's Notes"
+                aria-label="Explorer's Notes"
             />
         </div>
         
@@ -116,13 +117,13 @@ const FieldLog: React.FC<FieldLogProps> = ({ onPinEvidence }) => {
             onClick={handlePin}
             disabled={!hasDataToPin}
             className="w-full mt-4 bg-slctrips-red text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 disabled:bg-slate-400 disabled:cursor-not-allowed transition-colors duration-300"
-            aria-label="Add to Case Board"
+            aria-label="Add to Field Journal"
         >
-            📌 Add to Case Board
+            ✍️ Add to Field Journal
         </button>
       </div>
     </div>
   );
 };
 
-export default FieldLog;
+export default FieldReport;

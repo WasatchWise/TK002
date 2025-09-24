@@ -1,50 +1,33 @@
 
 import React, { useState, useCallback } from 'react';
 import { GoogleGenAI } from '@google/genai';
-import { CrimeLocation } from '../types';
-import { createInvestigationPlanPrompt } from '../data/prompts';
+import { Destination } from '../types';
+import { createItineraryPrompt } from '../data/prompts';
 
-interface InvestigationPlannerProps {
-  destination: CrimeLocation;
+interface FieldInvestigationKitProps {
+  destination: Destination;
 }
 
-const SkeletonLoader = () => (
-    <div className="space-y-3 animate-pulse-slow">
-      <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-      <div className="h-3 bg-gray-200 rounded w-full ml-4"></div>
-      <div className="h-3 bg-gray-200 rounded w-5/6 ml-4"></div>
-      <div className="h-4 bg-gray-200 rounded w-1/2 mt-2"></div>
-      <div className="h-3 bg-gray-200 rounded w-full ml-4"></div>
-    </div>
-);
-
-const ErrorDisplay = ({ message }: { message: string }) => (
-    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md">
-        <p className="font-bold">Planning Error</p>
-        <p className="text-sm">{message}</p>
-    </div>
-);
-
-const InvestigationPlanner: React.FC<InvestigationPlannerProps> = ({ destination }) => {
-  const [focus, setFocus] = useState('Historical Context');
-  const [duration, setDuration] = useState('1-2 hours');
+const FieldInvestigationKit: React.FC<FieldInvestigationKitProps> = ({ destination }) => {
+  const [focus, setFocus] = useState('Geography');
+  const [duration, setDuration] = useState('30-45 minutes');
   const [itinerary, setItinerary] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [isGenerated, setIsGenerated] = useState(false);
 
   const investigationFocusOptions = [
-    'Historical Context',
-    'Memorial Photography',
-    'Geographical Profiling',
-    'Paranormal Investigation',
+    'Geography',
+    'History',
+    'Science',
+    'Art & Culture',
   ];
 
   const durationOptions = [
-    '< 1 hour',
-    '1-2 hours',
-    '2-3 hours',
-    'Half-day (4 hours)',
+    '15-20 minutes',
+    '30-45 minutes',
+    '1 hour',
+    'Half-day',
   ];
 
   const generateItinerary = useCallback(async () => {
@@ -58,7 +41,7 @@ const InvestigationPlanner: React.FC<InvestigationPlannerProps> = ({ destination
         throw new Error("API key not found.");
       }
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-      const prompt = createInvestigationPlanPrompt(destination, focus, duration);
+      const prompt = createItineraryPrompt(destination, focus, duration);
 
       const stream = await ai.models.generateContentStream({
         model: "gemini-2.5-flash",
@@ -72,7 +55,7 @@ const InvestigationPlanner: React.FC<InvestigationPlannerProps> = ({ destination
       }
     } catch (e: any) {
       console.error(e);
-      setError('Could not generate plan. Intelligence seems to be unavailable. Please try again later.');
+      setError('Could not generate mission. The guardian seems to be busy. Please try again later.');
     } finally {
       setIsLoading(false);
     }
@@ -108,20 +91,20 @@ const InvestigationPlanner: React.FC<InvestigationPlannerProps> = ({ destination
 
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-slctrips-sky">
-      <h2 className="font-heading text-3xl font-bold text-slctrips-navy mb-2">Investigation Planner</h2>
-      <p className="text-gray-600 mb-6">Create a custom plan for your visit. Select your focus and available time to generate a respectful and efficient itinerary.</p>
+    <div className="bg-white p-6 rounded-lg mb-8 shadow-md border-t-4 border-slctrips-sky">
+      <h2 className="font-heading text-3xl font-bold text-slctrips-navy mb-2">AI Mission Generator</h2>
+      <p className="text-gray-600 mb-6">Let's build a custom lesson plan for your visit. Tell me your educational focus, and I'll generate a personalized activity schedule.</p>
 
       {!isGenerated ? (
         <div className="space-y-4">
           <div>
-            <label htmlFor="focus" className="block text-sm font-bold text-slctrips-navy mb-1">Investigative Focus</label>
+            <label htmlFor="focus" className="block text-sm font-bold text-slctrips-navy mb-1">Learning Focus</label>
             <select
               id="focus"
               value={focus}
               onChange={(e) => setFocus(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-slctrips-gold focus:border-slctrips-gold"
-              aria-label="Select Investigative Focus"
+              aria-label="Select Learning Focus"
             >
               {investigationFocusOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
             </select>
@@ -143,21 +126,21 @@ const InvestigationPlanner: React.FC<InvestigationPlannerProps> = ({ destination
             disabled={isLoading}
             className="w-full bg-slctrips-sky text-white font-bold py-3 px-6 rounded-lg hover:bg-slctrips-navy disabled:bg-slate-400 transition-colors duration-300 flex items-center justify-center gap-2"
           >
-            {isLoading ? 'Consulting Case Files...' : 'Generate Investigation Plan'}
+            {isLoading ? 'Consulting the Guardian...' : 'Generate My Mission'}
           </button>
         </div>
       ) : (
         <div className="bg-slctrips-light p-4 rounded-md border border-slctrips-mid min-h-[200px]">
-          {isLoading && !itinerary && <SkeletonLoader />}
+          {isLoading && !itinerary && <p className="text-slctrips-navy animate-pulse">Receiving instructions...</p>}
           
           <div className="prose max-w-none text-slctrips-black">
             {renderFormattedText(itinerary)}
             {isLoading && itinerary && <span className="inline-block w-2 h-4 bg-slctrips-sky animate-pulse ml-1"></span>}
           </div>
 
-          {error && <ErrorDisplay message={error} />}
+          {error && <p className="text-red-600 mt-4">{error}</p>}
           
-          {!isLoading && !error && (
+          {!isLoading && (
             <button
                 onClick={() => setIsGenerated(false)}
                 className="mt-4 bg-slctrips-mid text-slctrips-navy font-bold py-2 px-4 rounded-full hover:bg-gray-300 text-sm"
@@ -171,4 +154,4 @@ const InvestigationPlanner: React.FC<InvestigationPlannerProps> = ({ destination
   );
 };
 
-export default InvestigationPlanner;
+export default FieldInvestigationKit;

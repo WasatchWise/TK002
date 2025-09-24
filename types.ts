@@ -1,82 +1,77 @@
-
-export interface EvidenceItem {
-    note: string;
-    photo?: string;
-    id: string;
+// Fix: Add FameLevel enum for FameBadge component.
+export enum FameLevel {
+  INDIE = 'Indie',
+  BLOCKBUSTER = 'Blockbuster',
+  ICONIC = 'Iconic',
+  LEGENDARY = 'Legendary',
 }
 
-export enum State {
-  UTAH = "Utah",
-  COLORADO = "Colorado",
-  NEVADA = "Nevada",
-  ARIZONA = "Arizona",
-  WYOMING = "Wyoming",
-  MONTANA = "Montana",
-  IDAHO = "Idaho",
-  NEW_MEXICO = "New Mexico",
-  CALIFORNIA = "California",
-  OREGON = "Oregon",
-}
-
-export enum NotorietyLevel {
-    LOCAL = 'LOCAL INFAMY',
-    NATIONAL = 'NATIONAL ATTENTION',
-    ICONIC = 'ICONIC CASE',
-    LEGENDARY = 'CRIMINAL LEGEND'
-}
-
-export interface UnverifiedCrimeLocation {
-  id: string;
+export interface Guardian {
   name: string;
-  state: State;
+  animal_form: string;
+  archetype: string;
+  teaching_moment: string;
+  signature_line: string;
+  voice: {
+    tone: string;
+    vocabulary: string;
+    signature_phrase: string;
+    teaching_style: string;
+  };
 }
 
-export interface CrimeLocation {
-  id: string;
+export interface FieldTripStop {
   name: string;
-  crime: string;
-  state: State;
-  region: string;
-  address?: string;
-  driveTime: string;
-  story: string[];
-  accessibility: string;
   gps: string;
-  notorietyLevel: NotorietyLevel;
-  perpetrators?: string[];
-  victims?: string[];
-  dates: string;
-  relatedLocationIds?: string[];
-  dossierIds?: string[];
-  tags?: string[];
-  paranormal?: string;
-  status: string;
-  darknessLevel?: number;
-  podcastCoverage?: string[];
+  duration: string;
+  educational_focus: string;
+  guardian_connection: string;
+  safety_notes: string[];
 }
 
-export interface DossierSummaryItem {
-    label: string;
-    value: string | string[];
-}
-
-export interface DossierSection {
+export interface Activity {
   title: string;
-  content: React.ReactNode;
+  type: 'Observation' | 'Hands-On' | 'Storytelling';
+  prompt: string;
+  materials_needed: string[];
 }
 
-export interface MediaLink {
-    title: string;
-    url: string;
-    type: 'Watch Now' | 'Archival Video' | 'Photo & Document Archives' | 'Primary (Deep-dive)' | 'TV & Documentaries' | 'Timelines & Official Records' | 'Location Context';
+export interface CurriculumDetails {
+    [topic: string]: string[];
 }
 
-export interface Dossier {
+export interface LearningObjectives {
+  social_studies: CurriculumDetails;
+  science_seed: CurriculumDetails;
+  ela: CurriculumDetails;
+  mathematics: CurriculumDetails;
+  health_education: CurriculumDetails;
+  fine_arts: CurriculumDetails;
+}
+
+// Fix: Add EvidenceItem type for Field Journal component.
+export interface EvidenceItem {
   id: string;
-  name: string;
-  subtitle: string;
-  category: string;
-  summary: DossierSummaryItem[];
-  sections: DossierSection[];
-  mediaArchive?: MediaLink[];
+  note: string;
+  photo?: string; // base64 encoded image
+}
+
+// Re-purposing the Destination interface to represent a County module.
+export interface Destination {
+  id: string;
+  name: string; // County Name
+  guardian: Guardian;
+  learning_objectives: LearningObjectives;
+  story: string[]; // Intro story about the county/guardian
+  field_trip_stops: FieldTripStop[];
+  activities: Activity[];
+  relatedDestinationIds: string[]; // Related counties
+  gps: string; // Central point of county for map
+  what3words: string;
+  // Fix: Add optional ar_data for ARViewPage component.
+  ar_data?: {
+    title: string;
+    overlayImageUrl: string;
+    instructions: string;
+  };
 }

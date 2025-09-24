@@ -1,108 +1,123 @@
+import { Part, Type } from '@google/genai';
+import { Destination, EvidenceItem } from '../types';
 
-import { CrimeLocation, EvidenceItem } from '../types';
-import { Part } from '@google/genai';
+/**
+ * Creates a prompt for generating a custom field trip itinerary.
+ */
+export const createItineraryPrompt = (destination: Destination, focus: string, duration: string): string => {
+  const { name, guardian, field_trip_stops, activities } = destination;
 
-export const createCaseFilePrompt = (location: CrimeLocation): string => {
-  return `
-    You are an AI criminal profiler and historian for "Dark Tourism West," an app about true crime locations.
-    Your tone is factual, respectful, and analytical, like a seasoned detective briefing a colleague.
-    Generate a concise case briefing for the location: "${location.name}".
+  const stopsInfo = field_trip_stops.map(stop => `- ${stop.name}: ${stop.educational_focus}`).join('\n');
+  const activitiesInfo = activities.map(activity => `- ${activity.title}: ${activity.prompt}`).join('\n');
 
-    Please include:
-    1.  **Case Summary:** A one-sentence summary of the crime that occurred here.
-    2.  **Historical Significance:** A short summary of why this case is notable in criminal history.
-    3.  **Key Individuals:** 2-3 bullet points naming the primary perpetrator(s) and victim(s).
-    4.  **Profiler's Note:** A concluding sentence of insight for someone visiting the site.
+  return `You are a creative curriculum designer for 4th-grade students exploring Utah. Your goal is to create a short, engaging, hands-on learning itinerary for a field trip to ${name}.
+The guardian of this county is ${guardian.name}, the ${guardian.animal_form}, who teaches that "${guardian.teaching_moment}".
 
-    Keep the entire summary under 150 words. Format with markdown for clarity (bold with **, lists with * or -).
-    Location data:
-    - Name: ${location.name}
-    - Crime: ${location.crime}
-    - Story: ${location.story.join(' ')}
-    - Perpetrators: ${location.perpetrators?.join(', ') || 'N/A'}
-    - Victims: ${location.victims?.join(', ') || 'N/A'}
-  `;
+The itinerary should have an educational focus on: **${focus}**.
+The total duration for this activity plan should be approximately **${duration}**.
+
+The output should be a fun, mission-style briefing for a 4th grader. Use markdown for formatting, like using '*' for list items and '**' for bolding. Address the student as "Pathfinder".
+Start with a catchy mission title.
+
+Base your itinerary on the following information about ${name}:
+**Available Field Trip Stops:**
+${stopsInfo}
+
+**Example Activities:**
+${activitiesInfo}
+
+Generate a creative, step-by-step mission plan that a student and their parent or teacher can follow.`;
 };
 
-export const createInvestigationPlanPrompt = (location: CrimeLocation, focus: string, duration: string): string => {
-  return `
-    You are an AI assistant for "Dark Tourism West".
-    Your tone is that of a respectful and methodical investigator, planning a site visit.
-    Generate a personalized, step-by-step visitation plan for a user visiting "${location.name}".
+/**
+ * Creates prompt parts for generating guardian feedback on student evidence.
+ */
+export const createDirectorCutPrompt = (destination: Destination, evidenceItems: EvidenceItem[]): Part[] => {
+  const { name, guardian } = destination;
 
-    **User's Plan:**
-    - Visit Focus: ${focus}
-    - Available Time: ${duration}
+  const intro = `You are ${guardian.name}, the ${guardian.animal_form} and guardian of ${name}.
+Your voice is ${guardian.voice.tone} and you speak with a ${guardian.voice.vocabulary} vocabulary. Your signature phrase is "${guardian.signature_line}".
+A 4th-grade student, a "Junior Guardian", has shared their field journal with you. They have collected the following notes and photos during their visit to your county.
+Your task is to provide positive and encouraging feedback on their observations. Connect their findings back to your main teaching moment, which is: "${guardian.teaching_moment}".
+Keep your feedback concise, under 150 words. Address the student directly. Use markdown for formatting, like using '**' for bold text.
+Here is what the student collected:`;
 
-    **Case Dossier:**
-    - Name: ${location.name}
-    - Crime: ${location.crime}
-    - Accessibility Notes: ${location.accessibility}
+  const promptParts: Part[] = [{ text: intro }];
 
-    **Your Task:**
-    Create a practical, step-by-step itinerary based on the user's plan and the case dossier.
-    - The plan must be respectful and realistic for the time allotted.
-    - Emphasize practical considerations from the "Accessibility Notes".
-    - Structure the output with clear, sequential steps. Use Markdown for formatting (bolding with **, lists with *).
-    - Start with a professional intro, like "Here is a suggested investigation plan for your visit to ${location.name}."
-    - Conclude with a respectful sign-off, like "Remember to be mindful of the location's history. Conclude your investigation safely."
-    - Keep the entire response under 250 words.
-  `;
-};
-
-export const createProfilerAnalysisPrompt = (location: CrimeLocation, evidenceItems: EvidenceItem[]): Part[] => {
-  const promptParts: Part[] = [];
-  const textPrompt = `
-    You are an expert AI criminal profiler reviewing a field investigator's report for the location: "${location.name}".
-    I am presenting you with a collection of on-site photos and notes.
-    Your task is to synthesize this evidence into a cohesive psychological and geographical analysis.
-
-    - Start with a professional opening, like "Reviewing the submitted field evidence for the ${location.name} case."
-    - Analyze the investigator's notes and images. How do they reflect the atmosphere of the crime scene? What emotions or historical echoes do they capture?
-    - Connect the evidence to the known facts of the case (e.g., "The photo of the overgrown fence line evokes the isolation the victim must have felt...").
-    - Offer insights on the location's role in the crime itself (e.g., victim selection, escape routes, concealment). Maintain an analytical and insightful tone.
-    - Conclude with a summary of the analysis, like "This on-site evidence provides valuable context for understanding the environmental factors of the crime."
-    
-    Here is the submitted evidence:
-  `;
-  promptParts.push({ text: textPrompt });
-
-  evidenceItems.forEach((item, index) => {
-    let evidenceText = `\n\n--- Evidence Log #${index + 1} ---\n`;
-    if (item.note) {
-      evidenceText += `Investigator's Notes: "${item.note}"\n`;
-    }
-    if (item.photo) {
-      evidenceText += `See attached evidentiary photograph.\n`;
-    }
-    promptParts.push({ text: evidenceText });
-
+  evidenceItems.forEach(item => {
     if (item.photo) {
       const base64Data = item.photo.split(',')[1];
-      promptParts.push({ inlineData: { mimeType: 'image/jpeg', data: base64Data } });
+      if (base64Data) {
+        promptParts.push({
+          inlineData: {
+            mimeType: 'image/jpeg',
+            data: base64Data,
+          },
+        });
+      }
+    }
+    if (item.note) {
+      promptParts.push({ text: `Student's note: "${item.note}"` });
     }
   });
 
   return promptParts;
 };
 
-export const createCaseSuggestionPrompt = (allLocationNames: string[]): string => {
-    return `
-      You are an AI guide for "Dark Tourism West," an app about true crime locations.
-      Your task is to suggest one compelling case for a user to investigate.
-  
-      Here is a list of available case files:
-      ${allLocationNames.join(', ')}
-  
-      **Instructions:**
-      1.  Randomly select ONE case from the list.
-      2.  Provide a one-sentence, intriguing reason why this case is a great starting point for an investigation. Your reason should be thematic and engaging (e.g., "because it represents the brutal reality of frontier justice" or "because it remains one of America's most baffling unsolved mysteries").
-      3.  Format your response as a JSON object with two keys: "caseName" and "reason".
-      
-      Example Response:
-      {
-        "caseName": "JonBenét Ramsey House",
-        "reason": "Because it remains one of America's most baffling and high-profile unsolved child murders."
-      }
-    `;
+
+/**
+ * Creates a prompt and schema for generating trivia questions.
+ */
+export const createTriviaPrompt = (destination: Destination): { prompt: string, schema: any } => {
+  const { name, story, field_trip_stops, learning_objectives } = destination;
+
+  const prompt = `You are an expert on Utah history, geography, and culture, specializing in ${name}. Your task is to generate 3 unique and engaging trivia questions suitable for a 4th grader.
+The questions should be based on the provided information about ${name}. Use the story, field trip stops, and learning objectives to create the questions.
+For each question, provide four multiple-choice options (one correct, three plausible but incorrect). The correct answer should not be obvious. Also provide a brief, fun explanation for the correct answer.
+
+Return the result as a single JSON object that matches the provided schema. Do not include any other text or markdown formatting in your response.
+
+Here is the information about ${name}:
+Story: ${story.join(' ')}
+Field Trip Stops: ${JSON.stringify(field_trip_stops)}
+Learning Objectives: ${JSON.stringify(learning_objectives)}
+`;
+
+  const schema = {
+    type: Type.OBJECT,
+    properties: {
+      questions: {
+        type: Type.ARRAY,
+        description: 'A list of trivia questions.',
+        items: {
+          type: Type.OBJECT,
+          properties: {
+            question: {
+              type: Type.STRING,
+              description: 'The trivia question.',
+            },
+            choices: {
+              type: Type.ARRAY,
+              description: 'A list of four multiple-choice answers.',
+              items: {
+                type: Type.STRING,
+              },
+            },
+            answerIndex: {
+              type: Type.INTEGER,
+              description: 'The 0-based index of the correct answer in the choices array.',
+            },
+            explanation: {
+              type: Type.STRING,
+              description: 'A brief explanation for the correct answer.',
+            },
+          },
+          required: ['question', 'choices', 'answerIndex', 'explanation'],
+        },
+      },
+    },
+    required: ['questions'],
   };
+
+  return { prompt, schema };
+};

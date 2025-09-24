@@ -1,26 +1,26 @@
 
 import React from 'react';
-import { NotorietyLevel } from '../types';
+import { FameLevel } from '../types';
 
-interface NotorietyBadgeProps {
-  level: NotorietyLevel;
+interface FameBadgeProps {
+  level: FameLevel;
   description: string;
   small?: boolean;
 }
 
-const NotorietyBadge: React.FC<NotorietyBadgeProps> = ({ level, description, small = false }) => {
-  const levelStyles: Record<NotorietyLevel, string> = {
-    [NotorietyLevel.LOCAL]: 'bg-slctrips-sky text-white',
-    [NotorietyLevel.NATIONAL]: 'bg-slctrips-gold text-slctrips-navy',
-    [NotorietyLevel.ICONIC]: 'bg-slctrips-red text-white',
-    [NotorietyLevel.LEGENDARY]: 'bg-slctrips-black text-slctrips-red border border-slctrips-red',
+const FameBadge: React.FC<FameBadgeProps> = ({ level, description, small = false }) => {
+  const levelStyles: Record<FameLevel, string> = {
+    [FameLevel.INDIE]: 'bg-slctrips-sky text-white',
+    [FameLevel.BLOCKBUSTER]: 'bg-slctrips-gold text-slctrips-navy',
+    [FameLevel.ICONIC]: 'bg-slctrips-red text-white',
+    [FameLevel.LEGENDARY]: 'bg-slctrips-black text-slctrips-gold border border-slctrips-gold',
   };
 
-  const icon: Record<NotorietyLevel, string> = {
-    [NotorietyLevel.LOCAL]: '📰',
-    [NotorietyLevel.NATIONAL]: '⚖️',
-    [NotorietyLevel.ICONIC]: '🔪',
-    [NotorietyLevel.LEGENDARY]: '💀',
+  const icon: Record<FameLevel, string> = {
+    [FameLevel.INDIE]: '🎬',
+    [FameLevel.BLOCKBUSTER]: '🌟',
+    [FameLevel.ICONIC]: '🏆',
+    [FameLevel.LEGENDARY]: '📜',
   };
   
   if (small) {
@@ -40,4 +40,4 @@ const NotorietyBadge: React.FC<NotorietyBadgeProps> = ({ level, description, sma
   );
 };
 
-export default NotorietyBadge;
+export default FameBadge;
