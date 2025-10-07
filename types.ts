@@ -1,77 +1,99 @@
-// Fix: Add FameLevel enum for FameBadge component.
-export enum FameLevel {
-  INDIE = 'Indie',
-  BLOCKBUSTER = 'Blockbuster',
-  ICONIC = 'Iconic',
-  LEGENDARY = 'Legendary',
+
+export interface BuddyLink {
+  category: string;
+  text: string;
+  url: string;
 }
 
-export interface Guardian {
-  name: string;
-  animal_form: string;
-  archetype: string;
-  teaching_moment: string;
-  signature_line: string;
-  voice: {
-    tone: string;
-    vocabulary: string;
-    signature_phrase: string;
-    teaching_style: string;
-  };
-}
-
-export interface FieldTripStop {
-  name: string;
-  gps: string;
-  duration: string;
-  educational_focus: string;
-  guardian_connection: string;
-  safety_notes: string[];
-}
-
-export interface Activity {
-  title: string;
-  type: 'Observation' | 'Hands-On' | 'Storytelling';
-  prompt: string;
-  materials_needed: string[];
-}
-
-export interface CurriculumDetails {
-    [topic: string]: string[];
-}
-
-export interface LearningObjectives {
-  social_studies: CurriculumDetails;
-  science_seed: CurriculumDetails;
-  ela: CurriculumDetails;
-  mathematics: CurriculumDetails;
-  health_education: CurriculumDetails;
-  fine_arts: CurriculumDetails;
-}
-
-// Fix: Add EvidenceItem type for Field Journal component.
 export interface EvidenceItem {
-  id: string;
-  note: string;
-  photo?: string; // base64 encoded image
+    note: string;
+    photo?: string;
+    id: string;
 }
 
-// Re-purposing the Destination interface to represent a County module.
+export enum Category {
+  UTAH = "Utah",
+  COLORADO = "Colorado",
+  NEVADA = "Nevada",
+  ARIZONA = "Arizona",
+  WYOMING = "Wyoming",
+  MONTANA = "Montana",
+  IDAHO = "Idaho",
+  NEW_MEXICO = "New Mexico",
+  WEIRD = "Cult & Weird Cinema",
+}
+
+export enum FameLevel {
+    INDIE = 'INDIE GEM',
+    BLOCKBUSTER = 'BLOCKBUSTER',
+    ICONIC = 'ICONIC',
+    LEGENDARY = 'LEGENDARY'
+}
+
+export type ARData = {
+  overlays: Array<{
+    assetUrl: string; // PNG/SVG
+    alt: string;
+    anchor: { x: number; y: number }; // screen-relative 0..1
+  }>;
+  triggerRadiusM: number; // GPS proximity
+  captions?: string[];
+};
+
 export interface Destination {
   id: string;
-  name: string; // County Name
-  guardian: Guardian;
-  learning_objectives: LearningObjectives;
-  story: string[]; // Intro story about the county/guardian
-  field_trip_stops: FieldTripStop[];
-  activities: Activity[];
-  relatedDestinationIds: string[]; // Related counties
-  gps: string; // Central point of county for map
+  name: string;
+  subtitle: string;
+  category: Category;
+  location: string;
+  driveTime: string;
+  visitDuration: string;
+  cost: string;
+  groupSize: string;
+  bestTime: string;
+  fameLevel: FameLevel;
+  fameDescriptor: string;
+  gps: string;
   what3words: string;
-  // Fix: Add optional ar_data for ARViewPage component.
-  ar_data?: {
+  story: string[];
+  moviesFilmed: {
     title: string;
-    overlayImageUrl: string;
-    instructions: string;
+    movies: {
+      title: string;
+      posterUrl: string;
+    }[];
   };
+  hook: string;
+  media: {
+    youtubeId: string;
+    title: string;
+  }[];
+  visitorTips: {
+    title: string;
+    points: string[];
+  };
+  behindTheScenes: {
+    title: string;
+    quote: string;
+  };
+  equipment: { name: string; reason: string }[];
+  gettingThere?: {
+    from: string;
+    steps: string[];
+  };
+  parking?: string;
+  permits?: string;
+  whenToVisit?: {
+    bestTime: string;
+    seasonality: string;
+    peakActivity: string;
+  };
+  whatToExpect?: {
+    phenomena: string[];
+    encounters: string[];
+  };
+  relatedDestinationIds: string[];
+  buddyLinks?: BuddyLink[];
+  tags?: string[];
+  ar_data?: ARData;
 }

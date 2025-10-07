@@ -1,123 +1,114 @@
-import { Part, Type } from '@google/genai';
+
 import { Destination, EvidenceItem } from '../types';
+import { Part, Type } from '@google/genai';
 
-/**
- * Creates a prompt for generating a custom field trip itinerary.
- */
-export const createItineraryPrompt = (destination: Destination, focus: string, duration: string): string => {
-  const { name, guardian, field_trip_stops, activities } = destination;
+export const createBriefingPrompt = (destination: Destination): string => {
+  return `
+    You are an AI location scout assistant for 'SLCTrips', a guide to Hollywood's hidden backlot.
+    Your tone is that of a seasoned film historian: knowledgeable, insightful, and full of interesting trivia.
+    Generate a concise cinematic briefing for the location: "${destination.name}".
 
-  const stopsInfo = field_trip_stops.map(stop => `- ${stop.name}: ${stop.educational_focus}`).join('\n');
-  const activitiesInfo = activities.map(activity => `- ${activity.title}: ${activity.prompt}`).join('\n');
+    Please include:
+    1.  **Logline:** A one-sentence summary of this location's cinematic identity.
+    2.  **Why It's Famous:** A short summary of what makes this location significant in film history.
+    3.  **Key Scenes:** 2-3 bullet points of the most iconic movie moments filmed here.
+    4.  **Director's Tip:** A concluding sentence of practical advice for a visiting film fan.
 
-  return `You are a creative curriculum designer for 4th-grade students exploring Utah. Your goal is to create a short, engaging, hands-on learning itinerary for a field trip to ${name}.
-The guardian of this county is ${guardian.name}, the ${guardian.animal_form}, who teaches that "${guardian.teaching_moment}".
-
-The itinerary should have an educational focus on: **${focus}**.
-The total duration for this activity plan should be approximately **${duration}**.
-
-The output should be a fun, mission-style briefing for a 4th grader. Use markdown for formatting, like using '*' for list items and '**' for bolding. Address the student as "Pathfinder".
-Start with a catchy mission title.
-
-Base your itinerary on the following information about ${name}:
-**Available Field Trip Stops:**
-${stopsInfo}
-
-**Example Activities:**
-${activitiesInfo}
-
-Generate a creative, step-by-step mission plan that a student and their parent or teacher can follow.`;
+    Keep the entire summary under 150 words. Format with markdown for clarity (bold with **, lists with * or -).
+    Destination data:
+    - Name: ${destination.name}
+    - Subtitle: ${destination.subtitle}
+    - Story: ${destination.story.join(' ')}
+    - Movies Filmed: ${destination.moviesFilmed.movies.map(m => m.title).join(', ')}
+  `;
 };
 
-/**
- * Creates prompt parts for generating guardian feedback on student evidence.
- */
+export const createItineraryPrompt = (destination: Destination, focus: string, duration: string): string => {
+  return `
+    You are an AI trip planning assistant for 'SLCTrips', a guide to movie locations.
+    Your tone is that of Dan, the Wasatch Sasquatch, a friendly, expert location scout.
+    Generate a personalized, step-by-step shooting itinerary for a user visiting "${destination.name}".
+
+    **User's Plan:**
+    - Scouting Focus: ${focus}
+    - Available Time: ${duration}
+
+    **Location Dossier:**
+    - Name: ${destination.name}
+    - Key Movies: ${destination.moviesFilmed.movies.map(m => m.title).join(', ')}
+    - Visitor Tips: ${destination.visitorTips.points.join(' ')}
+
+    **Your Task:**
+    Create a practical, step-by-step itinerary based on the user's plan and the location dossier.
+    - The itinerary must be realistic for the time allotted.
+    - Emphasize practical tips from the "Visitor Tips".
+    - Structure the output with clear, sequential steps for a successful photo/video shoot. Use Markdown for formatting (bolding with **, lists with *).
+    - Start with a friendly intro, like "Alright, let's get you set up for the perfect shot at [Destination Name]!"
+    - Conclude with an encouraging sign-off, like "That's a wrap! Have fun and capture some Hollywood magic. - Dan".
+    - Keep the entire response under 250 words.
+  `;
+};
+
 export const createDirectorCutPrompt = (destination: Destination, evidenceItems: EvidenceItem[]): Part[] => {
-  const { name, guardian } = destination;
+  const promptParts: Part[] = [];
+  const textPrompt = `
+    You are Dan, the Wasatch Sasquatch, but you're also an acclaimed film director reviewing a location scout's report.
+    I am presenting you with a shot list for a scene at "${destination.name}".
+    Your task is to synthesize the scout's notes and photos into a cohesive director's summary.
 
-  const intro = `You are ${guardian.name}, the ${guardian.animal_form} and guardian of ${name}.
-Your voice is ${guardian.voice.tone} and you speak with a ${guardian.voice.vocabulary} vocabulary. Your signature phrase is "${guardian.signature_line}".
-A 4th-grade student, a "Junior Guardian", has shared their field journal with you. They have collected the following notes and photos during their visit to your county.
-Your task is to provide positive and encouraging feedback on their observations. Connect their findings back to your main teaching moment, which is: "${guardian.teaching_moment}".
-Keep your feedback concise, under 150 words. Address the student directly. Use markdown for formatting, like using '**' for bold text.
-Here is what the student collected:`;
+    - Start with an encouraging opening, like "Okay, let's review the dailies from your scout at ${destination.name}."
+    - Analyze how the scout's findings (notes and images) could be used to film a great scene, connecting them to the location's cinematic history.
+    - Speculate on shot composition, lighting, and mood. Offer creative suggestions. Maintain a tone of an experienced, insightful, and slightly quirky director.
+    - Conclude with a confident summary and a classic director's sign-off, like "This is great stuff. I think we've found our shot. - Dan".
+    
+    Here is the shot list:
+  `;
+  promptParts.push({ text: textPrompt });
 
-  const promptParts: Part[] = [{ text: intro }];
+  evidenceItems.forEach((item, index) => {
+    let evidenceText = `\n\n--- Shot ${index + 1} ---\n`;
+    if (item.note) {
+      evidenceText += `Scout's Notes: "${item.note}"\n`;
+    }
+    if (item.photo) {
+      evidenceText += `See attached image for this shot.\n`;
+    }
+    promptParts.push({ text: evidenceText });
 
-  evidenceItems.forEach(item => {
     if (item.photo) {
       const base64Data = item.photo.split(',')[1];
-      if (base64Data) {
-        promptParts.push({
-          inlineData: {
-            mimeType: 'image/jpeg',
-            data: base64Data,
-          },
-        });
-      }
-    }
-    if (item.note) {
-      promptParts.push({ text: `Student's note: "${item.note}"` });
+      promptParts.push({ inlineData: { mimeType: 'image/jpeg', data: base64Data } });
     }
   });
 
   return promptParts;
 };
 
-
-/**
- * Creates a prompt and schema for generating trivia questions.
- */
-export const createTriviaPrompt = (destination: Destination): { prompt: string, schema: any } => {
-  const { name, story, field_trip_stops, learning_objectives } = destination;
-
-  const prompt = `You are an expert on Utah history, geography, and culture, specializing in ${name}. Your task is to generate 3 unique and engaging trivia questions suitable for a 4th grader.
-The questions should be based on the provided information about ${name}. Use the story, field trip stops, and learning objectives to create the questions.
-For each question, provide four multiple-choice options (one correct, three plausible but incorrect). The correct answer should not be obvious. Also provide a brief, fun explanation for the correct answer.
-
-Return the result as a single JSON object that matches the provided schema. Do not include any other text or markdown formatting in your response.
-
-Here is the information about ${name}:
-Story: ${story.join(' ')}
-Field Trip Stops: ${JSON.stringify(field_trip_stops)}
-Learning Objectives: ${JSON.stringify(learning_objectives)}
-`;
-
-  const schema = {
-    type: Type.OBJECT,
-    properties: {
-      questions: {
-        type: Type.ARRAY,
-        description: 'A list of trivia questions.',
-        items: {
-          type: Type.OBJECT,
-          properties: {
-            question: {
-              type: Type.STRING,
-              description: 'The trivia question.',
-            },
-            choices: {
-              type: Type.ARRAY,
-              description: 'A list of four multiple-choice answers.',
-              items: {
-                type: Type.STRING,
-              },
-            },
-            answerIndex: {
-              type: Type.INTEGER,
-              description: 'The 0-based index of the correct answer in the choices array.',
-            },
-            explanation: {
-              type: Type.STRING,
-              description: 'A brief explanation for the correct answer.',
-            },
-          },
-          required: ['question', 'choices', 'answerIndex', 'explanation'],
+export const createTriviaPrompt = (destination: Destination) => {
+  return {
+    prompt: `
+      You are an AI assistant for a movie tourism app.
+      Your task is to generate exactly 3 fun, engaging trivia questions about the movies filmed at "${destination.name}".
+      The questions should be based on behind-the-scenes facts or specific scenes from key movies like: ${destination.moviesFilmed.movies.map(m => m.title).join(', ')}.
+      Return the response as a JSON object that strictly adheres to the provided schema.
+    `,
+    schema: {
+        type: Type.OBJECT,
+        properties: {
+            questions: {
+                type: Type.ARRAY,
+                description: "A list of 3 trivia questions.",
+                items: {
+                    type: Type.OBJECT,
+                    properties: {
+                        question: { type: Type.STRING, description: 'The trivia question.' },
+                        answer: { type: Type.STRING, description: 'The answer to the question.' }
+                    },
+                    required: ["question", "answer"]
+                }
+            }
         },
-      },
-    },
-    required: ['questions'],
+        required: ["questions"]
+    }
   };
-
-  return { prompt, schema };
 };

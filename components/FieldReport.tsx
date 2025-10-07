@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 
 interface FieldReportProps {
@@ -57,7 +56,7 @@ const FieldReport: React.FC<FieldReportProps> = ({ onPinEvidence }) => {
 
   const handlePin = () => {
     if (!note && !photo) {
-      setError("Add a note or photo to create a journal entry.");
+      setError("Add a note or photo to create a log entry.");
       return;
     }
     onPinEvidence({ note, photo });
@@ -70,12 +69,12 @@ const FieldReport: React.FC<FieldReportProps> = ({ onPinEvidence }) => {
 
   return (
     <div className="bg-white p-6 rounded-lg mb-8 shadow-md border-t-4 border-slctrips-red">
-      <h2 className="font-heading text-3xl font-bold text-slctrips-navy mb-2">Field Journal Entry</h2>
-      <p className="text-gray-600 mb-6">You're the explorer. Capture your photos and notes here to add them to your Field Journal.</p>
+      <h2 className="font-heading text-3xl font-bold text-slctrips-navy mb-2">Location Log</h2>
+      <p className="text-gray-600 mb-6">You're the scout. Capture your photos and notes here to add them to your shot list.</p>
       
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-bold text-slctrips-navy mb-1">Field Photo</label>
+          <label className="block text-sm font-bold text-slctrips-navy mb-1">Scouting Photo</label>
           <div className="p-2 border border-gray-300 rounded-md bg-slctrips-light min-h-[100px] flex justify-center items-center">
             {photo ? (
               <div className="text-center">
@@ -100,14 +99,14 @@ const FieldReport: React.FC<FieldReportProps> = ({ onPinEvidence }) => {
         </div>
         
         <div>
-            <label htmlFor="field-notes" className="block text-sm font-bold text-slctrips-navy mb-1">Explorer's Notes</label>
+            <label htmlFor="field-notes" className="block text-sm font-bold text-slctrips-navy mb-1">Scout's Notes</label>
             <textarea
                 id="field-notes"
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
-                placeholder="Log your observations about plants, animals, geology, or history..."
+                placeholder="Log your observations on light, sound, and composition..."
                 className="w-full h-24 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-slctrips-gold focus:border-slctrips-gold"
-                aria-label="Explorer's Notes"
+                aria-label="Scout's Notes"
             />
         </div>
         
@@ -117,9 +116,9 @@ const FieldReport: React.FC<FieldReportProps> = ({ onPinEvidence }) => {
             onClick={handlePin}
             disabled={!hasDataToPin}
             className="w-full mt-4 bg-slctrips-red text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 disabled:bg-slate-400 disabled:cursor-not-allowed transition-colors duration-300"
-            aria-label="Add to Field Journal"
+            aria-label="Add to Shot List"
         >
-            ✍️ Add to Field Journal
+            🎬 Add to Shot List
         </button>
       </div>
     </div>

@@ -1,5 +1,7 @@
 {
-  "name": "SLCTrips - TK-000 - Mt. Olympians TripKit",
-  "description": "A comprehensive educational TripKit that transforms Utah's 29 county guardians into grade-appropriate adventures for 4th-grade teachers. Blends mythic storytelling with Utah Core Standards through location-based learning, featuring magical animal guardians who teach geography, history, and conservation. Includes safety protocols and field trip guides to turn Utah's landscape into a classroom for discovery, where students become junior guardians protecting the state's natural and cultural treasures.\n\n*One-liner: \"Where Utah folklore meets 4th-grade field trips - a teacher-ready, safety-first educational guide.\"*",
-  "requestFramePermissions": []
+  "name": "SLCTrips - TK-002 - Utah's Movie Madness",
+  "description": "Explore iconic movie filming locations across Utah and the West. A location scout's guide to Hollywood's hidden backlot.",
+  "requestFramePermissions": [
+    "camera"
+  ]
 }

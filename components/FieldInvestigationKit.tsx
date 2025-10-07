@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import { GoogleGenAI } from '@google/genai';
 import { Destination } from '../types';
@@ -9,25 +8,25 @@ interface FieldInvestigationKitProps {
 }
 
 const FieldInvestigationKit: React.FC<FieldInvestigationKitProps> = ({ destination }) => {
-  const [focus, setFocus] = useState('Geography');
-  const [duration, setDuration] = useState('30-45 minutes');
+  const [focus, setFocus] = useState('Recreate a Scene');
+  const [duration, setDuration] = useState('2-3 hours');
   const [itinerary, setItinerary] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [isGenerated, setIsGenerated] = useState(false);
 
   const investigationFocusOptions = [
-    'Geography',
-    'History',
-    'Science',
-    'Art & Culture',
+    'Recreate a Scene',
+    'Landscape Photography',
+    'Historical Film Tour',
+    'Behind-the-Scenes Vlogging',
   ];
 
   const durationOptions = [
-    '15-20 minutes',
-    '30-45 minutes',
-    '1 hour',
-    'Half-day',
+    '1-2 hours',
+    '2-3 hours',
+    'Half-day (4-5 hours)',
+    'Full-day (6-8 hours)',
   ];
 
   const generateItinerary = useCallback(async () => {
@@ -55,7 +54,7 @@ const FieldInvestigationKit: React.FC<FieldInvestigationKitProps> = ({ destinati
       }
     } catch (e: any) {
       console.error(e);
-      setError('Could not generate mission. The guardian seems to be busy. Please try again later.');
+      setError('Could not generate itinerary. The script seems to have a few pages missing. Please try again later.');
     } finally {
       setIsLoading(false);
     }
@@ -92,19 +91,19 @@ const FieldInvestigationKit: React.FC<FieldInvestigationKitProps> = ({ destinati
 
   return (
     <div className="bg-white p-6 rounded-lg mb-8 shadow-md border-t-4 border-slctrips-sky">
-      <h2 className="font-heading text-3xl font-bold text-slctrips-navy mb-2">AI Mission Generator</h2>
-      <p className="text-gray-600 mb-6">Let's build a custom lesson plan for your visit. Tell me your educational focus, and I'll generate a personalized activity schedule.</p>
+      <h2 className="font-heading text-3xl font-bold text-slctrips-navy mb-2">Scouting Itinerary Planner</h2>
+      <p className="text-gray-600 mb-6">Let's build a custom shot list for your visit. Tell me your creative focus, and I'll generate a personalized shooting schedule.</p>
 
       {!isGenerated ? (
         <div className="space-y-4">
           <div>
-            <label htmlFor="focus" className="block text-sm font-bold text-slctrips-navy mb-1">Learning Focus</label>
+            <label htmlFor="focus" className="block text-sm font-bold text-slctrips-navy mb-1">Scouting Focus</label>
             <select
               id="focus"
               value={focus}
               onChange={(e) => setFocus(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-slctrips-gold focus:border-slctrips-gold"
-              aria-label="Select Learning Focus"
+              aria-label="Select Scouting Focus"
             >
               {investigationFocusOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
             </select>
@@ -126,12 +125,12 @@ const FieldInvestigationKit: React.FC<FieldInvestigationKitProps> = ({ destinati
             disabled={isLoading}
             className="w-full bg-slctrips-sky text-white font-bold py-3 px-6 rounded-lg hover:bg-slctrips-navy disabled:bg-slate-400 transition-colors duration-300 flex items-center justify-center gap-2"
           >
-            {isLoading ? 'Consulting the Guardian...' : 'Generate My Mission'}
+            {isLoading ? 'Setting the Scene...' : 'Generate My Itinerary'}
           </button>
         </div>
       ) : (
         <div className="bg-slctrips-light p-4 rounded-md border border-slctrips-mid min-h-[200px]">
-          {isLoading && !itinerary && <p className="text-slctrips-navy animate-pulse">Receiving instructions...</p>}
+          {isLoading && !itinerary && <p className="text-slctrips-navy animate-pulse">Consulting my location notes...</p>}
           
           <div className="prose max-w-none text-slctrips-black">
             {renderFormattedText(itinerary)}

@@ -1,32 +1,109 @@
-
-import React from 'react';
+import React, { useState, useCallback } from 'react';
+import { GoogleGenAI } from '@google/genai';
 import { Destination } from '../types';
+import { createBriefingPrompt } from '../data/prompts';
 
-interface GuardianProfileProps {
+interface GeminiMissionBriefingProps {
   destination: Destination;
 }
 
-const GuardianProfile: React.FC<GuardianProfileProps> = ({ destination }) => {
-  const { guardian } = destination;
+const GeminiMissionBriefing: React.FC<GeminiMissionBriefingProps> = ({ destination }) => {
+  const [briefing, setBriefing] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [isGenerated, setIsGenerated] = useState(false);
+
+  const generateBriefing = useCallback(async () => {
+    setIsLoading(true);
+    setError('');
+    setBriefing('');
+    setIsGenerated(true);
+
+    try {
+      if (!process.env.API_KEY) {
+        throw new Error("API key not found.");
+      }
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const prompt = createBriefingPrompt(destination);
+      
+      const stream = await ai.models.generateContentStream({
+        model: "gemini-2.5-flash",
+        contents: prompt
+      });
+
+      let text = '';
+      for await (const chunk of stream) {
+        text += chunk.text;
+        setBriefing(text);
+      }
+    } catch (e: any) {
+      console.error(e);
+      setError('Failed to generate summary. Our connection to the studio seems to be down.');
+    } finally {
+      setIsLoading(false);
+    }
+  }, [destination]);
   
+  const renderFormattedText = (text: string) => {
+    return text.split('\n').map((line, i) => {
+        const trimmedLine = line.trim();
+        if (trimmedLine === '') return null;
+
+        if (trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ')) {
+            const content = trimmedLine.substring(2);
+            const parts = content.split('**');
+            return (
+                <li key={i} className="ml-5 list-disc text-slctrips-mid">
+                    {parts.map((part, index) =>
+                        index % 2 === 1 ? <strong key={index} className="text-slctrips-gold font-semibold">{part}</strong> : part
+                    )}
+                </li>
+            );
+        }
+
+        const parts = line.split('**');
+        return (
+            <p key={i} className="mb-2 text-slctrips-light">
+                {parts.map((part, index) =>
+                    index % 2 === 1 ? <strong key={index} className="text-slctrips-gold font-semibold">{part}</strong> : part
+                )}
+            </p>
+        );
+    });
+};
+
+
   return (
     <div className="bg-slctrips-navy border-2 border-slctrips-gold p-6 rounded-lg mb-8 shadow-lg text-white">
-      <h2 className="font-heading text-3xl font-bold text-slctrips-gold mb-4">Meet Your Guardian</h2>
+      <h2 className="font-heading text-3xl font-bold text-slctrips-gold mb-4">AI Location Briefing</h2>
       
-      <div className="prose prose-invert max-w-none">
-        <p className="text-slctrips-light">
-            Your guide for {destination.name} is <strong className="text-slctrips-gold font-semibold">{guardian.name}</strong>, the <strong className="text-slctrips-gold font-semibold">{guardian.animal_form}</strong>.
-        </p>
-        <ul className="text-slctrips-mid">
-            <li><strong>Archetype:</strong> {guardian.archetype}</li>
-            <li><strong>Teaches:</strong> {guardian.teaching_moment}</li>
-        </ul>
-        <blockquote className="border-l-4 border-slctrips-sky pl-4 italic">
-            {guardian.signature_line}
-        </blockquote>
-      </div>
+      {!isGenerated && (
+        <>
+            <p className="text-slctrips-mid mb-4">Get a quick, AI-powered summary of this location's cinematic history and what makes it special.</p>
+            <button
+                onClick={generateBriefing}
+                disabled={isLoading}
+                className="bg-slctrips-gold text-slctrips-navy font-bold py-2 px-6 rounded-full hover:bg-yellow-300 disabled:bg-slate-600 transition-colors duration-300"
+            >
+                {isLoading ? 'Rolling...' : 'Generate Briefing'}
+            </button>
+        </>
+      )}
+
+      {isGenerated && (
+        <div>
+            {isLoading && !briefing && <p className="text-slctrips-mid animate-pulse">Accessing film archives...</p>}
+            
+            <div className="prose prose-invert max-w-none whitespace-pre-wrap">
+                {renderFormattedText(briefing)}
+                 {isLoading && briefing && <span className="inline-block w-2 h-4 bg-slctrips-gold animate-pulse ml-1"></span>}
+            </div>
+
+            {error && <p className="text-red-400 mt-4">{error}</p>}
+        </div>
+      )}
     </div>
   );
 };
 
-export default GuardianProfile;
+export default GeminiMissionBriefing;

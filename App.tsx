@@ -6,6 +6,7 @@ import DestinationListPage from './pages/DestinationListPage';
 import DestinationDetailPage from './pages/DestinationDetailPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ARViewPage from './pages/ARViewPage';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/destinations" element={<DestinationListPage />} />
             <Route path="/destinations/:id" element={<DestinationDetailPage />} />
+            <Route path="/ar-view/:id" element={<ARViewPage />} />
           </Routes>
         </main>
         <Footer />

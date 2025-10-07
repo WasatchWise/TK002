@@ -30,7 +30,7 @@ const Header: React.FC = () => {
             className="text-slctrips-navy hover:text-slctrips-gold font-bold transition-colors pb-1 text-lg"
             style={({ isActive }) => isActive ? activeLinkStyle : {}}
           >
-            Counties
+            Destinations
           </NavLink>
         </nav>
       </div>
